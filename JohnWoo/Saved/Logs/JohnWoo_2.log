@@ -1180,3 +1180,12 @@ LogConfig: Set CVar [[r.Shadow.DetectVertexShaderLayerAtRuntime:1]]
 [2023.04.05-10.34.05:471][  1]LogSlate: Took 0.000216 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Regular.ttf' (155K)
 [2023.04.05-10.34.05:544][  2]LogNavigationDataBuild: Navigation data generation finished for RecastNavMesh-Default (RecastNavMesh /Game/VRTemplate/Maps/VRTemplateMap.VRTemplateMap:PersistentLevel.RecastNavMesh-Default).
 [2023.04.05-10.35.58:238][381]LogDerivedDataCache: C:/Users/qwe_o/AppData/Local/UnrealEngine/Common/DerivedDataCache: Maintenance finished in +00:00:06.190 and deleted 0 files with total size 0 MiB. Scanned 3844 files in 3819 folders with total size 115 MiB.
+[2023.04.05-10.48.58:925][722]LogLiveCoding: Display: Starting Live Coding compile.
+[2023.04.05-10.49.13:096][765]LogLiveCoding: Display:    Creating library C:\Users\qwe_o\Documents\GitHub\med10.1\JohnWoo\Binaries\Win64\UnrealEditor-JohnWoo.patch_0.lib and object C:\Users\qwe_o\Documents\GitHub\med10.1\JohnWoo\Binaries\Win64\UnrealEditor-JohnWoo.patch_0.exp
+[2023.04.05-10.49.13:418][766]LogClass: UPackage /Script/JohnWoo Reload.
+[2023.04.05-10.49.13:418][766]LogClass: Could not find existing class A_PlayerPistol in package /Script/JohnWoo for reload, assuming new or modified class
+[2023.04.05-10.49.13:462][766]LogUObjectHash: Compacting FUObjectHashTables data took   0.51ms
+[2023.04.05-10.49.13:687][767]Display: Reload/Re-instancing Complete: 1 package changed, 1 class new
+[2023.04.05-10.49.13:687][767]LogLiveCoding: Warning: Live coding succeeded, data type changes may cause packaging to fail if assets reference the new or updated data types
+[2023.04.05-10.50.15:861][952]LogHotReload: New module detected: UnrealEditor-JohnWoo-1140.dll
+[2023.04.05-10.50.51:205][ 58]LogHotReload: New module detected: UnrealEditor-JohnWoo-5930.dll

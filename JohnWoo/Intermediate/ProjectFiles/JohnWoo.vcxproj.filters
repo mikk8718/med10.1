@@ -11,6 +11,7 @@
     <None Include="..\..\Source\JohnWooEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.vsconfig" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -29,6 +30,12 @@
     <Filter Include="Source\JohnWoo">
       <UniqueIdentifier>{A3B5EACB-DB50-30FA-8B96-9B4E4B8B3C59}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\JohnWoo\A_PlayerPistol.cpp">
+      <Filter>Source\JohnWoo</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\JohnWoo\A_PlayerPistol.h">
+      <Filter>Source\JohnWoo</Filter>
+    </ClInclude>
     <None Include="..\..\Source\JohnWoo\JohnWoo.Build.cs">
       <Filter>Source\JohnWoo</Filter>
     </None>
@@ -38,10 +45,22 @@
     <ClInclude Include="..\..\Source\JohnWoo\JohnWoo.h">
       <Filter>Source\JohnWoo</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\JohnWoo\MyENUMS.cpp">
+      <Filter>Source\JohnWoo</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\JohnWoo\MyENUMS.h">
+      <Filter>Source\JohnWoo</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\JohnWoo\SC_ThrustingReader.cpp">
       <Filter>Source\JohnWoo</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\JohnWoo\SC_ThrustingReader.h">
+      <Filter>Source\JohnWoo</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\JohnWoo\SS_MotionController.cpp">
+      <Filter>Source\JohnWoo</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\JohnWoo\SS_MotionController.h">
       <Filter>Source\JohnWoo</Filter>
     </ClInclude>
   </ItemGroup>
