@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "JohnWoo",
+			"Path": "C:\\Users\\qwe_o\\Documents\\GitHub\\med10.1\\JohnWoo\\Source\\JohnWoo.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "JohnWooEditor",
+			"Path": "C:\\Users\\qwe_o\\Documents\\GitHub\\med10.1\\JohnWoo\\Source\\JohnWooEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

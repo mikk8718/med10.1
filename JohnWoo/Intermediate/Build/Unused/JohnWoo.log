@@ -1,0 +1,5 @@
+﻿  Running UnrealBuildTool: dotnet "..\..\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.dll" JohnWooEditor Win64 Development -Project="C:\Users\qwe_o\Documents\GitHub\med10.1\JohnWoo\JohnWoo.uproject" -WaitMutex -FromMsBuild
+  Log file: C:\Users\qwe_o\AppData\Local\UnrealBuildTool\Log.txt
+  Using 'git status' to determine working set for adaptive non-unity build (C:\Users\qwe_o\Documents\GitHub\med10.1).
+  Target is up to date
+  Total execution time: 28.46 seconds
