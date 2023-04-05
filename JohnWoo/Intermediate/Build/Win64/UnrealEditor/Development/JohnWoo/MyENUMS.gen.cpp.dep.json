@@ -1,0 +1,14 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "c:\\users\\qwe_o\\documents\\github\\med10.1\\johnwoo\\intermediate\\build\\win64\\unrealeditor\\inc\\johnwoo\\uht\\myenums.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\qwe_o\\documents\\github\\med10.1\\johnwoo\\intermediate\\build\\win64\\johnwooeditor\\development\\engine\\sharedpch.engine.shadowerrors.inclorderunreal5_0.h.pch",
+        "Includes": [
+            "c:\\users\\qwe_o\\documents\\github\\med10.1\\johnwoo\\intermediate\\build\\win64\\unrealeditor\\development\\johnwoo\\definitions.johnwoo.h",
+            "c:\\users\\qwe_o\\documents\\github\\med10.1\\johnwoo\\source\\johnwoo\\myenums.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

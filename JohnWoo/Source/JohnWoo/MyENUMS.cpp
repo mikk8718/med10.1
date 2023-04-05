@@ -2,11 +2,3 @@
 
 
 #include "MyENUMS.h"
-
-MyENUMS::MyENUMS()
-{
-}
-
-MyENUMS::~MyENUMS()
-{
-}

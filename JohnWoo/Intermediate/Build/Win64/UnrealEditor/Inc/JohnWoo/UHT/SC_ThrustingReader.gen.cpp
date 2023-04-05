@@ -28,6 +28,16 @@ void EmptyLinkFunctionForGeneratedCodeSC_ThrustingReader() {}
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_customThresholds_MetaData[];
+#endif
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_customThresholds;
+		static const UECodeGen_Private::FBoolPropertyParams NewProp_customThresholdMet_Inner;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_customThresholdMet_MetaData[];
+#endif
+		static const UECodeGen_Private::FArrayPropertyParams NewProp_customThresholdMet;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
 	};
@@ -44,6 +54,28 @@ void EmptyLinkFunctionForGeneratedCodeSC_ThrustingReader() {}
 		{ "ModuleRelativePath", "SC_ThrustingReader.h" },
 	};
 #endif
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USC_ThrustingReader_Statics::NewProp_customThresholds_MetaData[] = {
+		{ "Category", "SC_ThrustingReader" },
+		{ "ModuleRelativePath", "SC_ThrustingReader.h" },
+	};
+#endif
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_USC_ThrustingReader_Statics::NewProp_customThresholds = { "customThresholds", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, CPP_ARRAY_DIM(customThresholds, USC_ThrustingReader), nullptr, nullptr, STRUCT_OFFSET(USC_ThrustingReader, customThresholds), METADATA_PARAMS(Z_Construct_UClass_USC_ThrustingReader_Statics::NewProp_customThresholds_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USC_ThrustingReader_Statics::NewProp_customThresholds_MetaData)) };
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_USC_ThrustingReader_Statics::NewProp_customThresholdMet_Inner = { "customThresholdMet", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, sizeof(bool), 0, nullptr, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USC_ThrustingReader_Statics::NewProp_customThresholdMet_MetaData[] = {
+		{ "Category", "SC_ThrustingReader" },
+		{ "Comment", "//element[0] holds distance threshold, element[1] holds velocity treshold, element[2] holds acceleration threshold.\n" },
+		{ "ModuleRelativePath", "SC_ThrustingReader.h" },
+		{ "ToolTip", "element[0] holds distance threshold, element[1] holds velocity treshold, element[2] holds acceleration threshold." },
+	};
+#endif
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_USC_ThrustingReader_Statics::NewProp_customThresholdMet = { "customThresholdMet", nullptr, (EPropertyFlags)0x0040000000000001, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(USC_ThrustingReader, customThresholdMet), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_USC_ThrustingReader_Statics::NewProp_customThresholdMet_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USC_ThrustingReader_Statics::NewProp_customThresholdMet_MetaData)) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_USC_ThrustingReader_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USC_ThrustingReader_Statics::NewProp_customThresholds,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USC_ThrustingReader_Statics::NewProp_customThresholdMet_Inner,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USC_ThrustingReader_Statics::NewProp_customThresholdMet,
+	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_USC_ThrustingReader_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<USC_ThrustingReader>::IsAbstract,
 	};
@@ -53,11 +85,11 @@ void EmptyLinkFunctionForGeneratedCodeSC_ThrustingReader() {}
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
 		nullptr,
-		nullptr,
+		Z_Construct_UClass_USC_ThrustingReader_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
 		0,
-		0,
+		UE_ARRAY_COUNT(Z_Construct_UClass_USC_ThrustingReader_Statics::PropPointers),
 		0,
 		0x00B000A4u,
 		METADATA_PARAMS(Z_Construct_UClass_USC_ThrustingReader_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_USC_ThrustingReader_Statics::Class_MetaDataParams))
@@ -81,9 +113,9 @@ void EmptyLinkFunctionForGeneratedCodeSC_ThrustingReader() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_SC_ThrustingReader_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_USC_ThrustingReader, USC_ThrustingReader::StaticClass, TEXT("USC_ThrustingReader"), &Z_Registration_Info_UClass_USC_ThrustingReader, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(USC_ThrustingReader), 437849769U) },
+		{ Z_Construct_UClass_USC_ThrustingReader, USC_ThrustingReader::StaticClass, TEXT("USC_ThrustingReader"), &Z_Registration_Info_UClass_USC_ThrustingReader, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(USC_ThrustingReader), 545228990U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_SC_ThrustingReader_h_1815263808(TEXT("/Script/JohnWoo"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_SC_ThrustingReader_h_266785714(TEXT("/Script/JohnWoo"),
 		Z_CompiledInDeferFile_FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_SC_ThrustingReader_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_SC_ThrustingReader_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

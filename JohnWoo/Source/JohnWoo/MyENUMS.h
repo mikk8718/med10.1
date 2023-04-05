@@ -5,11 +5,11 @@
 #include "CoreMinimal.h"
 
 /**
- * 
+ *
  */
-class JOHNWOO_API MyENUMS
+UENUM(BlueprintType)
+enum class EHand : uint8
 {
-public:
-	MyENUMS();
-	~MyENUMS();
+	LEFT = 0,
+	RIGHT = 1
 };
