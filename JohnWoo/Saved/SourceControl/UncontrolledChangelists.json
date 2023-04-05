@@ -5,7 +5,14 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
-				"C:/Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/StarterContent/HDRI/HDRI_Epic_Courtyard_Daylight.uasset"
+				"C:/Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/StarterContent/HDRI/HDRI_Epic_Courtyard_Daylight.uasset",
+				"C:/Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/VRTemplate/Blueprints/VRPawn.uasset",
+				"C:/Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/OurStuff/lTrigger.uasset",
+				"C:/Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/OurStuff/yButton.uasset",
+				"C:/Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/OurStuff/XButton.uasset",
+				"C:/Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/OurStuff/bButton.uasset",
+				"C:/Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/OurStuff/rTrigger.uasset",
+				"C:/Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/VRTemplate/Input/IMC_Default.uasset"
 			]
 		}
 	]

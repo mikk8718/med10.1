@@ -1344,3 +1344,474 @@ LogConfig: Set CVar [[r.Shadow.DetectVertexShaderLayerAtRuntime:1]]
 [2023.04.05-11.27.54:881][414]LogUObjectHash: Compacting FUObjectHashTables data took   0.49ms
 [2023.04.05-11.27.54:913][414]Display: HotReload took 34.0s.
 [2023.04.05-11.27.54:913][414]Display: Reload/Re-instancing Complete: 1 package changed, 2 classes changed, 1 class unchanged, 1 enum unchanged
+[2023.04.05-11.30.28:589][ 53]LogSlate: Took 0.001912 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Light.ttf' (167K)
+[2023.04.05-11.30.29:461][101]LogShaderCompilers: Display: ================================================
+[2023.04.05-11.30.29:462][101]LogShaderCompilers: Display: === FShaderJobCache stats ===
+[2023.04.05-11.30.29:462][101]LogShaderCompilers: Display: Total job queries 69, among them cache hits 12 (17.39%)
+[2023.04.05-11.30.29:462][101]LogShaderCompilers: Display: Tracking 55 distinct input hashes that result in 46 distinct outputs (83.64%)
+[2023.04.05-11.30.29:462][101]LogShaderCompilers: Display: RAM used: 0.52 MB (0.00 GB) of 716.80 MB (0.70 GB) budget. Usage: 0.07%
+[2023.04.05-11.30.29:462][101]LogShaderCompilers: Display: === Shader Compilation stats ===
+[2023.04.05-11.30.29:462][101]LogShaderCompilers: Display: Shaders Compiled: 15
+[2023.04.05-11.30.29:462][101]LogShaderCompilers: Display: Jobs assigned 15, completed 15 (100.00%)
+[2023.04.05-11.30.29:462][101]LogShaderCompilers: Display: Average time worker was idle: 6.40 s
+[2023.04.05-11.30.29:462][101]LogShaderCompilers: Display: Time job spent in pending queue: average 0.08 s, longest 0.11 s
+[2023.04.05-11.30.29:462][101]LogShaderCompilers: Display: Job execution time: average 1.59 s, max 3.76 s
+[2023.04.05-11.30.29:462][101]LogShaderCompilers: Display: Job life time (pending + execution): average 1.67 s, max 3.82
+[2023.04.05-11.30.29:462][101]LogShaderCompilers: Display: Time at least one job was in flight (either pending or executed): 9.45 s
+[2023.04.05-11.30.29:462][101]LogShaderCompilers: Display: Jobs were issued in 15 batches (only local compilation was used), average 1.00 jobs/batch
+[2023.04.05-11.30.29:462][101]LogShaderCompilers: Display: Average processing rate: 1.59 jobs/sec
+[2023.04.05-11.30.29:462][101]LogShaderCompilers: Display: Total thread time: 19.94 s
+[2023.04.05-11.30.29:462][101]LogShaderCompilers: Display: Total thread preprocess time: 0.65 s
+[2023.04.05-11.30.29:462][101]LogShaderCompilers: Display: Percentage time preprocessing: 3.26%
+[2023.04.05-11.30.29:462][101]LogShaderCompilers: Display: Effective parallelization: 2.11 (times faster than compiling all shaders on one thread). Compare with number of workers: 8
+[2023.04.05-11.30.29:462][101]LogShaderCompilers: Display: Top 5 most expensive shader types by average time:
+[2023.04.05-11.30.29:462][101]LogShaderCompilers: Display:      TBasePassPSFPrecomputedVolumetricLightmapLightingPolicy (compiled    3 times, average 3.29 sec, max 3.43 sec, min 3.08 sec)
+[2023.04.05-11.30.29:462][101]LogShaderCompilers: Display:                                 TBasePassVSFNoLightMapPolicy (compiled    3 times, average 1.06 sec, max 1.07 sec, min 1.04 sec)
+[2023.04.05-11.30.29:462][101]LogShaderCompilers: Display:                                 TBasePassPSFNoLightMapPolicy (compiled    3 times, average 1.00 sec, max 1.15 sec, min 0.92 sec)
+[2023.04.05-11.30.29:462][101]LogShaderCompilers: Display:                                                  FHitProxyVS (compiled    1 times, average 0.93 sec, max 0.93 sec, min 0.93 sec)
+[2023.04.05-11.30.29:462][101]LogShaderCompilers: Display:                                                  FHitProxyPS (compiled    1 times, average 0.75 sec, max 0.75 sec, min 0.75 sec)
+[2023.04.05-11.30.29:462][101]LogShaderCompilers: Display: Top 5 shader types by total compile time:
+[2023.04.05-11.30.29:462][101]LogShaderCompilers: Display:      TBasePassPSFPrecomputedVolumetricLightmapLightingPolicy - 49.46% of total time (compiled    3 times, average 3.29 sec, max 3.43 sec, min 3.08 sec)
+[2023.04.05-11.30.29:462][101]LogShaderCompilers: Display:                                 TBasePassVSFNoLightMapPolicy - 15.95% of total time (compiled    3 times, average 1.06 sec, max 1.07 sec, min 1.04 sec)
+[2023.04.05-11.30.29:462][101]LogShaderCompilers: Display:                                 TBasePassPSFNoLightMapPolicy - 15.07% of total time (compiled    3 times, average 1.00 sec, max 1.15 sec, min 0.92 sec)
+[2023.04.05-11.30.29:462][101]LogShaderCompilers: Display:      TBasePassVSFPrecomputedVolumetricLightmapLightingPolicy - 11.05% of total time (compiled    3 times, average 0.73 sec, max 0.81 sec, min 0.67 sec)
+[2023.04.05-11.30.29:462][101]LogShaderCompilers: Display:                                                  FHitProxyVS - 4.68% of total time (compiled    1 times, average 0.93 sec, max 0.93 sec, min 0.93 sec)
+[2023.04.05-11.30.29:462][101]LogShaderCompilers: Display: ================================================
+[2023.04.05-11.30.31:721][230]LogAssetEditorSubsystem: Opening Asset editor for Blueprint /Game/VRTemplate/Blueprints/VRPawn.VRPawn
+[2023.04.05-11.30.31:722][230]LogChaos: FPhysicsSolverBase::AsyncDt:-1.000000
+[2023.04.05-11.30.33:106][230]LogSlate: Took 0.000673 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-BoldCondensed.ttf' (158K)
+[2023.04.05-11.30.35:015][284]LogViewport: Scene viewport resized to 1141x693, mode Windowed.
+[2023.04.05-11.30.40:782][539]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.04.05-11.30.40:878][539]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/VRTemplate/Blueprints/VRPawn" FILE="../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/VRTemplate/Blueprints/VRPawn.uasset" SILENT=true
+[2023.04.05-11.30.40:889][539]LogPackageLocalizationCache: Processed 42 localized package path(s) for 1 prioritized culture(s) in 0.009846 seconds
+[2023.04.05-11.30.40:936][539]LogSerialization: UsePackageTrailer: 'true'
+[2023.04.05-11.30.40:964][539]LogSavePackage: Moving output files for package: /Game/VRTemplate/Blueprints/VRPawn
+[2023.04.05-11.30.40:965][539]LogSavePackage: Moving '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Saved/VRPawnB24340B6404D5AD5634698B81475BB7E.tmp' to '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/VRTemplate/Blueprints/VRPawn.uasset'
+[2023.04.05-11.30.40:976][539]LogFileHelpers: InternalPromptForCheckoutAndSave took 193 ms
+[2023.04.05-11.30.40:984][539]AssetCheck: New page: Asset Save: VRPawn
+[2023.04.05-11.30.40:984][539]LogContentValidation: Display: Validating /Script/Engine.Blueprint /Game/VRTemplate/Blueprints/VRPawn.VRPawn
+[2023.04.05-11.30.42:979][618]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.04.05-11.30.43:055][618]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/VRTemplate/Blueprints/VRPawn" FILE="../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/VRTemplate/Blueprints/VRPawn.uasset" SILENT=true
+[2023.04.05-11.30.43:120][618]LogSavePackage: Moving output files for package: /Game/VRTemplate/Blueprints/VRPawn
+[2023.04.05-11.30.43:120][618]LogSavePackage: Moving '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Saved/VRPawnE5415A2E4F1E0F4DC8E45FB0EFA67AA6.tmp' to '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/VRTemplate/Blueprints/VRPawn.uasset'
+[2023.04.05-11.30.43:129][618]LogFileHelpers: InternalPromptForCheckoutAndSave took 150 ms (total: 343 ms)
+[2023.04.05-11.30.43:137][618]AssetCheck: New page: Asset Save: VRPawn
+[2023.04.05-11.30.43:137][618]LogContentValidation: Display: Validating /Script/Engine.Blueprint /Game/VRTemplate/Blueprints/VRPawn.VRPawn
+[2023.04.05-11.31.16:629][302]LogViewport: Scene viewport resized to 624x250, mode Windowed.
+[2023.04.05-11.31.17:541][336]LogViewport: Scene viewport resized to 622x268, mode Windowed.
+[2023.04.05-11.31.17:619][338]LogViewport: Scene viewport resized to 519x206, mode Windowed.
+[2023.04.05-11.31.17:651][339]LogViewport: Scene viewport resized to 467x174, mode Windowed.
+[2023.04.05-11.31.17:811][348]LogViewport: Scene viewport resized to 1141x693, mode Windowed.
+[2023.04.05-11.31.18:331][379]LogSlate: Window 'VRPawn' being destroyed
+[2023.04.05-11.32.34:607][744]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.04.05-11.32.34:686][744]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/VRTemplate/Blueprints/VRPawn" FILE="../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/VRTemplate/Blueprints/VRPawn.uasset" SILENT=true
+[2023.04.05-11.32.34:752][744]LogSavePackage: Moving output files for package: /Game/VRTemplate/Blueprints/VRPawn
+[2023.04.05-11.32.34:752][744]LogSavePackage: Moving '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Saved/VRPawn59ACD1D547255452DDE4A5AD4DA4871C.tmp' to '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/VRTemplate/Blueprints/VRPawn.uasset'
+[2023.04.05-11.32.34:760][744]LogFileHelpers: InternalPromptForCheckoutAndSave took 152 ms (total: 496 ms)
+[2023.04.05-11.32.34:768][744]AssetCheck: New page: Asset Save: VRPawn
+[2023.04.05-11.32.34:768][744]LogContentValidation: Display: Validating /Script/Engine.Blueprint /Game/VRTemplate/Blueprints/VRPawn.VRPawn
+[2023.04.05-11.32.55:342][976]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.04.05-11.32.55:422][976]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/VRTemplate/Blueprints/VRPawn" FILE="../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/VRTemplate/Blueprints/VRPawn.uasset" SILENT=true
+[2023.04.05-11.32.55:486][976]LogSavePackage: Moving output files for package: /Game/VRTemplate/Blueprints/VRPawn
+[2023.04.05-11.32.55:488][976]LogSavePackage: Moving '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Saved/VRPawnF6310CDB44510847D1C19582A7BE166E.tmp' to '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/VRTemplate/Blueprints/VRPawn.uasset'
+[2023.04.05-11.32.55:495][976]LogFileHelpers: InternalPromptForCheckoutAndSave took 152 ms (total: 648 ms)
+[2023.04.05-11.32.55:503][976]AssetCheck: New page: Asset Save: VRPawn
+[2023.04.05-11.32.55:503][976]LogContentValidation: Display: Validating /Script/Engine.Blueprint /Game/VRTemplate/Blueprints/VRPawn.VRPawn
+[2023.04.05-11.33.03:684][466]BlueprintLog: New page: Compile VRPawn
+[2023.04.05-11.33.03:805][466]LogUObjectHash: Compacting FUObjectHashTables data took   1.18ms
+[2023.04.05-11.39.33:686][ 42]LogContentBrowser: Deferred new asset folder creation: NewFolder
+[2023.04.05-11.39.33:698][ 42]LogContentBrowser: Creating deferred item: NewFolder
+[2023.04.05-11.39.33:706][ 43]LogContentBrowser: Renaming the item being created (Deferred Item: NewFolder).
+[2023.04.05-11.39.41:780][517]LogContentBrowser: Attempting asset rename: NewFolder -> OurStuff
+[2023.04.05-11.39.41:781][517]LogContentBrowser: End creating deferred item NewFolder
+[2023.04.05-11.39.50:798][ 52]LogMaterial: Warning: [AssetLog] C:\Users\qwe_o\Documents\GitHub\med10.1\JohnWoo\Content\VRTemplate\Materials\Functions\MF_OccludedPixels.uasset: Failed to compile Material for platform PCD3D_SM6, Default Material will be used in game.
+	Only transparent or postprocess materials can read from scene depth.
+
+[2023.04.05-11.39.51:582][ 99]LogShaderCompilers: Display: ================================================
+[2023.04.05-11.39.51:582][ 99]LogShaderCompilers: Display: === FShaderJobCache stats ===
+[2023.04.05-11.39.51:582][ 99]LogShaderCompilers: Display: Total job queries 86, among them cache hits 16 (18.60%)
+[2023.04.05-11.39.51:582][ 99]LogShaderCompilers: Display: Tracking 69 distinct input hashes that result in 54 distinct outputs (78.26%)
+[2023.04.05-11.39.51:582][ 99]LogShaderCompilers: Display: RAM used: 0.71 MB (0.00 GB) of 716.80 MB (0.70 GB) budget. Usage: 0.10%
+[2023.04.05-11.39.51:582][ 99]LogShaderCompilers: Display: === Shader Compilation stats ===
+[2023.04.05-11.39.51:582][ 99]LogShaderCompilers: Display: Shaders Compiled: 27
+[2023.04.05-11.39.51:582][ 99]LogShaderCompilers: Display: Jobs assigned 28, completed 27 (96.43%)
+[2023.04.05-11.39.51:582][ 99]LogShaderCompilers: Display: Average time worker was idle: 482.97 s
+[2023.04.05-11.39.51:582][ 99]LogShaderCompilers: Display: Time job spent in pending queue: average 0.08 s, longest 0.11 s
+[2023.04.05-11.39.51:582][ 99]LogShaderCompilers: Display: Job execution time: average 2.60 s, max 6.43 s
+[2023.04.05-11.39.51:582][ 99]LogShaderCompilers: Display: Job life time (pending + execution): average 2.68 s, max 6.50
+[2023.04.05-11.39.51:582][ 99]LogShaderCompilers: Display: Time at least one job was in flight (either pending or executed): 20.96 s
+[2023.04.05-11.39.51:582][ 99]LogShaderCompilers: Display: Jobs were issued in 28 batches (only local compilation was used), average 1.00 jobs/batch
+[2023.04.05-11.39.51:582][ 99]LogShaderCompilers: Display: Average processing rate: 1.29 jobs/sec
+[2023.04.05-11.39.51:582][ 99]LogShaderCompilers: Display: Total thread time: 63.26 s
+[2023.04.05-11.39.51:582][ 99]LogShaderCompilers: Display: Total thread preprocess time: 1.38 s
+[2023.04.05-11.39.51:582][ 99]LogShaderCompilers: Display: Percentage time preprocessing: 2.18%
+[2023.04.05-11.39.51:582][ 99]LogShaderCompilers: Display: Effective parallelization: 3.02 (times faster than compiling all shaders on one thread). Compare with number of workers: 8
+[2023.04.05-11.39.51:582][ 99]LogShaderCompilers: Display: Top 5 most expensive shader types by average time:
+[2023.04.05-11.39.51:582][ 99]LogShaderCompilers: Display:                         TBasePassPSFNoLightMapPolicySkylight (compiled    3 times, average 5.79 sec, max 6.00 sec, min 5.48 sec)
+[2023.04.05-11.39.51:583][ 99]LogShaderCompilers: Display:                                 TBasePassPSFNoLightMapPolicy (compiled    7 times, average 3.43 sec, max 6.06 sec, min 0.92 sec)
+[2023.04.05-11.39.51:583][ 99]LogShaderCompilers: Display:      TBasePassPSFPrecomputedVolumetricLightmapLightingPolicy (compiled    3 times, average 3.29 sec, max 3.43 sec, min 3.08 sec)
+[2023.04.05-11.39.51:583][ 99]LogShaderCompilers: Display:                                 TBasePassVSFNoLightMapPolicy (compiled    8 times, average 1.02 sec, max 1.25 sec, min 0.55 sec)
+[2023.04.05-11.39.51:583][ 99]LogShaderCompilers: Display:                                                  FHitProxyVS (compiled    1 times, average 0.93 sec, max 0.93 sec, min 0.93 sec)
+[2023.04.05-11.39.51:583][ 99]LogShaderCompilers: Display: Top 5 shader types by total compile time:
+[2023.04.05-11.39.51:583][ 99]LogShaderCompilers: Display:                                 TBasePassPSFNoLightMapPolicy - 37.95% of total time (compiled    7 times, average 3.43 sec, max 6.06 sec, min 0.92 sec)
+[2023.04.05-11.39.51:583][ 99]LogShaderCompilers: Display:                         TBasePassPSFNoLightMapPolicySkylight - 27.46% of total time (compiled    3 times, average 5.79 sec, max 6.00 sec, min 5.48 sec)
+[2023.04.05-11.39.51:583][ 99]LogShaderCompilers: Display:      TBasePassPSFPrecomputedVolumetricLightmapLightingPolicy - 15.59% of total time (compiled    3 times, average 3.29 sec, max 3.43 sec, min 3.08 sec)
+[2023.04.05-11.39.51:583][ 99]LogShaderCompilers: Display:                                 TBasePassVSFNoLightMapPolicy - 12.84% of total time (compiled    8 times, average 1.02 sec, max 1.25 sec, min 0.55 sec)
+[2023.04.05-11.39.51:583][ 99]LogShaderCompilers: Display:      TBasePassVSFPrecomputedVolumetricLightmapLightingPolicy - 3.49% of total time (compiled    3 times, average 0.73 sec, max 0.81 sec, min 0.67 sec)
+[2023.04.05-11.39.51:583][ 99]LogShaderCompilers: Display: ================================================
+[2023.04.05-11.39.53:569][211]LogAssetEditorSubsystem: Opening Asset editor for InputMappingContext /Game/VRTemplate/Input/IMC_Default.IMC_Default
+[2023.04.05-11.40.04:292][792]LogContentBrowser: Deferred new asset file creation: NewInputAction
+[2023.04.05-11.40.04:298][792]LogContentBrowser: Creating deferred item: NewInputAction
+[2023.04.05-11.40.04:357][794]LogContentBrowser: Renaming the item being created (Deferred Item: NewInputAction).
+[2023.04.05-11.40.08:830][ 63]LogContentBrowser: Attempting asset rename: NewInputAction -> rTrigger
+[2023.04.05-11.40.08:833][ 63]LogContentBrowser: End creating deferred item NewInputAction
+[2023.04.05-11.40.20:486][734]LogContentBrowser: Attempting asset rename: rTrigger_2 -> lTrigger
+[2023.04.05-11.40.20:518][734]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.04.05-11.40.20:591][734]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/OurStuff/lTrigger" FILE="../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/OurStuff/lTrigger.uasset" SILENT=true
+[2023.04.05-11.40.20:592][734]LogSavePackage: Moving output files for package: /Game/OurStuff/lTrigger
+[2023.04.05-11.40.20:592][734]LogSavePackage: Moving '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Saved/lTrigger62EE18354D5EE0FB7C5794B8D32826AC.tmp' to '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/OurStuff/lTrigger.uasset'
+[2023.04.05-11.40.20:599][734]LogFileHelpers: InternalPromptForCheckoutAndSave took 81 ms (total: 730 ms)
+[2023.04.05-11.40.20:640][734]LogUObjectHash: Compacting FUObjectHashTables data took   1.38ms
+[2023.04.05-11.40.20:666][734]LogUObjectHash: Compacting FUObjectHashTables data took   1.06ms
+[2023.04.05-11.40.20:691][734]LogUObjectHash: Compacting FUObjectHashTables data took   0.47ms
+[2023.04.05-11.40.20:697][734]AssetCheck: New page: Asset Save: lTrigger
+[2023.04.05-11.40.20:698][734]LogContentValidation: Display: Validating /Script/EnhancedInput.InputAction /Game/OurStuff/lTrigger.lTrigger
+[2023.04.05-11.40.29:929][263]LogContentBrowser: Attempting asset rename: rTrigger_2 -> yButton
+[2023.04.05-11.40.29:949][263]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.04.05-11.40.30:021][263]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/OurStuff/yButton" FILE="../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/OurStuff/yButton.uasset" SILENT=true
+[2023.04.05-11.40.30:022][263]LogSavePackage: Moving output files for package: /Game/OurStuff/yButton
+[2023.04.05-11.40.30:022][263]LogSavePackage: Moving '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Saved/yButton917A4F704ABFEA59B36A75A4687319F8.tmp' to '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/OurStuff/yButton.uasset'
+[2023.04.05-11.40.30:029][263]LogFileHelpers: InternalPromptForCheckoutAndSave took 79 ms (total: 809 ms)
+[2023.04.05-11.40.30:063][263]LogUObjectHash: Compacting FUObjectHashTables data took   1.06ms
+[2023.04.05-11.40.30:090][263]LogUObjectHash: Compacting FUObjectHashTables data took   1.06ms
+[2023.04.05-11.40.30:115][263]LogUObjectHash: Compacting FUObjectHashTables data took   0.47ms
+[2023.04.05-11.40.30:122][263]AssetCheck: New page: Asset Save: yButton
+[2023.04.05-11.40.30:122][263]LogContentValidation: Display: Validating /Script/EnhancedInput.InputAction /Game/OurStuff/yButton.yButton
+[2023.04.05-11.40.35:363][554]LogContentBrowser: Attempting asset rename: yButton_2 -> XButton
+[2023.04.05-11.40.35:381][554]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.04.05-11.40.35:451][554]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/OurStuff/XButton" FILE="../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/OurStuff/XButton.uasset" SILENT=true
+[2023.04.05-11.40.35:452][554]LogSavePackage: Moving output files for package: /Game/OurStuff/XButton
+[2023.04.05-11.40.35:452][554]LogSavePackage: Moving '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Saved/XButton8C245FD041D42C1E2CD25BA32294DE7F.tmp' to '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/OurStuff/XButton.uasset'
+[2023.04.05-11.40.35:460][554]LogFileHelpers: InternalPromptForCheckoutAndSave took 78 ms (total: 888 ms)
+[2023.04.05-11.40.35:496][554]LogUObjectHash: Compacting FUObjectHashTables data took   1.32ms
+[2023.04.05-11.40.35:522][554]LogUObjectHash: Compacting FUObjectHashTables data took   1.08ms
+[2023.04.05-11.40.35:547][554]LogUObjectHash: Compacting FUObjectHashTables data took   0.55ms
+[2023.04.05-11.40.35:553][554]AssetCheck: New page: Asset Save: XButton
+[2023.04.05-11.40.35:553][554]LogContentValidation: Display: Validating /Script/EnhancedInput.InputAction /Game/OurStuff/XButton.XButton
+[2023.04.05-11.40.40:054][812]LogContentBrowser: Attempting asset rename: XButton -> bButton
+[2023.04.05-11.40.40:072][812]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.04.05-11.40.40:135][812]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/OurStuff/bButton" FILE="../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/OurStuff/bButton.uasset" SILENT=true
+[2023.04.05-11.40.40:136][812]LogSavePackage: Moving output files for package: /Game/OurStuff/bButton
+[2023.04.05-11.40.40:136][812]LogSavePackage: Moving '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Saved/bButtonC3F9129B4530A8B2294507BDBE174FE0.tmp' to '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/OurStuff/bButton.uasset'
+[2023.04.05-11.40.40:143][812]LogFileHelpers: InternalPromptForCheckoutAndSave took 71 ms (total: 959 ms)
+[2023.04.05-11.40.40:181][812]LogUObjectHash: Compacting FUObjectHashTables data took   1.03ms
+[2023.04.05-11.40.40:207][812]LogUObjectHash: Compacting FUObjectHashTables data took   1.02ms
+[2023.04.05-11.40.40:232][812]LogUObjectHash: Compacting FUObjectHashTables data took   0.49ms
+[2023.04.05-11.40.40:238][812]AssetCheck: New page: Asset Save: bButton
+[2023.04.05-11.40.40:238][812]LogContentValidation: Display: Validating /Script/EnhancedInput.InputAction /Game/OurStuff/bButton.bButton
+[2023.04.05-11.40.40:357][819]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.04.05-11.40.40:421][819]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/OurStuff/bButton" FILE="../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/OurStuff/bButton.uasset" SILENT=true
+[2023.04.05-11.40.40:422][819]LogSavePackage: Moving output files for package: /Game/OurStuff/bButton
+[2023.04.05-11.40.40:422][819]LogSavePackage: Moving '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Saved/bButton77C248674ED44E04FC6C0B9A8AEA34E0.tmp' to '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/OurStuff/bButton.uasset'
+[2023.04.05-11.40.40:429][819]LogFileHelpers: InternalPromptForCheckoutAndSave took 72 ms (total: 1.03 sec)
+[2023.04.05-11.40.40:435][819]AssetCheck: New page: Asset Save: bButton
+[2023.04.05-11.40.40:435][819]LogContentValidation: Display: Validating /Script/EnhancedInput.InputAction /Game/OurStuff/bButton.bButton
+[2023.04.05-11.40.42:903][967]LogAssetEditorSubsystem: Opening Asset editor for InputAction /Game/OurStuff/bButton.bButton
+[2023.04.05-11.40.47:141][205]LogEditorClassViewer: Warning: Class /Script/InteractiveToolsFramework.GizmoActor has parent /Script/InteractiveToolsFramework.InternalToolFrameworkActor, but this parent is not found. The Class will not be shown in ClassViewer.
+[2023.04.05-11.40.47:141][205]LogEditorClassViewer: Warning: Class /Script/ModelingComponents.PreviewGeometryActor has parent /Script/InteractiveToolsFramework.InternalToolFrameworkActor, but this parent is not found. The Class will not be shown in ClassViewer.
+[2023.04.05-11.40.47:141][205]LogEditorClassViewer: Warning: Class /Script/ModelingComponents.PreviewMeshActor has parent /Script/InteractiveToolsFramework.InternalToolFrameworkActor, but this parent is not found. The Class will not be shown in ClassViewer.
+[2023.04.05-11.40.51:327][435]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.04.05-11.40.51:404][435]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/OurStuff/bButton" FILE="../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/OurStuff/bButton.uasset" SILENT=true
+[2023.04.05-11.40.51:405][435]LogSavePackage: Moving output files for package: /Game/OurStuff/bButton
+[2023.04.05-11.40.51:406][435]LogSavePackage: Moving '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Saved/bButtonE97B98BA4A36DB214FDF99932FF484BB.tmp' to '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/OurStuff/bButton.uasset'
+[2023.04.05-11.40.51:413][435]LogFileHelpers: InternalPromptForCheckoutAndSave took 85 ms (total: 1.11 sec)
+[2023.04.05-11.40.51:419][435]AssetCheck: New page: Asset Save: bButton
+[2023.04.05-11.40.51:419][435]LogContentValidation: Display: Validating /Script/EnhancedInput.InputAction /Game/OurStuff/bButton.bButton
+[2023.04.05-11.40.54:113][594]LogAssetEditorSubsystem: Opening Asset editor for InputAction /Game/OurStuff/lTrigger.lTrigger
+[2023.04.05-11.40.58:024][796]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.04.05-11.40.58:099][796]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/OurStuff/lTrigger" FILE="../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/OurStuff/lTrigger.uasset" SILENT=true
+[2023.04.05-11.40.58:100][796]LogSavePackage: Moving output files for package: /Game/OurStuff/lTrigger
+[2023.04.05-11.40.58:101][796]LogSavePackage: Moving '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Saved/lTriggerD9EE512F480A0ECCDC751BBFAF9359C3.tmp' to '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/OurStuff/lTrigger.uasset'
+[2023.04.05-11.40.58:109][796]LogFileHelpers: InternalPromptForCheckoutAndSave took 84 ms (total: 1.20 sec)
+[2023.04.05-11.40.58:116][796]AssetCheck: New page: Asset Save: lTrigger
+[2023.04.05-11.40.58:116][796]LogContentValidation: Display: Validating /Script/EnhancedInput.InputAction /Game/OurStuff/lTrigger.lTrigger
+[2023.04.05-11.41.00:131][914]LogAssetEditorSubsystem: Opening Asset editor for InputAction /Game/OurStuff/rTrigger.rTrigger
+[2023.04.05-11.41.04:183][124]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.04.05-11.41.04:258][124]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/OurStuff/rTrigger" FILE="../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/OurStuff/rTrigger.uasset" SILENT=true
+[2023.04.05-11.41.04:259][124]LogSavePackage: Moving output files for package: /Game/OurStuff/rTrigger
+[2023.04.05-11.41.04:259][124]LogSavePackage: Moving '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Saved/rTrigger1696792D4B03384C64B1DCB38AEF19A2.tmp' to '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/OurStuff/rTrigger.uasset'
+[2023.04.05-11.41.04:268][124]LogFileHelpers: InternalPromptForCheckoutAndSave took 85 ms (total: 1.28 sec)
+[2023.04.05-11.41.04:276][124]AssetCheck: New page: Asset Save: rTrigger
+[2023.04.05-11.41.04:276][124]LogContentValidation: Display: Validating /Script/EnhancedInput.InputAction /Game/OurStuff/rTrigger.rTrigger
+[2023.04.05-11.41.05:930][221]LogAssetEditorSubsystem: Opening Asset editor for InputAction /Game/OurStuff/yButton.yButton
+[2023.04.05-11.41.10:166][444]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.04.05-11.41.10:246][444]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/OurStuff/yButton" FILE="../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/OurStuff/yButton.uasset" SILENT=true
+[2023.04.05-11.41.10:247][444]LogSavePackage: Moving output files for package: /Game/OurStuff/yButton
+[2023.04.05-11.41.10:248][444]LogSavePackage: Moving '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Saved/yButtonC367BFCA4FA24882A0F06E9853A79B2D.tmp' to '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/OurStuff/yButton.uasset'
+[2023.04.05-11.41.10:258][444]LogFileHelpers: InternalPromptForCheckoutAndSave took 92 ms (total: 1.38 sec)
+[2023.04.05-11.41.10:267][444]AssetCheck: New page: Asset Save: yButton
+[2023.04.05-11.41.10:267][444]LogContentValidation: Display: Validating /Script/EnhancedInput.InputAction /Game/OurStuff/yButton.yButton
+[2023.04.05-11.41.35:110][916]LogSlate: Took 0.000208 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Light.ttf' (167K)
+[2023.04.05-11.42.39:267][694]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.04.05-11.42.39:339][694]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/VRTemplate/Input/IMC_Default" FILE="../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/VRTemplate/Input/IMC_Default.uasset" SILENT=true
+[2023.04.05-11.42.39:343][694]LogSavePackage: Moving output files for package: /Game/VRTemplate/Input/IMC_Default
+[2023.04.05-11.42.39:343][694]LogSavePackage: Moving '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Saved/IMC_Default6FC8A406451C11B614013E93FF7DCFD5.tmp' to '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/VRTemplate/Input/IMC_Default.uasset'
+[2023.04.05-11.42.39:350][694]LogFileHelpers: InternalPromptForCheckoutAndSave took 83 ms (total: 1.46 sec)
+[2023.04.05-11.42.39:358][694]AssetCheck: New page: Asset Save: IMC_Default
+[2023.04.05-11.42.39:358][694]LogContentValidation: Display: Validating /Script/EnhancedInput.InputMappingContext /Game/VRTemplate/Input/IMC_Default.IMC_Default
+[2023.04.05-11.43.03:534][123]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.04.05-11.43.03:607][123]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/VRTemplate/Input/IMC_Default" FILE="../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/VRTemplate/Input/IMC_Default.uasset" SILENT=true
+[2023.04.05-11.43.03:611][123]LogSavePackage: Moving output files for package: /Game/VRTemplate/Input/IMC_Default
+[2023.04.05-11.43.03:611][123]LogSavePackage: Moving '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Saved/IMC_DefaultB1C09BE94F2D4B19DCE5A8A403D206D9.tmp' to '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/VRTemplate/Input/IMC_Default.uasset'
+[2023.04.05-11.43.03:617][123]LogFileHelpers: InternalPromptForCheckoutAndSave took 84 ms (total: 1.54 sec)
+[2023.04.05-11.43.03:623][123]AssetCheck: New page: Asset Save: IMC_Default
+[2023.04.05-11.43.03:623][123]LogContentValidation: Display: Validating /Script/EnhancedInput.InputMappingContext /Game/VRTemplate/Input/IMC_Default.IMC_Default
+[2023.04.05-11.43.38:018][102]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.04.05-11.43.38:144][102]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/VRTemplate/Blueprints/VRPawn" FILE="../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/VRTemplate/Blueprints/VRPawn.uasset" SILENT=true
+[2023.04.05-11.43.38:208][102]LogSavePackage: Moving output files for package: /Game/VRTemplate/Blueprints/VRPawn
+[2023.04.05-11.43.38:209][102]LogSavePackage: Moving '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Saved/VRPawnBA0EAF7B487D068C2121CB95AF3BC3D7.tmp' to '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/VRTemplate/Blueprints/VRPawn.uasset'
+[2023.04.05-11.43.38:218][102]LogFileHelpers: InternalPromptForCheckoutAndSave took 199 ms (total: 1.74 sec)
+[2023.04.05-11.43.38:225][102]AssetCheck: New page: Asset Save: VRPawn
+[2023.04.05-11.43.38:225][102]LogContentValidation: Display: Validating /Script/Engine.Blueprint /Game/VRTemplate/Blueprints/VRPawn.VRPawn
+[2023.04.05-11.46.19:884][629]LogUObjectHash: Compacting FUObjectHashTables data took   1.28ms
+[2023.04.05-11.46.19:885][629]LogFileHelpers: Editor autosave (incl. external actors) for '/Game/VRTemplate/Maps/VRTemplateMap' took 0.031
+[2023.04.05-11.46.19:886][629]OBJ SavePackage: Generating thumbnails for [2] asset(s) in package [/Game/VRTemplate/Blueprints/VRPawn] ([2] browsable assets)...
+[2023.04.05-11.46.19:939][629]OBJ SavePackage:     Rendered thumbnail for [Blueprint /Game/VRTemplate/Blueprints/VRPawn.VRPawn]
+[2023.04.05-11.46.19:939][629]OBJ SavePackage: Finished generating thumbnails for package [/Game/VRTemplate/Blueprints/VRPawn]
+[2023.04.05-11.46.20:004][629]LogSavePackage: Moving output files for package: /Temp/Autosaves/Game/VRTemplate/Blueprints/VRPawn_Auto1
+[2023.04.05-11.46.20:004][629]LogSavePackage: Moving '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Saved/VRPawn_Auto104503AB5477E813CEDBECEB728AD087A.tmp' to '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Saved/Autosaves/Game/VRTemplate/Blueprints/VRPawn_Auto1.uasset'
+[2023.04.05-11.46.20:005][629]LogFileHelpers: Auto-saving content packages took 0.120
+[2023.04.05-11.46.27:194][822]Candidate modules for hot reload:
+[2023.04.05-11.46.27:194][822]  JohnWoo
+[2023.04.05-11.46.27:200][822]Launching UnrealBuildTool... [C:/Program Files/Epic Games/UE_5.1/Engine/Build/BatchFiles/Build.bat  -ModuleWithSuffix=JohnWoo,4485 JohnWooEditor Win64 Development -Project="C:/Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/JohnWoo.uproject" "C:/Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/JohnWoo.uproject"  -IgnoreJunk]
+[2023.04.05-11.46.27:205][822]Warning: Starting HotReload took  0.0s.
+[2023.04.05-11.46.45:124][872]CompilerResultsLog: New page: Compilation - 5. apr. 2023 15.46.45
+[2023.04.05-11.46.45:124][872]CompilerResultsLog: Running UnrealBuildTool: dotnet "..\..\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.dll" -ModuleWithSuffix=JohnWoo,4485 JohnWooEditor Win64 Development -Project="C:/Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/JohnWoo.uproject" "C:/Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/JohnWoo.uproject"  -IgnoreJunk
+[2023.04.05-11.46.45:125][872]CompilerResultsLog: Log file: C:\Users\qwe_o\AppData\Local\UnrealBuildTool\Log.txt
+[2023.04.05-11.46.45:125][872]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build (C:\Users\qwe_o\Documents\GitHub\med10.1).
+[2023.04.05-11.46.45:125][872]CompilerResultsLog: Parsing headers for JohnWooEditor
+[2023.04.05-11.46.45:125][872]CompilerResultsLog:   Running Internal UnrealHeaderTool C:\Users\qwe_o\Documents\GitHub\med10.1\JohnWoo\JohnWoo.uproject C:\Users\qwe_o\Documents\GitHub\med10.1\JohnWoo\Intermediate\Build\Win64\JohnWooEditor\Development\JohnWooEditor.uhtmanifest -WarningsAsErrors -installed
+[2023.04.05-11.46.45:125][872]CompilerResultsLog: Total of 3 written
+[2023.04.05-11.46.45:125][872]CompilerResultsLog: Reflection code generated for JohnWooEditor in 1.1928016 seconds
+[2023.04.05-11.46.45:125][872]CompilerResultsLog: Building JohnWooEditor...
+[2023.04.05-11.46.45:125][872]CompilerResultsLog: Using Visual Studio 2022 14.29.30148 toolchain (C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+[2023.04.05-11.46.45:125][872]CompilerResultsLog: [Upgrade]
+[2023.04.05-11.46.45:125][872]CompilerResultsLog: [Upgrade] Using backward-compatible include order. The latest version of UE has changed the order of includes, which may require code changes. The current setting is:
+[2023.04.05-11.46.45:125][872]CompilerResultsLog: [Upgrade]     IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_0
+[2023.04.05-11.46.45:125][872]CompilerResultsLog: [Upgrade] Suppress this message by setting 'IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_1;' in JohnWooEditor.Target.cs.
+[2023.04.05-11.46.45:125][872]CompilerResultsLog: [Upgrade] Alternatively you can set this to 'EngineIncludeOrderVersion.Latest' to always use the latest include order. This will potentially cause compile errors when integrating new versions of the engine.
+[2023.04.05-11.46.45:125][872]CompilerResultsLog: [Upgrade]
+[2023.04.05-11.46.45:125][872]CompilerResultsLog: Determining max actions to execute in parallel (6 physical cores, 12 logical cores)
+[2023.04.05-11.46.45:125][872]CompilerResultsLog:   Executing up to 6 processes, one per physical core
+[2023.04.05-11.46.45:125][872]CompilerResultsLog:   Requested 1.5 GB free memory per action, 2.63 GB available: limiting max parallel actions to 1
+[2023.04.05-11.46.45:125][872]CompilerResultsLog: Distributing 7 actions to XGE
+[2023.04.05-11.46.45:125][872]CompilerResultsLog: --------------------Build System Warning---------------------------------------
+[2023.04.05-11.46.45:125][872]CompilerResultsLog: License is invalid:
+[2023.04.05-11.46.45:125][872]CompilerResultsLog:     License information is invalid. Please try reloading your license file using the Coordinator Monitor application on the Coordinator machine, or reinstall IncrediBuild.
+[2023.04.05-11.46.45:125][872]CompilerResultsLog:     This build will run in standalone mode.
+[2023.04.05-11.46.45:125][872]CompilerResultsLog: 
+[2023.04.05-11.46.45:125][872]CompilerResultsLog: -------------------------------------------------------------------------------
+[2023.04.05-11.46.45:125][872]CompilerResultsLog: 
+[2023.04.05-11.46.45:125][872]CompilerResultsLog: Build ID: {4CC585E2-E2EC-4101-B1CC-7297C1C38D15}
+[2023.04.05-11.46.45:125][872]CompilerResultsLog: 
+[2023.04.05-11.46.45:125][872]CompilerResultsLog: --------------------Project: Default-------------------------------------------
+[2023.04.05-11.46.45:125][872]CompilerResultsLog: [1/7] A_PlayerPistol.cpp (0:09.78 at +0:00)
+[2023.04.05-11.46.45:125][872]CompilerResultsLog: [2/7] SS_MotionController.gen.cpp (0:00.98 at +0:09)
+[2023.04.05-11.46.45:125][872]CompilerResultsLog: [3/7] JohnWoo.init.gen.cpp (0:00.60 at +0:10)
+[2023.04.05-11.46.45:125][872]CompilerResultsLog: [4/7] SS_MotionController.cpp (0:02.76 at +0:11)
+[2023.04.05-11.46.45:125][872]CompilerResultsLog: [5/7] UnrealEditor-JohnWoo-4485.dll (0:00.93 at +0:14)
+[2023.04.05-11.46.45:125][872]CompilerResultsLog:    Creating library C:\Users\qwe_o\Documents\GitHub\med10.1\JohnWoo\Intermediate\Build\Win64\UnrealEditor\Development\JohnWoo\UnrealEditor-JohnWoo-4485.suppressed.lib and object C:\Users\qwe_o\Documents\GitHub\med10.1\JohnWoo\Intermediate\Build\Win64\UnrealEditor\Development\JohnWoo\UnrealEditor-JohnWoo-4485.suppressed.exp
+[2023.04.05-11.46.45:125][872]CompilerResultsLog: [6/7] UnrealEditor-JohnWoo-4485.lib (0:00.12 at +0:15)
+[2023.04.05-11.46.45:125][872]CompilerResultsLog:    Creating library C:\Users\qwe_o\Documents\GitHub\med10.1\JohnWoo\Intermediate\Build\Win64\UnrealEditor\Development\JohnWoo\UnrealEditor-JohnWoo-4485.lib and object C:\Users\qwe_o\Documents\GitHub\med10.1\JohnWoo\Intermediate\Build\Win64\UnrealEditor\Development\JohnWoo\UnrealEditor-JohnWoo-4485.exp
+[2023.04.05-11.46.45:125][872]CompilerResultsLog: [7/7] JohnWooEditor.target (0:00.28 at +0:15)
+[2023.04.05-11.46.45:125][872]CompilerResultsLog: ---------------------- Done ----------------------
+[2023.04.05-11.46.45:125][872]CompilerResultsLog: 
+[2023.04.05-11.46.45:125][872]CompilerResultsLog:     Rebuild All: 1 succeeded, 0 failed, 0 skipped
+[2023.04.05-11.46.45:125][872]CompilerResultsLog: 
+[2023.04.05-11.46.45:125][872]CompilerResultsLog: 1 build system warning(s):
+[2023.04.05-11.46.45:125][872]CompilerResultsLog:    - License is invalid
+[2023.04.05-11.46.45:125][872]CompilerResultsLog: 
+[2023.04.05-11.46.45:125][872]CompilerResultsLog: Total time in XGE executor: 15.72 seconds
+[2023.04.05-11.46.45:125][872]CompilerResultsLog: Total execution time: 17.72 seconds
+[2023.04.05-11.46.45:125][872]LogMainFrame: MainFrame: Module compiling took 17.959 seconds
+[2023.04.05-11.46.45:152][872]LogUObjectHash: Compacting FUObjectHashTables data took   0.55ms
+[2023.04.05-11.46.45:182][872]LogClass: UPackage /Script/JohnWoo Reload.
+[2023.04.05-11.46.45:183][872]LogClass: UClass SS_MotionController Reload.
+[2023.04.05-11.46.45:186][872]LogClass: Could not find existing class SS_MotionController in package /Script/JohnWoo for reload, assuming new or modified class
+[2023.04.05-11.46.45:186][872]LogClass: Function AddController is new or belongs to a modified class.
+[2023.04.05-11.46.45:186][872]LogClass: Function AttachPistolToController is new or belongs to a modified class.
+[2023.04.05-11.46.45:186][872]LogClass: Function ButtonPressPTA is new or belongs to a modified class.
+[2023.04.05-11.46.45:186][872]LogClass: Function InitializeControllers is new or belongs to a modified class.
+[2023.04.05-11.46.45:187][872]LogClass: Function PT is new or belongs to a modified class.
+[2023.04.05-11.46.45:187][872]LogClass: Function PTA is new or belongs to a modified class.
+[2023.04.05-11.46.45:187][872]LogClass: Function SetHasEntered is new or belongs to a modified class.
+[2023.04.05-11.46.45:187][872]LogClass: Function UpdateColliderRadius is new or belongs to a modified class.
+[2023.04.05-11.46.45:206][872]Re-instancing SS_MotionController after reload.
+[2023.04.05-11.46.45:332][872]LogUObjectHash: Compacting FUObjectHashTables data took   1.17ms
+[2023.04.05-11.46.45:365][872]Display: HotReload took 18.2s.
+[2023.04.05-11.46.45:365][872]Display: Reload/Re-instancing Complete: 1 package changed, 1 class changed, 2 classes unchanged, 1 enum unchanged
+[2023.04.05-11.49.37:731][487]LogBlueprint: Warning: [AssetLog] C:\Users\qwe_o\Documents\GitHub\med10.1\JohnWoo\Content\VRTemplate\Blueprints\VRPawn.uasset: [Compiler] Pasted node  CustomEvent   conflicted with  OnComponentEndOverlap_Event  and was replaced as a Custom Event!
+[2023.04.05-11.50.06:473][116]LogOutputDevice: Warning: 
+
+Script Stack (0 frames) :
+
+[2023.04.05-11.50.06:522][116]LogStats: FPlatformStackWalk::StackWalkAndDump -  0.040 s
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: === Handled ensure: ===
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: 
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: Ensure condition failed: !bGraphDataInvalid  [File:D:\build\++UE5\Sync\Engine\Source\Editor\GraphEditor\Private\SGraphPin.cpp] [Line: 905] 
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: The Graph Pin Object has been invalidated. Someone is keeping a hard ref on the SGraphPin (SGraphPin [NodeFactory.cpp(266)]). See InvalidateGraphData for more info
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: Stack: 
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: [Callstack] 0x00007ffdc270c0f1 UnrealEditor-GraphEditor.dll!UnknownFunction []
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: [Callstack] 0x00007ffdc2648da3 UnrealEditor-GraphEditor.dll!UnknownFunction []
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: [Callstack] 0x00007ffdc2665206 UnrealEditor-GraphEditor.dll!UnknownFunction []
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: [Callstack] 0x00007ffdc252e676 UnrealEditor-GraphEditor.dll!UnknownFunction []
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: [Callstack] 0x00007ffdc2507aa3 UnrealEditor-GraphEditor.dll!UnknownFunction []
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: [Callstack] 0x00007ffdf6b8cf82 UnrealEditor-SlateCore.dll!UnknownFunction []
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: [Callstack] 0x00007ffdf6b8d379 UnrealEditor-SlateCore.dll!UnknownFunction []
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: [Callstack] 0x00007ffdf6b8d569 UnrealEditor-SlateCore.dll!UnknownFunction []
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: [Callstack] 0x00007ffdf6b4f0d7 UnrealEditor-SlateCore.dll!UnknownFunction []
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: [Callstack] 0x00007ffdf6993f29 UnrealEditor-SlateCore.dll!UnknownFunction []
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: [Callstack] 0x00007ffdf6994013 UnrealEditor-SlateCore.dll!UnknownFunction []
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: [Callstack] 0x00007ffdf699384c UnrealEditor-SlateCore.dll!UnknownFunction []
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: [Callstack] 0x00007ffdf6991f59 UnrealEditor-SlateCore.dll!UnknownFunction []
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: [Callstack] 0x00007ffdf69c95ae UnrealEditor-SlateCore.dll!UnknownFunction []
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: [Callstack] 0x00007ffdf755add8 UnrealEditor-Slate.dll!UnknownFunction []
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: [Callstack] 0x00007ffdf761981c UnrealEditor-Slate.dll!UnknownFunction []
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: [Callstack] 0x00007ffdf7548035 UnrealEditor-Slate.dll!UnknownFunction []
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: [Callstack] 0x00007ffdf755aa42 UnrealEditor-Slate.dll!UnknownFunction []
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: [Callstack] 0x00007ffdf755b030 UnrealEditor-Slate.dll!UnknownFunction []
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: [Callstack] 0x00007ffdf75552bd UnrealEditor-Slate.dll!UnknownFunction []
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: [Callstack] 0x00007ffdf7544cb1 UnrealEditor-Slate.dll!UnknownFunction []
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: [Callstack] 0x00007ffdf753aae8 UnrealEditor-Slate.dll!UnknownFunction []
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: [Callstack] 0x00007ffe01ba1a18 UnrealEditor-ApplicationCore.dll!UnknownFunction []
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: [Callstack] 0x00007ffe01b867d1 UnrealEditor-ApplicationCore.dll!UnknownFunction []
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: [Callstack] 0x00007ffe01ba4391 UnrealEditor-ApplicationCore.dll!UnknownFunction []
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: [Callstack] 0x00007ffe01b7ff93 UnrealEditor-ApplicationCore.dll!UnknownFunction []
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: [Callstack] 0x00007ffe3a44e7e8 USER32.dll!UnknownFunction []
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: [Callstack] 0x00007ffe3a44e229 USER32.dll!UnknownFunction []
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: [Callstack] 0x00007ffe01ba5849 UnrealEditor-ApplicationCore.dll!UnknownFunction []
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: [Callstack] 0x00007ff7b9487332 UnrealEditor.exe!UnknownFunction []
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: [Callstack] 0x00007ff7b94a287d UnrealEditor.exe!UnknownFunction []
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: [Callstack] 0x00007ff7b94a296a UnrealEditor.exe!UnknownFunction []
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: [Callstack] 0x00007ff7b94a5680 UnrealEditor.exe!UnknownFunction []
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: [Callstack] 0x00007ff7b94b71b4 UnrealEditor.exe!UnknownFunction []
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: [Callstack] 0x00007ff7b94ba516 UnrealEditor.exe!UnknownFunction []
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: [Callstack] 0x00007ffe3a187614 KERNEL32.DLL!UnknownFunction []
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: [Callstack] 0x00007ffe3bfe26a1 ntdll.dll!UnknownFunction []
+[2023.04.05-11.50.06:522][116]LogOutputDevice: Error: 
+[2023.04.05-11.50.06:525][116]LogStats:                SubmitErrorReport -  0.000 s
+[2023.04.05-11.50.07:830][116]LogStats:                    SendNewReport -  1.305 s
+[2023.04.05-11.50.07:830][116]LogStats:             FDebug::EnsureFailed -  1.357 s
+[2023.04.05-11.53.39:015][589]LogSelectionDetails: Warning: NavigateToFunctionSource:  Unable to find source file and line number for 'UKismetStringLibrary::EqualEqual_StriStri' [The specified module could not be found.]
+[2023.04.05-11.55.15:279][577]BlueprintLog: New page: Compile VRPawn
+[2023.04.05-11.55.15:309][577]LogBlueprint: Error: [AssetLog] C:\Users\qwe_o\Documents\GitHub\med10.1\JohnWoo\Content\VRTemplate\Blueprints\VRPawn.uasset: [Compiler] This blueprint (self) is not a SS_MotionController, therefore ' Target ' must have a connection.
+[2023.04.05-11.55.15:310][577]LogBlueprint: Error: [AssetLog] C:\Users\qwe_o\Documents\GitHub\med10.1\JohnWoo\Content\VRTemplate\Blueprints\VRPawn.uasset: [Compiler] This blueprint (self) is not a SS_MotionController, therefore ' Target ' must have a connection.
+[2023.04.05-11.55.15:427][577]LogUObjectHash: Compacting FUObjectHashTables data took   2.61ms
+[2023.04.05-11.55.59:509][998]BlueprintLog: New page: Compile VRPawn
+[2023.04.05-11.55.59:622][998]LogUObjectHash: Compacting FUObjectHashTables data took   1.94ms
+[2023.04.05-11.57.35:662][784]BlueprintLog: New page: Compile VRPawn
+[2023.04.05-11.57.35:771][784]LogUObjectHash: Compacting FUObjectHashTables data took   2.39ms
+[2023.04.05-11.58.13:319][865]LogBlueprint: Warning: [AssetLog] C:\Users\qwe_o\Documents\GitHub\med10.1\JohnWoo\Content\VRTemplate\Blueprints\VRPawn.uasset: [Compiler] Pasted node  CustomEvent   conflicted with  OnComponentEndOverlap_Event  and was replaced as a Custom Event!
+[2023.04.05-11.58.13:321][865]LogBlueprint: Warning: [AssetLog] C:\Users\qwe_o\Documents\GitHub\med10.1\JohnWoo\Content\VRTemplate\Blueprints\VRPawn.uasset: [Compiler] Pasted node  CustomEvent_1   conflicted with  OnComponentEndOverlap(Left)  and was replaced as a Custom Event!
+[2023.04.05-11.58.58:793][108]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.04.05-11.58.58:919][108]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/VRTemplate/Blueprints/VRPawn" FILE="../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/VRTemplate/Blueprints/VRPawn.uasset" SILENT=true
+[2023.04.05-11.58.58:990][108]LogSavePackage: Moving output files for package: /Game/VRTemplate/Blueprints/VRPawn
+[2023.04.05-11.58.58:991][108]LogSavePackage: Moving '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Saved/VRPawnCB5C2370482448938AF85CBF958FABA3.tmp' to '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/VRTemplate/Blueprints/VRPawn.uasset'
+[2023.04.05-11.58.58:999][108]LogFileHelpers: InternalPromptForCheckoutAndSave took 205 ms (total: 1.95 sec)
+[2023.04.05-11.58.59:009][108]AssetCheck: New page: Asset Save: VRPawn
+[2023.04.05-11.58.59:009][108]LogContentValidation: Display: Validating /Script/Engine.Blueprint /Game/VRTemplate/Blueprints/VRPawn.VRPawn
+[2023.04.05-11.59.46:466][522]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.04.05-11.59.46:595][522]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/VRTemplate/Blueprints/VRPawn" FILE="../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/VRTemplate/Blueprints/VRPawn.uasset" SILENT=true
+[2023.04.05-11.59.46:667][522]LogSavePackage: Moving output files for package: /Game/VRTemplate/Blueprints/VRPawn
+[2023.04.05-11.59.46:667][522]LogSavePackage: Moving '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Saved/VRPawn334C394E45680799FD2AA490D373A326.tmp' to '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/VRTemplate/Blueprints/VRPawn.uasset'
+[2023.04.05-11.59.46:674][522]LogFileHelpers: InternalPromptForCheckoutAndSave took 209 ms (total: 2.16 sec)
+[2023.04.05-11.59.46:687][522]AssetCheck: New page: Asset Save: VRPawn
+[2023.04.05-11.59.46:687][522]LogContentValidation: Display: Validating /Script/Engine.Blueprint /Game/VRTemplate/Blueprints/VRPawn.VRPawn
+[2023.04.05-12.00.19:791][449]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.04.05-12.00.19:909][449]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/VRTemplate/Blueprints/VRPawn" FILE="../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/VRTemplate/Blueprints/VRPawn.uasset" SILENT=true
+[2023.04.05-12.00.19:981][449]LogSavePackage: Moving output files for package: /Game/VRTemplate/Blueprints/VRPawn
+[2023.04.05-12.00.19:982][449]LogSavePackage: Moving '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Saved/VRPawn2A40F9BD48D3883528F0BF8E5B7B713F.tmp' to '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/VRTemplate/Blueprints/VRPawn.uasset'
+[2023.04.05-12.00.19:990][449]LogFileHelpers: InternalPromptForCheckoutAndSave took 197 ms (total: 2.36 sec)
+[2023.04.05-12.00.20:000][449]AssetCheck: New page: Asset Save: VRPawn
+[2023.04.05-12.00.20:000][449]LogContentValidation: Display: Validating /Script/Engine.Blueprint /Game/VRTemplate/Blueprints/VRPawn.VRPawn
+[2023.04.05-12.00.33:757][270]LogBlueprint: Warning: [AssetLog] C:\Users\qwe_o\Documents\GitHub\med10.1\JohnWoo\Content\VRTemplate\Blueprints\VRPawn.uasset: [Compiler] Pasted node  CustomEvent_2   conflicted with  On Component End Overlap (right)  and was replaced as a Custom Event!
+[2023.04.05-12.00.33:758][270]LogBlueprint: Warning: [AssetLog] C:\Users\qwe_o\Documents\GitHub\med10.1\JohnWoo\Content\VRTemplate\Blueprints\VRPawn.uasset: [Compiler] Pasted node  CustomEvent_3   conflicted with  On Component End Overlap (Left)  and was replaced as a Custom Event!
+[2023.04.05-12.00.45:250][903]LogBlueprint: Warning: [AssetLog] C:\Users\qwe_o\Documents\GitHub\med10.1\JohnWoo\Content\VRTemplate\Blueprints\VRPawn.uasset: [Compiler] Pasted node  CustomEvent   conflicted with  On Component End Overlap (right)  and was replaced as a Custom Event!
+[2023.04.05-12.00.45:251][903]LogBlueprint: Warning: [AssetLog] C:\Users\qwe_o\Documents\GitHub\med10.1\JohnWoo\Content\VRTemplate\Blueprints\VRPawn.uasset: [Compiler] Pasted node  CustomEvent_1   conflicted with  On Component End Overlap (Left)  and was replaced as a Custom Event!
+[2023.04.05-12.01.08:186][224]LogBlueprint: Warning: [AssetLog] C:\Users\qwe_o\Documents\GitHub\med10.1\JohnWoo\Content\VRTemplate\Blueprints\VRPawn.uasset: [Compiler] Pasted node  CustomEvent   conflicted with  On Component End Overlap (right)  and was replaced as a Custom Event!
+[2023.04.05-12.01.52:173][790]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.04.05-12.01.52:297][790]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/VRTemplate/Blueprints/VRPawn" FILE="../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/VRTemplate/Blueprints/VRPawn.uasset" SILENT=true
+[2023.04.05-12.01.52:367][790]LogSavePackage: Moving output files for package: /Game/VRTemplate/Blueprints/VRPawn
+[2023.04.05-12.01.52:368][790]LogSavePackage: Moving '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Saved/VRPawn29F35EC64D4FCBE2565F6998734E2D2E.tmp' to '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/VRTemplate/Blueprints/VRPawn.uasset'
+[2023.04.05-12.01.52:376][790]LogFileHelpers: InternalPromptForCheckoutAndSave took 202 ms (total: 2.56 sec)
+[2023.04.05-12.01.52:386][790]AssetCheck: New page: Asset Save: VRPawn
+[2023.04.05-12.01.52:386][790]LogContentValidation: Display: Validating /Script/Engine.Blueprint /Game/VRTemplate/Blueprints/VRPawn.VRPawn
+[2023.04.05-12.02.18:681][228]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.04.05-12.02.18:773][228]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/VRTemplate/Blueprints/VRPawn" FILE="../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/VRTemplate/Blueprints/VRPawn.uasset" SILENT=true
+[2023.04.05-12.02.18:843][228]LogSavePackage: Moving output files for package: /Game/VRTemplate/Blueprints/VRPawn
+[2023.04.05-12.02.18:843][228]LogSavePackage: Moving '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Saved/VRPawn32AB16F64EFF5AF114459A98A8D87BF9.tmp' to '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/VRTemplate/Blueprints/VRPawn.uasset'
+[2023.04.05-12.02.18:850][228]LogFileHelpers: InternalPromptForCheckoutAndSave took 169 ms (total: 2.73 sec)
+[2023.04.05-12.02.18:861][228]AssetCheck: New page: Asset Save: VRPawn
+[2023.04.05-12.02.18:861][228]LogContentValidation: Display: Validating /Script/Engine.Blueprint /Game/VRTemplate/Blueprints/VRPawn.VRPawn
+[2023.04.05-12.02.19:619][274]BlueprintLog: New page: Compile VRPawn
+[2023.04.05-12.02.19:650][274]LogBlueprint: Error: [AssetLog] C:\Users\qwe_o\Documents\GitHub\med10.1\JohnWoo\Content\VRTemplate\Blueprints\VRPawn.uasset: [Compiler] This blueprint (self) is not a SS_MotionController, therefore ' Target ' must have a connection.
+[2023.04.05-12.02.19:650][274]LogBlueprint: Error: [AssetLog] C:\Users\qwe_o\Documents\GitHub\med10.1\JohnWoo\Content\VRTemplate\Blueprints\VRPawn.uasset: [Compiler] This blueprint (self) is not a SS_MotionController, therefore ' Target ' must have a connection.
+[2023.04.05-12.02.19:747][274]LogUObjectHash: Compacting FUObjectHashTables data took   2.90ms
+[2023.04.05-12.02.29:102][803]BlueprintLog: New page: Compile VRPawn
+[2023.04.05-12.02.29:207][803]LogUObjectHash: Compacting FUObjectHashTables data took   1.83ms
+[2023.04.05-12.02.32:257][968]Candidate modules for hot reload:
+[2023.04.05-12.02.32:257][968]  JohnWoo
+[2023.04.05-12.02.32:262][968]Launching UnrealBuildTool... [C:/Program Files/Epic Games/UE_5.1/Engine/Build/BatchFiles/Build.bat  -ModuleWithSuffix=JohnWoo,3445 JohnWooEditor Win64 Development -Project="C:/Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/JohnWoo.uproject" "C:/Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/JohnWoo.uproject"  -IgnoreJunk]
+[2023.04.05-12.02.32:266][968]Warning: Starting HotReload took  0.0s.
+[2023.04.05-12.02.34:715][105]CompilerResultsLog: New page: Compilation - 5. apr. 2023 16.02.34
+[2023.04.05-12.02.34:715][105]CompilerResultsLog: Running UnrealBuildTool: dotnet "..\..\Engine\Binaries\DotNET\UnrealBuildTool\UnrealBuildTool.dll" -ModuleWithSuffix=JohnWoo,3445 JohnWooEditor Win64 Development -Project="C:/Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/JohnWoo.uproject" "C:/Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/JohnWoo.uproject"  -IgnoreJunk
+[2023.04.05-12.02.34:715][105]CompilerResultsLog: Log file: C:\Users\qwe_o\AppData\Local\UnrealBuildTool\Log.txt
+[2023.04.05-12.02.34:715][105]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build (C:\Users\qwe_o\Documents\GitHub\med10.1).
+[2023.04.05-12.02.34:715][105]CompilerResultsLog: Building JohnWooEditor...
+[2023.04.05-12.02.34:715][105]CompilerResultsLog: Using Visual Studio 2022 14.29.30148 toolchain (C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.29.30133) and Windows 10.0.22621.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+[2023.04.05-12.02.34:715][105]CompilerResultsLog: [Upgrade]
+[2023.04.05-12.02.34:715][105]CompilerResultsLog: [Upgrade] Using backward-compatible include order. The latest version of UE has changed the order of includes, which may require code changes. The current setting is:
+[2023.04.05-12.02.34:715][105]CompilerResultsLog: [Upgrade]     IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_0
+[2023.04.05-12.02.34:715][105]CompilerResultsLog: [Upgrade] Suppress this message by setting 'IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_1;' in JohnWooEditor.Target.cs.
+[2023.04.05-12.02.34:715][105]CompilerResultsLog: [Upgrade] Alternatively you can set this to 'EngineIncludeOrderVersion.Latest' to always use the latest include order. This will potentially cause compile errors when integrating new versions of the engine.
+[2023.04.05-12.02.34:715][105]CompilerResultsLog: [Upgrade]
+[2023.04.05-12.02.34:715][105]CompilerResultsLog: Determining max actions to execute in parallel (6 physical cores, 12 logical cores)
+[2023.04.05-12.02.34:715][105]CompilerResultsLog:   Executing up to 6 processes, one per physical core
+[2023.04.05-12.02.34:715][105]CompilerResultsLog:   Requested 1.5 GB free memory per action, 3.88 GB available: limiting max parallel actions to 2
+[2023.04.05-12.02.34:715][105]CompilerResultsLog: Distributing 3 actions to XGE
+[2023.04.05-12.02.34:715][105]CompilerResultsLog: --------------------Build System Warning---------------------------------------
+[2023.04.05-12.02.34:715][105]CompilerResultsLog: License is invalid:
+[2023.04.05-12.02.34:715][105]CompilerResultsLog:     License information is invalid. Please try reloading your license file using the Coordinator Monitor application on the Coordinator machine, or reinstall IncrediBuild.
+[2023.04.05-12.02.34:715][105]CompilerResultsLog:     This build will run in standalone mode.
+[2023.04.05-12.02.34:715][105]CompilerResultsLog: 
+[2023.04.05-12.02.34:715][105]CompilerResultsLog: -------------------------------------------------------------------------------
+[2023.04.05-12.02.34:715][105]CompilerResultsLog: 
+[2023.04.05-12.02.34:715][105]CompilerResultsLog: Build ID: {3668A4DE-2401-4E8B-8F46-68D53B2012DF}
+[2023.04.05-12.02.34:715][105]CompilerResultsLog: 
+[2023.04.05-12.02.34:715][105]CompilerResultsLog: --------------------Project: Default-------------------------------------------
+[2023.04.05-12.02.34:715][105]CompilerResultsLog: [1/3] UnrealEditor-JohnWoo-3445.dll (0:00.93 at +0:00)
+[2023.04.05-12.02.34:715][105]CompilerResultsLog:    Creating library C:\Users\qwe_o\Documents\GitHub\med10.1\JohnWoo\Intermediate\Build\Win64\UnrealEditor\Development\JohnWoo\UnrealEditor-JohnWoo-3445.suppressed.lib and object C:\Users\qwe_o\Documents\GitHub\med10.1\JohnWoo\Intermediate\Build\Win64\UnrealEditor\Development\JohnWoo\UnrealEditor-JohnWoo-3445.suppressed.exp
+[2023.04.05-12.02.34:716][105]CompilerResultsLog: [2/3] UnrealEditor-JohnWoo-3445.lib (0:00.09 at +0:00)
+[2023.04.05-12.02.34:716][105]CompilerResultsLog:    Creating library C:\Users\qwe_o\Documents\GitHub\med10.1\JohnWoo\Intermediate\Build\Win64\UnrealEditor\Development\JohnWoo\UnrealEditor-JohnWoo-3445.lib and object C:\Users\qwe_o\Documents\GitHub\med10.1\JohnWoo\Intermediate\Build\Win64\UnrealEditor\Development\JohnWoo\UnrealEditor-JohnWoo-3445.exp
+[2023.04.05-12.02.34:716][105]CompilerResultsLog: [3/3] JohnWooEditor.target (0:00.26 at +0:01)
+[2023.04.05-12.02.34:716][105]CompilerResultsLog: ---------------------- Done ----------------------
+[2023.04.05-12.02.34:716][105]CompilerResultsLog: 
+[2023.04.05-12.02.34:716][105]CompilerResultsLog:     Rebuild All: 1 succeeded, 0 failed, 0 skipped
+[2023.04.05-12.02.34:716][105]CompilerResultsLog: 
+[2023.04.05-12.02.34:716][105]CompilerResultsLog: 1 build system warning(s):
+[2023.04.05-12.02.34:716][105]CompilerResultsLog:    - License is invalid
+[2023.04.05-12.02.34:716][105]CompilerResultsLog: 
+[2023.04.05-12.02.34:716][105]CompilerResultsLog: Total time in XGE executor: 1.56 seconds
+[2023.04.05-12.02.34:716][105]CompilerResultsLog: Total execution time: 2.29 seconds
+[2023.04.05-12.02.34:716][105]LogMainFrame: MainFrame: Module compiling took 2.489 seconds
+[2023.04.05-12.02.34:753][105]LogUObjectHash: Compacting FUObjectHashTables data took   1.62ms
+[2023.04.05-12.02.34:963][105]LogUObjectHash: Compacting FUObjectHashTables data took   1.67ms
+[2023.04.05-12.02.34:998][105]Display: HotReload took  2.8s.
+[2023.04.05-12.02.34:999][105]Display: Reload/Re-instancing Complete: 1 package changed, 3 classes unchanged, 1 enum unchanged, 8 functions remapped
+[2023.04.05-12.03.42:398][130]LogFileHelpers: InternalPromptForCheckoutAndSave started...
+[2023.04.05-12.03.42:539][130]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/VRTemplate/Blueprints/VRPawn" FILE="../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/VRTemplate/Blueprints/VRPawn.uasset" SILENT=true
+[2023.04.05-12.03.42:611][130]LogSavePackage: Moving output files for package: /Game/VRTemplate/Blueprints/VRPawn
+[2023.04.05-12.03.42:612][130]LogSavePackage: Moving '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Saved/VRPawnED2581C248A53F3FA37782849948F7FA.tmp' to '../../../../../../Users/qwe_o/Documents/GitHub/med10.1/JohnWoo/Content/VRTemplate/Blueprints/VRPawn.uasset'
+[2023.04.05-12.03.42:620][130]LogFileHelpers: InternalPromptForCheckoutAndSave took 221 ms (total: 2.95 sec)
+[2023.04.05-12.03.42:634][130]AssetCheck: New page: Asset Save: VRPawn
+[2023.04.05-12.03.42:634][130]LogContentValidation: Display: Validating /Script/Engine.Blueprint /Game/VRTemplate/Blueprints/VRPawn.VRPawn

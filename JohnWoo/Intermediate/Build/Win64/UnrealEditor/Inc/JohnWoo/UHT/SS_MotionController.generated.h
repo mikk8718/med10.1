@@ -24,6 +24,7 @@ enum class EHand : uint8;
 	DECLARE_FUNCTION(execSetHasEntered); \
 	DECLARE_FUNCTION(execPTA); \
 	DECLARE_FUNCTION(execPT); \
+	DECLARE_FUNCTION(execUpdateColliderRadius); \
 	DECLARE_FUNCTION(execInitializeControllers); \
 	DECLARE_FUNCTION(execAttachPistolToController); \
 	DECLARE_FUNCTION(execAddController);
@@ -35,6 +36,7 @@ enum class EHand : uint8;
 	DECLARE_FUNCTION(execSetHasEntered); \
 	DECLARE_FUNCTION(execPTA); \
 	DECLARE_FUNCTION(execPT); \
+	DECLARE_FUNCTION(execUpdateColliderRadius); \
 	DECLARE_FUNCTION(execInitializeControllers); \
 	DECLARE_FUNCTION(execAttachPistolToController); \
 	DECLARE_FUNCTION(execAddController);

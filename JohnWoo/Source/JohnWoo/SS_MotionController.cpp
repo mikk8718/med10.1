@@ -47,11 +47,6 @@ void USS_MotionController::InitializeCollider(EHand Hand)
 	Colliders = reinterpret_cast<TArray<USphereComponent*>&>(CollidersUActorComponent);
 }
 
-void USS_MotionController::InitializeThrustingReaders()
-{
-	TArray<UActorComponent*> ThrustingReadersUActorComponent = GetWorld()->GetFirstPlayerController()->GetPawn()->GetComponentsByTag(USceneComponent::StaticClass(), FName(TEXT("Col")));
-}
-
 void USS_MotionController::UpdateColliderRadius(EHand Hand)
 {
 	if (Colliders.Num() == 0)

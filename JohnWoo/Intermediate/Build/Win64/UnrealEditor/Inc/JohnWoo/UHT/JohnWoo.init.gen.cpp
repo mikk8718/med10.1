@@ -17,7 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeJohnWoo_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0x7213C758,
+				0xC68FC3FA,
 				0xA65C288F,
 				METADATA_PARAMS(nullptr, 0)
 			};
@@ -25,5 +25,5 @@ void EmptyLinkFunctionForGeneratedCodeJohnWoo_init() {}
 		}
 		return Z_Registration_Info_UPackage__Script_JohnWoo.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_JohnWoo(Z_Construct_UPackage__Script_JohnWoo, TEXT("/Script/JohnWoo"), Z_Registration_Info_UPackage__Script_JohnWoo, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x7213C758, 0xA65C288F));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_JohnWoo(Z_Construct_UPackage__Script_JohnWoo, TEXT("/Script/JohnWoo"), Z_Registration_Info_UPackage__Script_JohnWoo, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xC68FC3FA, 0xA65C288F));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

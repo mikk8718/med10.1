@@ -28,16 +28,16 @@ private:
 public:
 	// depricated
 	UFUNCTION(BlueprintCallable)
-		void AddController(USceneComponent* Controller);
+	void AddController(USceneComponent* Controller);
 
 	UFUNCTION(BlueprintCallable)
-		void AttachPistolToController(AA_PlayerPistol* PistolActor, EHand Hand);
+	void AttachPistolToController(AA_PlayerPistol* PistolActor, EHand Hand);
 
 	// call this once!
 	UFUNCTION(BlueprintCallable)
 	void InitializeControllers();
 	void InitializeCollider(EHand Hand);
-	void InitializeThrustingReaders();
+	UFUNCTION(BlueprintCallable)
 	void UpdateColliderRadius(EHand hand);
 	UFUNCTION(BlueprintCallable)
 	void PT(EHand Hand);
