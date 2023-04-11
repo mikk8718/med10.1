@@ -48,7 +48,7 @@ void AEnemy::LoggingFunction(int32 alive)
 
 }
 
-void AEnemy::TakeDamage(int32 damage)
+void AEnemy::TakeDamageXXX(int32 damage)
 {
 	health -= damage;
 	hit++;

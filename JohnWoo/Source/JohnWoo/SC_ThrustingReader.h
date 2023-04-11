@@ -25,6 +25,10 @@ public:
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 	bool IsThrusting();
 	void ResetThresholsMet();
+	UFUNCTION(BlueprintCallable)
+	TMap<FString, float> GetVelocityAndAccel();
+	UFUNCTION(BlueprintCallable)
+	void SetupThreshholds(float v, float a);
 
 
 private:
@@ -34,7 +38,7 @@ private:
 	float currentVelocity;
 	float currentAcceleration;
 	FVector distanceVector;
-
+	 
 
 
 
@@ -47,7 +51,6 @@ private:
 	TArray<bool> arrayOfLies;
 
 	void WriteToFile(float v, float a, float d, FString n, float r);
-	void SetupThreshholds(float v, float a);
 	void CheckThresholds(float DeltaTime);
 
 };

@@ -39,6 +39,14 @@ void USC_ThrustingReader::ResetThresholsMet()
 	customThresholdMet = arrayOfLies;
 }
 
+TMap<FString, float> USC_ThrustingReader::GetVelocityAndAccel()
+{
+	TMap<FString, float> Temp;
+	Temp.Emplace("Velocity", velocity);
+	Temp.Emplace("Acceleration", currentAcceleration);
+	return Temp;
+}
+
 void USC_ThrustingReader::WriteToFile(float v, float a, float d, FString n, float r)
 {
 	FString FilePath = FPaths::ConvertRelativePathToFull(FPaths::GameSourceDir()) + TEXT("/" + n + ".txt");

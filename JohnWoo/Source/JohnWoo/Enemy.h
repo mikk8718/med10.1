@@ -29,11 +29,11 @@ public:
 	UFUNCTION(BlueprintCallable)
 		void LoggingFunction(int32 alive);
 	UFUNCTION(BlueprintCallable)
-		void TakeDamage(int32 damage);
+		void TakeDamageXXX(int32 damage);
 
 private:
 	static int Counter;
-	int32 health;
+	int32 health = 20;
 	int32 hit;
 	float spawnTime;
 	UFUNCTION()

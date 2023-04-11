@@ -9,14 +9,25 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+ 
 #ifdef JOHNWOO_SC_ThrustingReader_generated_h
 #error "SC_ThrustingReader.generated.h already included, missing '#pragma once' in SC_ThrustingReader.h"
 #endif
 #define JOHNWOO_SC_ThrustingReader_generated_h
 
 #define FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_SC_ThrustingReader_h_13_SPARSE_DATA
-#define FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_SC_ThrustingReader_h_13_RPC_WRAPPERS
-#define FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_SC_ThrustingReader_h_13_RPC_WRAPPERS_NO_PURE_DECLS
+#define FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_SC_ThrustingReader_h_13_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execSetupThreshholds); \
+	DECLARE_FUNCTION(execGetVelocityAndAccel);
+
+
+#define FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_SC_ThrustingReader_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execSetupThreshholds); \
+	DECLARE_FUNCTION(execGetVelocityAndAccel);
+
+
 #define FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_SC_ThrustingReader_h_13_ACCESSORS
 #define FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_SC_ThrustingReader_h_13_INCLASS_NO_PURE_DECLS \
 private: \

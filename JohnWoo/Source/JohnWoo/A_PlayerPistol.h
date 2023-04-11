@@ -20,7 +20,7 @@ public:
 	bool GetIsThrusting();
 	bool HasEntered = true;
 	float TimeExitted = 0;
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	int Orientation;
 	UPROPERTY(EditAnywhere)
 	USoundBase* Sound;

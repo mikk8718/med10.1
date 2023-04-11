@@ -10,7 +10,6 @@
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 class AA_PlayerPistol;
-class USceneComponent;
 enum class EHand : uint8;
 #ifdef JOHNWOO_SS_MotionController_generated_h
 #error "SS_MotionController.generated.h already included, missing '#pragma once' in SS_MotionController.h"
@@ -20,26 +19,28 @@ enum class EHand : uint8;
 #define FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_SS_MotionController_h_15_SPARSE_DATA
 #define FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_SS_MotionController_h_15_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execSetColliderPosition); \
+	DECLARE_FUNCTION(execDisableCollision); \
 	DECLARE_FUNCTION(execButtonPressPTA); \
 	DECLARE_FUNCTION(execSetHasEntered); \
 	DECLARE_FUNCTION(execPTA); \
 	DECLARE_FUNCTION(execPT); \
 	DECLARE_FUNCTION(execUpdateColliderRadius); \
 	DECLARE_FUNCTION(execInitializeControllers); \
-	DECLARE_FUNCTION(execAttachPistolToController); \
-	DECLARE_FUNCTION(execAddController);
+	DECLARE_FUNCTION(execAttachPistolToController);
 
 
 #define FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_SS_MotionController_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execSetColliderPosition); \
+	DECLARE_FUNCTION(execDisableCollision); \
 	DECLARE_FUNCTION(execButtonPressPTA); \
 	DECLARE_FUNCTION(execSetHasEntered); \
 	DECLARE_FUNCTION(execPTA); \
 	DECLARE_FUNCTION(execPT); \
 	DECLARE_FUNCTION(execUpdateColliderRadius); \
 	DECLARE_FUNCTION(execInitializeControllers); \
-	DECLARE_FUNCTION(execAttachPistolToController); \
-	DECLARE_FUNCTION(execAddController);
+	DECLARE_FUNCTION(execAttachPistolToController);
 
 
 #define FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_SS_MotionController_h_15_ACCESSORS

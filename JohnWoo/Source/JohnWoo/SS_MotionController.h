@@ -18,18 +18,15 @@ public:
 	//virtual void Deinitialize() override;
 
 private:
-	TArray<USceneComponent*> Controllers;
-	TArray<USphereComponent*> Colliders;
+	TMap<EHand ,USceneComponent*> Controllers;
+	TMap<EHand, USphereComponent*> Colliders;
 	TArray<USC_ThrustingReader*> ThrustingReaders;
 	AA_PlayerPistol* PistolLeft;
 	AA_PlayerPistol* PistolRight;
-	TArray<AA_PlayerPistol*> Pistols;
+	TMap<EHand, AA_PlayerPistol*> Pistols;
+
 
 public:
-	// depricated
-	UFUNCTION(BlueprintCallable)
-	void AddController(USceneComponent* Controller);
-
 	UFUNCTION(BlueprintCallable)
 	void AttachPistolToController(AA_PlayerPistol* PistolActor, EHand Hand);
 
@@ -47,4 +44,8 @@ public:
 	void SetHasEntered(EHand Hand);
 	UFUNCTION(BlueprintCallable)
 	void ButtonPressPTA(EHand Hand);
+	UFUNCTION(BlueprintCallable)
+	void DisableCollision(EHand Hand);
+	UFUNCTION(BlueprintCallable)
+	void SetColliderPosition(EHand Hand);
 };

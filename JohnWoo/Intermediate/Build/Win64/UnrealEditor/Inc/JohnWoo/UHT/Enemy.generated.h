@@ -18,14 +18,14 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_Enemy_h_12_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execPostInitializeComponents); \
-	DECLARE_FUNCTION(execTakeDamage); \
+	DECLARE_FUNCTION(execTakeDamageXXX); \
 	DECLARE_FUNCTION(execLoggingFunction);
 
 
 #define FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_Enemy_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execPostInitializeComponents); \
-	DECLARE_FUNCTION(execTakeDamage); \
+	DECLARE_FUNCTION(execTakeDamageXXX); \
 	DECLARE_FUNCTION(execLoggingFunction);
 
 

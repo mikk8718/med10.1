@@ -73,7 +73,7 @@ void EmptyLinkFunctionForGeneratedCodeA_PlayerPistol() {}
 		{ "ModuleRelativePath", "A_PlayerPistol.h" },
 	};
 #endif
-	const UECodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_AA_PlayerPistol_Statics::NewProp_Orientation = { "Orientation", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AA_PlayerPistol, Orientation), METADATA_PARAMS(Z_Construct_UClass_AA_PlayerPistol_Statics::NewProp_Orientation_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AA_PlayerPistol_Statics::NewProp_Orientation_MetaData)) };
+	const UECodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_AA_PlayerPistol_Statics::NewProp_Orientation = { "Orientation", nullptr, (EPropertyFlags)0x0010000000000005, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AA_PlayerPistol, Orientation), METADATA_PARAMS(Z_Construct_UClass_AA_PlayerPistol_Statics::NewProp_Orientation_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AA_PlayerPistol_Statics::NewProp_Orientation_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AA_PlayerPistol_Statics::NewProp_Sound_MetaData[] = {
 		{ "Category", "A_PlayerPistol" },
@@ -149,9 +149,9 @@ void EmptyLinkFunctionForGeneratedCodeA_PlayerPistol() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_A_PlayerPistol_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AA_PlayerPistol, AA_PlayerPistol::StaticClass, TEXT("AA_PlayerPistol"), &Z_Registration_Info_UClass_AA_PlayerPistol, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AA_PlayerPistol), 3932900559U) },
+		{ Z_Construct_UClass_AA_PlayerPistol, AA_PlayerPistol::StaticClass, TEXT("AA_PlayerPistol"), &Z_Registration_Info_UClass_AA_PlayerPistol, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AA_PlayerPistol), 3806575768U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_A_PlayerPistol_h_1733425259(TEXT("/Script/JohnWoo"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_A_PlayerPistol_h_1691164779(TEXT("/Script/JohnWoo"),
 		Z_CompiledInDeferFile_FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_A_PlayerPistol_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_A_PlayerPistol_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

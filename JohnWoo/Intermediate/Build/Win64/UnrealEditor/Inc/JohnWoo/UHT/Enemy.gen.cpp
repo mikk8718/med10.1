@@ -21,12 +21,12 @@ void EmptyLinkFunctionForGeneratedCodeEnemy() {}
 		P_THIS->PostInitializeComponents();
 		P_NATIVE_END;
 	}
-	DEFINE_FUNCTION(AEnemy::execTakeDamage)
+	DEFINE_FUNCTION(AEnemy::execTakeDamageXXX)
 	{
 		P_GET_PROPERTY(FIntProperty,Z_Param_damage);
 		P_FINISH;
 		P_NATIVE_BEGIN;
-		P_THIS->TakeDamage(Z_Param_damage);
+		P_THIS->TakeDamageXXX(Z_Param_damage);
 		P_NATIVE_END;
 	}
 	DEFINE_FUNCTION(AEnemy::execLoggingFunction)
@@ -43,7 +43,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemy() {}
 		static const FNameNativePtrPair Funcs[] = {
 			{ "LoggingFunction", &AEnemy::execLoggingFunction },
 			{ "PostInitializeComponents", &AEnemy::execPostInitializeComponents },
-			{ "TakeDamage", &AEnemy::execTakeDamage },
+			{ "TakeDamageXXX", &AEnemy::execTakeDamageXXX },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 	}
@@ -101,9 +101,9 @@ void EmptyLinkFunctionForGeneratedCodeEnemy() {}
 		}
 		return ReturnFunction;
 	}
-	struct Z_Construct_UFunction_AEnemy_TakeDamage_Statics
+	struct Z_Construct_UFunction_AEnemy_TakeDamageXXX_Statics
 	{
-		struct Enemy_eventTakeDamage_Parms
+		struct Enemy_eventTakeDamageXXX_Parms
 		{
 			int32 damage;
 		};
@@ -114,22 +114,22 @@ void EmptyLinkFunctionForGeneratedCodeEnemy() {}
 #endif
 		static const UECodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AEnemy_TakeDamage_Statics::NewProp_damage = { "damage", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(Enemy_eventTakeDamage_Parms, damage), METADATA_PARAMS(nullptr, 0) };
-	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AEnemy_TakeDamage_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AEnemy_TakeDamage_Statics::NewProp_damage,
+	const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_AEnemy_TakeDamageXXX_Statics::NewProp_damage = { "damage", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(Enemy_eventTakeDamageXXX_Parms, damage), METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AEnemy_TakeDamageXXX_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AEnemy_TakeDamageXXX_Statics::NewProp_damage,
 	};
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AEnemy_TakeDamage_Statics::Function_MetaDataParams[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AEnemy_TakeDamageXXX_Statics::Function_MetaDataParams[] = {
 		{ "ModuleRelativePath", "Enemy.h" },
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AEnemy_TakeDamage_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AEnemy, nullptr, "TakeDamage", nullptr, nullptr, sizeof(Z_Construct_UFunction_AEnemy_TakeDamage_Statics::Enemy_eventTakeDamage_Parms), Z_Construct_UFunction_AEnemy_TakeDamage_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AEnemy_TakeDamage_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AEnemy_TakeDamage_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AEnemy_TakeDamage_Statics::Function_MetaDataParams)) };
-	UFunction* Z_Construct_UFunction_AEnemy_TakeDamage()
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AEnemy_TakeDamageXXX_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AEnemy, nullptr, "TakeDamageXXX", nullptr, nullptr, sizeof(Z_Construct_UFunction_AEnemy_TakeDamageXXX_Statics::Enemy_eventTakeDamageXXX_Parms), Z_Construct_UFunction_AEnemy_TakeDamageXXX_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AEnemy_TakeDamageXXX_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AEnemy_TakeDamageXXX_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AEnemy_TakeDamageXXX_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AEnemy_TakeDamageXXX()
 	{
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AEnemy_TakeDamage_Statics::FuncParams);
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AEnemy_TakeDamageXXX_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -160,7 +160,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemy() {}
 	const FClassFunctionLinkInfo Z_Construct_UClass_AEnemy_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_AEnemy_LoggingFunction, "LoggingFunction" }, // 3963118358
 		{ &Z_Construct_UFunction_AEnemy_PostInitializeComponents, "PostInitializeComponents" }, // 1281405240
-		{ &Z_Construct_UFunction_AEnemy_TakeDamage, "TakeDamage" }, // 2887664113
+		{ &Z_Construct_UFunction_AEnemy_TakeDamageXXX, "TakeDamageXXX" }, // 2651241760
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemy_Statics::Class_MetaDataParams[] = {
@@ -215,9 +215,9 @@ void EmptyLinkFunctionForGeneratedCodeEnemy() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_Enemy_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AEnemy, AEnemy::StaticClass, TEXT("AEnemy"), &Z_Registration_Info_UClass_AEnemy, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemy), 3140973489U) },
+		{ Z_Construct_UClass_AEnemy, AEnemy::StaticClass, TEXT("AEnemy"), &Z_Registration_Info_UClass_AEnemy, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemy), 4284866831U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_Enemy_h_2176559301(TEXT("/Script/JohnWoo"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_Enemy_h_1515577056(TEXT("/Script/JohnWoo"),
 		Z_CompiledInDeferFile_FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_Enemy_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_Enemy_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

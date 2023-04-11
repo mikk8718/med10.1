@@ -8,6 +8,7 @@
 #include "SC_ThrustingReader.h"
 #include "MotionControllerComponent.h"
 #include "SS_MotionController.h"
+#include "Enemy.h"
 #include "MyENUMS.h"
 
 
@@ -36,13 +37,15 @@ void AA_PlayerPistol::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 	//PT();
 	MotionControllerSubSystem->UpdateColliderRadius(Orientation != 1 ? EHand::LEFT : EHand::RIGHT);
+	DrawDebugLine(GetWorld(), GetActorLocation() + GetActorForwardVector() * 300, GetActorLocation() + (GetActorForwardVector() * 5000), FColor::Green, false, 1, 0, 5);
 
 }
 
 bool AA_PlayerPistol::CheckRayFromSelf()
 {
-	Start = GetActorLocation() + StartOffset;
+
 	ForwardVector = GetActorForwardVector();
+	Start = GetActorLocation() + ForwardVector * 300;
 	EndOfTrace = ((ForwardVector * 500.f) + Start);
 	return GetWorld()->LineTraceSingleByChannel(OutHit, Start, EndOfTrace, ECC_WorldStatic, CollisionParams);
 }
@@ -50,10 +53,17 @@ bool AA_PlayerPistol::CheckRayFromSelf()
 
 void AA_PlayerPistol::Shoot()
 {
-	if (CheckRayFromSelf())//makes hit true when something in GameTraceChannel2 is being hit
+	CheckRayFromSelf();
+	UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), GetActorRotation());
+	if (OutHit.IsValidBlockingHit())//makes hit true when something in GameTraceChannel2 is being hit
 	{
-		UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), GetActorRotation());
 		GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT("Shot")));
+		//UE_LOG(LogTemp, Log, TEXT("%s"), *(OutHit.GetActor()->GetActorLabel()));
+		GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Green, FString::Printf(TEXT("Shot %s"), *(OutHit.GetActor()->GetActorLabel())));
+		if (OutHit.GetActor()->IsA(AEnemy::StaticClass())) {
+			Cast<AEnemy>(OutHit.GetActor())->TakeDamageXXX(10);
+		}
+
 		ThrustingReader->ResetThresholsMet();
 	}
 }

@@ -11,13 +11,28 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeSS_MotionController() {}
 // Cross Module References
 	ENGINE_API UClass* Z_Construct_UClass_UGameInstanceSubsystem();
-	ENGINE_API UClass* Z_Construct_UClass_USceneComponent_NoRegister();
 	JOHNWOO_API UClass* Z_Construct_UClass_AA_PlayerPistol_NoRegister();
 	JOHNWOO_API UClass* Z_Construct_UClass_USS_MotionController();
 	JOHNWOO_API UClass* Z_Construct_UClass_USS_MotionController_NoRegister();
 	JOHNWOO_API UEnum* Z_Construct_UEnum_JohnWoo_EHand();
 	UPackage* Z_Construct_UPackage__Script_JohnWoo();
 // End Cross Module References
+	DEFINE_FUNCTION(USS_MotionController::execSetColliderPosition)
+	{
+		P_GET_ENUM(EHand,Z_Param_Hand);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->SetColliderPosition(EHand(Z_Param_Hand));
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(USS_MotionController::execDisableCollision)
+	{
+		P_GET_ENUM(EHand,Z_Param_Hand);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->DisableCollision(EHand(Z_Param_Hand));
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(USS_MotionController::execButtonPressPTA)
 	{
 		P_GET_ENUM(EHand,Z_Param_Hand);
@@ -74,70 +89,21 @@ void EmptyLinkFunctionForGeneratedCodeSS_MotionController() {}
 		P_THIS->AttachPistolToController(Z_Param_PistolActor,EHand(Z_Param_Hand));
 		P_NATIVE_END;
 	}
-	DEFINE_FUNCTION(USS_MotionController::execAddController)
-	{
-		P_GET_OBJECT(USceneComponent,Z_Param_Controller);
-		P_FINISH;
-		P_NATIVE_BEGIN;
-		P_THIS->AddController(Z_Param_Controller);
-		P_NATIVE_END;
-	}
 	void USS_MotionController::StaticRegisterNativesUSS_MotionController()
 	{
 		UClass* Class = USS_MotionController::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
-			{ "AddController", &USS_MotionController::execAddController },
 			{ "AttachPistolToController", &USS_MotionController::execAttachPistolToController },
 			{ "ButtonPressPTA", &USS_MotionController::execButtonPressPTA },
+			{ "DisableCollision", &USS_MotionController::execDisableCollision },
 			{ "InitializeControllers", &USS_MotionController::execInitializeControllers },
 			{ "PT", &USS_MotionController::execPT },
 			{ "PTA", &USS_MotionController::execPTA },
+			{ "SetColliderPosition", &USS_MotionController::execSetColliderPosition },
 			{ "SetHasEntered", &USS_MotionController::execSetHasEntered },
 			{ "UpdateColliderRadius", &USS_MotionController::execUpdateColliderRadius },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
-	}
-	struct Z_Construct_UFunction_USS_MotionController_AddController_Statics
-	{
-		struct SS_MotionController_eventAddController_Parms
-		{
-			USceneComponent* Controller;
-		};
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_Controller_MetaData[];
-#endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_Controller;
-		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
-#endif
-		static const UECodeGen_Private::FFunctionParams FuncParams;
-	};
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_USS_MotionController_AddController_Statics::NewProp_Controller_MetaData[] = {
-		{ "EditInline", "true" },
-	};
-#endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_USS_MotionController_AddController_Statics::NewProp_Controller = { "Controller", nullptr, (EPropertyFlags)0x0010000000080080, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(SS_MotionController_eventAddController_Parms, Controller), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(Z_Construct_UFunction_USS_MotionController_AddController_Statics::NewProp_Controller_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_USS_MotionController_AddController_Statics::NewProp_Controller_MetaData)) };
-	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_USS_MotionController_AddController_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USS_MotionController_AddController_Statics::NewProp_Controller,
-	};
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_USS_MotionController_AddController_Statics::Function_MetaDataParams[] = {
-		{ "Comment", "// depricated\n" },
-		{ "ModuleRelativePath", "SS_MotionController.h" },
-		{ "ToolTip", "depricated" },
-	};
-#endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USS_MotionController_AddController_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USS_MotionController, nullptr, "AddController", nullptr, nullptr, sizeof(Z_Construct_UFunction_USS_MotionController_AddController_Statics::SS_MotionController_eventAddController_Parms), Z_Construct_UFunction_USS_MotionController_AddController_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USS_MotionController_AddController_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USS_MotionController_AddController_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USS_MotionController_AddController_Statics::Function_MetaDataParams)) };
-	UFunction* Z_Construct_UFunction_USS_MotionController_AddController()
-	{
-		static UFunction* ReturnFunction = nullptr;
-		if (!ReturnFunction)
-		{
-			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_USS_MotionController_AddController_Statics::FuncParams);
-		}
-		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_USS_MotionController_AttachPistolToController_Statics
 	{
@@ -210,6 +176,41 @@ void EmptyLinkFunctionForGeneratedCodeSS_MotionController() {}
 		if (!ReturnFunction)
 		{
 			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_USS_MotionController_ButtonPressPTA_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_USS_MotionController_DisableCollision_Statics
+	{
+		struct SS_MotionController_eventDisableCollision_Parms
+		{
+			EHand Hand;
+		};
+		static const UECodeGen_Private::FBytePropertyParams NewProp_Hand_Underlying;
+		static const UECodeGen_Private::FEnumPropertyParams NewProp_Hand;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FBytePropertyParams Z_Construct_UFunction_USS_MotionController_DisableCollision_Statics::NewProp_Hand_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_USS_MotionController_DisableCollision_Statics::NewProp_Hand = { "Hand", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(SS_MotionController_eventDisableCollision_Parms, Hand), Z_Construct_UEnum_JohnWoo_EHand, METADATA_PARAMS(nullptr, 0) }; // 2697977092
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_USS_MotionController_DisableCollision_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USS_MotionController_DisableCollision_Statics::NewProp_Hand_Underlying,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USS_MotionController_DisableCollision_Statics::NewProp_Hand,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_USS_MotionController_DisableCollision_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "SS_MotionController.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USS_MotionController_DisableCollision_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USS_MotionController, nullptr, "DisableCollision", nullptr, nullptr, sizeof(Z_Construct_UFunction_USS_MotionController_DisableCollision_Statics::SS_MotionController_eventDisableCollision_Parms), Z_Construct_UFunction_USS_MotionController_DisableCollision_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USS_MotionController_DisableCollision_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USS_MotionController_DisableCollision_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USS_MotionController_DisableCollision_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_USS_MotionController_DisableCollision()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_USS_MotionController_DisableCollision_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -307,6 +308,41 @@ void EmptyLinkFunctionForGeneratedCodeSS_MotionController() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_USS_MotionController_SetColliderPosition_Statics
+	{
+		struct SS_MotionController_eventSetColliderPosition_Parms
+		{
+			EHand Hand;
+		};
+		static const UECodeGen_Private::FBytePropertyParams NewProp_Hand_Underlying;
+		static const UECodeGen_Private::FEnumPropertyParams NewProp_Hand;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FBytePropertyParams Z_Construct_UFunction_USS_MotionController_SetColliderPosition_Statics::NewProp_Hand_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_USS_MotionController_SetColliderPosition_Statics::NewProp_Hand = { "Hand", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(SS_MotionController_eventSetColliderPosition_Parms, Hand), Z_Construct_UEnum_JohnWoo_EHand, METADATA_PARAMS(nullptr, 0) }; // 2697977092
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_USS_MotionController_SetColliderPosition_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USS_MotionController_SetColliderPosition_Statics::NewProp_Hand_Underlying,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USS_MotionController_SetColliderPosition_Statics::NewProp_Hand,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_USS_MotionController_SetColliderPosition_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "SS_MotionController.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USS_MotionController_SetColliderPosition_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USS_MotionController, nullptr, "SetColliderPosition", nullptr, nullptr, sizeof(Z_Construct_UFunction_USS_MotionController_SetColliderPosition_Statics::SS_MotionController_eventSetColliderPosition_Parms), Z_Construct_UFunction_USS_MotionController_SetColliderPosition_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USS_MotionController_SetColliderPosition_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USS_MotionController_SetColliderPosition_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USS_MotionController_SetColliderPosition_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_USS_MotionController_SetColliderPosition()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_USS_MotionController_SetColliderPosition_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	struct Z_Construct_UFunction_USS_MotionController_SetHasEntered_Statics
 	{
 		struct SS_MotionController_eventSetHasEntered_Parms
@@ -397,12 +433,13 @@ void EmptyLinkFunctionForGeneratedCodeSS_MotionController() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_JohnWoo,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_USS_MotionController_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_USS_MotionController_AddController, "AddController" }, // 3938441755
 		{ &Z_Construct_UFunction_USS_MotionController_AttachPistolToController, "AttachPistolToController" }, // 124621179
 		{ &Z_Construct_UFunction_USS_MotionController_ButtonPressPTA, "ButtonPressPTA" }, // 2263336777
+		{ &Z_Construct_UFunction_USS_MotionController_DisableCollision, "DisableCollision" }, // 3743724822
 		{ &Z_Construct_UFunction_USS_MotionController_InitializeControllers, "InitializeControllers" }, // 3885966147
 		{ &Z_Construct_UFunction_USS_MotionController_PT, "PT" }, // 1107568996
 		{ &Z_Construct_UFunction_USS_MotionController_PTA, "PTA" }, // 1796177102
+		{ &Z_Construct_UFunction_USS_MotionController_SetColliderPosition, "SetColliderPosition" }, // 2207366654
 		{ &Z_Construct_UFunction_USS_MotionController_SetHasEntered, "SetHasEntered" }, // 1109890272
 		{ &Z_Construct_UFunction_USS_MotionController_UpdateColliderRadius, "UpdateColliderRadius" }, // 3053851622
 	};
@@ -449,9 +486,9 @@ void EmptyLinkFunctionForGeneratedCodeSS_MotionController() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_SS_MotionController_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_USS_MotionController, USS_MotionController::StaticClass, TEXT("USS_MotionController"), &Z_Registration_Info_UClass_USS_MotionController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(USS_MotionController), 496801683U) },
+		{ Z_Construct_UClass_USS_MotionController, USS_MotionController::StaticClass, TEXT("USS_MotionController"), &Z_Registration_Info_UClass_USS_MotionController, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(USS_MotionController), 1656825200U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_SS_MotionController_h_227131532(TEXT("/Script/JohnWoo"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_SS_MotionController_h_1168492761(TEXT("/Script/JohnWoo"),
 		Z_CompiledInDeferFile_FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_SS_MotionController_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_SS_MotionController_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
