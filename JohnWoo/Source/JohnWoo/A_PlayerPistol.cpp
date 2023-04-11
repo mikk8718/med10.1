@@ -26,7 +26,7 @@ void AA_PlayerPistol::BeginPlay()
 
 	MotionControllerSubSystem = GetGameInstance()->GetSubsystem<USS_MotionController>();
 	MotionControllerSubSystem->InitializeControllers();
-	MotionControllerSubSystem->AttachPistolToController(this, EHand::RIGHT);
+	MotionControllerSubSystem->AttachPistolToController(this, Orientation != 1 ? EHand::LEFT : EHand::RIGHT);
 	ThrustingReader = (USC_ThrustingReader*)GetComponentByClass(USC_ThrustingReader::StaticClass());
 }
 
@@ -35,7 +35,7 @@ void AA_PlayerPistol::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 	//PT();
-	MotionControllerSubSystem->UpdateColliderRadius(EHand::RIGHT);
+	MotionControllerSubSystem->UpdateColliderRadius(Orientation != 1 ? EHand::LEFT : EHand::RIGHT);
 
 }
 
@@ -52,6 +52,7 @@ void AA_PlayerPistol::Shoot()
 {
 	if (CheckRayFromSelf())//makes hit true when something in GameTraceChannel2 is being hit
 	{
+		UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), GetActorRotation());
 		GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT("Shot")));
 		ThrustingReader->ResetThresholsMet();
 	}

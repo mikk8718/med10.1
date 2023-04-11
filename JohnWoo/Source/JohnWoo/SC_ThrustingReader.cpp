@@ -92,6 +92,9 @@ void USC_ThrustingReader::CheckThresholds(float DeltaTime)
 
 	// get last velocity of this TICK (IS COMPARED AT THE START OF TICK
 	velocityPast = distanceVector.Size();
+
+	UE_LOG(LogTemp, Log, TEXT("VELOCITY %f"), velocity);
+	UE_LOG(LogTemp, Log, TEXT("CURRENT ACCELERATIION %f"), currentAcceleration);
 }
 
 

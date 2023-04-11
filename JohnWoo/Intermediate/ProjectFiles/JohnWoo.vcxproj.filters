@@ -27,6 +27,18 @@
     <None Include="..\..\Config\DefaultInput.ini">
       <Filter>Config</Filter>
     </None>
+    <Filter Include="Platforms">
+      <UniqueIdentifier>{ED49A36C-4FD5-37E5-A2AC-E11BEF4F21CF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platforms\HoloLens">
+      <UniqueIdentifier>{28125F47-4973-377C-9D77-EBC3C72EC856}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platforms\HoloLens\Config">
+      <UniqueIdentifier>{D3BF39CB-FA64-39E2-A327-B5021BA69773}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Platforms\HoloLens\Config\HoloLensEngine.ini">
+      <Filter>Platforms\HoloLens\Config</Filter>
+    </None>
     <Filter Include="Source\JohnWoo">
       <UniqueIdentifier>{A3B5EACB-DB50-30FA-8B96-9B4E4B8B3C59}</UniqueIdentifier>
     </Filter>
@@ -36,6 +48,12 @@
     <ClInclude Include="..\..\Source\JohnWoo\A_PlayerPistol.h">
       <Filter>Source\JohnWoo</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\JohnWoo\Enemy.cpp">
+      <Filter>Source\JohnWoo</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\JohnWoo\Enemy.h">
+      <Filter>Source\JohnWoo</Filter>
+    </ClInclude>
     <None Include="..\..\Source\JohnWoo\JohnWoo.Build.cs">
       <Filter>Source\JohnWoo</Filter>
     </None>
@@ -43,6 +61,12 @@
       <Filter>Source\JohnWoo</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\JohnWoo\JohnWoo.h">
+      <Filter>Source\JohnWoo</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\JohnWoo\LoggingSubsystem.cpp">
+      <Filter>Source\JohnWoo</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\JohnWoo\LoggingSubsystem.h">
       <Filter>Source\JohnWoo</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\JohnWoo\MyENUMS.cpp">

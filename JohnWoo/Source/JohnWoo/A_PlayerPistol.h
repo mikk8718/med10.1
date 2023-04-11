@@ -20,6 +20,10 @@ public:
 	bool GetIsThrusting();
 	bool HasEntered = true;
 	float TimeExitted = 0;
+	UPROPERTY(EditAnywhere)
+	int Orientation;
+	UPROPERTY(EditAnywhere)
+	USoundBase* Sound;
 
 protected:
 	// Called when the game starts or when spawned
