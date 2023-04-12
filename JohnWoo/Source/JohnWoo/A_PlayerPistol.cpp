@@ -10,6 +10,7 @@
 #include "SS_MotionController.h"
 #include "Enemy.h"
 #include "MyENUMS.h"
+#include "Components/SphereComponent.h"
 
 
 // Sets default values
@@ -36,9 +37,13 @@ void AA_PlayerPistol::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 	//PT();
-	MotionControllerSubSystem->UpdateColliderRadius(Orientation != 1 ? EHand::LEFT : EHand::RIGHT);
-	DrawDebugLine(GetWorld(), GetActorLocation() + GetActorForwardVector() * 300, GetActorLocation() + (GetActorForwardVector() * 5000), FColor::Green, false, 1, 0, 5);
-
+	//MotionControllerSubSystem->UpdateColliderRadius(Orientation != 1 ? EHand::LEFT : EHand::RIGHT);
+	DrawDebugLine(GetWorld(), GetActorLocation() + GetActorForwardVector() * 30, GetActorLocation() + (GetActorForwardVector() * 5000), FColor::Green, false, 1, 0, 5);
+	if ((SphereVariable->GetComponentLocation() - GetActorLocation()).Size() < 7 ) {
+		CloseToCenter = true;
+	}
+	UE_LOG(LogTemp, Log, TEXT("distance difference %f"), (SphereVariable->GetComponentLocation() - GetActorLocation()).Size());
+	GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT(" It's Micheal here %f"), (SphereVariable->GetComponentLocation() - GetActorLocation()).Size()));
 }
 
 bool AA_PlayerPistol::CheckRayFromSelf()
@@ -55,11 +60,17 @@ void AA_PlayerPistol::Shoot()
 {
 	CheckRayFromSelf();
 	UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), GetActorRotation());
+	UE_LOG(LogTemp, Log, TEXT("VELOCITY %f"), ThrustingReader->GetVelocityAndAccel()["Velocity"]);
+	UE_LOG(LogTemp, Log, TEXT("ACCEL %f"), ThrustingReader->GetVelocityAndAccel()["Acceleration"]);
+	//UE_LOG(LogTemp, Log, TEXT("Actor Label %s"), *(OutHit.GetActor()->GetActorLabel()));
+	//UE_LOG(LogTemp, Log, TEXT("Actor Label %s"), *(OutHit.GetActor()->GetActorLabel()));
+
 	if (OutHit.IsValidBlockingHit())//makes hit true when something in GameTraceChannel2 is being hit
 	{
 		GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT("Shot")));
-		//UE_LOG(LogTemp, Log, TEXT("%s"), *(OutHit.GetActor()->GetActorLabel()));
 		GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Green, FString::Printf(TEXT("Shot %s"), *(OutHit.GetActor()->GetActorLabel())));
+		
+
 		if (OutHit.GetActor()->IsA(AEnemy::StaticClass())) {
 			Cast<AEnemy>(OutHit.GetActor())->TakeDamageXXX(10);
 		}
@@ -77,5 +88,6 @@ USC_ThrustingReader*& AA_PlayerPistol::GetThrustingReader()
 
 bool AA_PlayerPistol::GetIsThrusting()
 {
+
 	return ThrustingReader->IsThrusting();
 }

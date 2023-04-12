@@ -1,4 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
 #pragma once
 #include "Components/SceneComponent.h"
 #include "CoreMinimal.h"
@@ -6,6 +5,7 @@
 #include "A_PlayerPistol.generated.h"
 class USC_ThrustingReader;
 class USS_MotionController;
+class USphereComponent;
 UCLASS()
 class JOHNWOO_API AA_PlayerPistol : public AActor
 {
@@ -32,6 +32,8 @@ protected:
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+	USphereComponent* SphereVariable;
+	bool CloseToCenter;
 
 
 private:
@@ -43,6 +45,7 @@ private:
 	class USC_ThrustingReader* ThrustingReader;
 	USS_MotionController* MotionControllerSubSystem;
 	
+
 
 	UPROPERTY(EditAnywhere)
 		TArray<UActorComponent*> Components;

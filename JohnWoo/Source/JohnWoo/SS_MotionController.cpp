@@ -28,6 +28,7 @@ void USS_MotionController::AttachPistolToController(AA_PlayerPistol* PistolActor
 	PistolActor->AttachToComponent(Controller, FAttachmentTransformRules::SnapToTargetNotIncludingScale);
 	InitializeCollider(Hand);
 	Pistols.Add(Hand, PistolActor);
+	Pistols[Hand]->SphereVariable = Colliders[Hand];
 	
 }
 
@@ -51,19 +52,26 @@ void USS_MotionController::UpdateColliderRadius(EHand Hand)
 {
 	if (Colliders.Num() == 0)
 		return;
-	/*
-	if (GEngine) {
-		GEngine->AddOnScreenDebugMessage(-1, 15, FColor::Yellow, TEXT(""+ FString::SanitizeFloat((Colliders[(uint8)Hand]->GetComponentLocation() - Controllers[(uint8)Hand]->GetComponentLocation()).Length())));
-	}
-	*/
+	ArmRadius.Add((Colliders[Hand]->GetComponentLocation() - Controllers[Hand]->GetComponentLocation()).Size());
+	if (ArmRadius.Num() == 4) {
+		
+		for (float radius : ArmRadius) {
+			sum += radius;
+		}
+		Colliders[Hand]->SetSphereRadius(sum/ArmRadius.Num());
+		ArmRadius.Empty();
+		sum = 0;
+	 }
 }
 
 void USS_MotionController::PT(EHand Hand)
 {
-	if (Pistols[Hand]->GetIsThrusting() && Pistols[Hand]->HasEntered) {
+	
+	if (Pistols[Hand]->GetIsThrusting() && Pistols[Hand]->HasEntered && Pistols[Hand]->CloseToCenter) {
 		Pistols[Hand]->Shoot();
 		Pistols[Hand]->HasEntered = false;
 	}
+	Pistols[Hand]->CloseToCenter = false;
 }
 
 void USS_MotionController::PTA(EHand Hand)

@@ -15,9 +15,12 @@ public:
 	// Sets default values for this actor's properties
 	AEnemy();
 	UPROPERTY(BlueprintReadWrite)
-		int ID;
+	int ID;
 	int GetID();
 	ULoggingSubsystem* LoggingSubsystem;
+	//UPROPERTY(EditAnywhere)
+	//TSubclassOf<AActor> calibrationClass;
+	//TArray<AActor*> CalibrationInstance;
 
 protected:
 	// Called when the game starts or when spawned
@@ -27,16 +30,16 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 	UFUNCTION(BlueprintCallable)
-		void LoggingFunction(int32 alive);
+	void LoggingFunction(int32 alive);
 	UFUNCTION(BlueprintCallable)
-		void TakeDamageXXX(int32 damage);
+	void TakeDamageXXX(int32 damage);
 
 private:
 	static int Counter;
-	int32 health = 20;
+	int32 health;
 	int32 hit;
 	float spawnTime;
 	UFUNCTION()
-		virtual void PostInitializeComponents() override;
+	virtual void PostInitializeComponents() override;
 
 };

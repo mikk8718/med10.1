@@ -17,8 +17,7 @@ USC_ThrustingReader::USC_ThrustingReader()
 void USC_ThrustingReader::BeginPlay()
 {
 	Super::BeginPlay();
-
-	SetupThreshholds(4, 2);
+	SetupThreshholds(10, 5);
 }
 
 
@@ -62,7 +61,8 @@ void USC_ThrustingReader::SetupThreshholds(float v, float a)
 	arrayOfLies.Init(false, 2);
 
 	customThresholds[0] = v; //Velocity
-	customThresholds[2] = a; //Aceeleration
+	customThresholds[1] = a; // Acceleration
+	//customThresholds[2] = 20;
 }
 
 void USC_ThrustingReader::CheckThresholds(float DeltaTime)
@@ -81,12 +81,13 @@ void USC_ThrustingReader::CheckThresholds(float DeltaTime)
 		customThresholdMet[0] = false;
 	}
 	//Acceleration check
-	if (currentAcceleration > customThresholds[2]) {
+	if (currentAcceleration > customThresholds[1]) {
 		customThresholdMet[1] = true;
 	}
 	else {
 		customThresholdMet[1] = false;
 	}
+
 
 
 	// calculate the current velocity
@@ -101,8 +102,8 @@ void USC_ThrustingReader::CheckThresholds(float DeltaTime)
 	// get last velocity of this TICK (IS COMPARED AT THE START OF TICK
 	velocityPast = distanceVector.Size();
 
-	UE_LOG(LogTemp, Log, TEXT("VELOCITY %f"), velocity);
-	UE_LOG(LogTemp, Log, TEXT("CURRENT ACCELERATIION %f"), currentAcceleration);
+	//UE_LOG(LogTemp, Log, TEXT("VELOCITY %f"), velocity);
+	//UE_LOG(LogTemp, Log, TEXT("CURRENT ACCELERATIION %f"), currentAcceleration);
 }
 
 

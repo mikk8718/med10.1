@@ -21,7 +21,7 @@ int AEnemy::Counter = 0;
 
 void AEnemy::PostInitializeComponents() {
 	Super::PostInitializeComponents();
-	health = 10;
+	health = 20;
 	hit = 0;
 }
 
@@ -29,10 +29,13 @@ void AEnemy::PostInitializeComponents() {
 void AEnemy::BeginPlay()
 {
 	Super::BeginPlay();
+	//UGameplayStatics::GetAllActorsOfClass(GetWorld(), calibrationClass, CalibrationInstance);
+
 	ID = Counter;
 	Counter++;
 	LoggingSubsystem = GetGameInstance()->GetSubsystem<ULoggingSubsystem>();
 	spawnTime = UGameplayStatics::GetRealTimeSeconds(GetWorld());
+	//UE_LOG(LogTemp, Log, TEXT("%d"), health);
 }
 
 // Called every frame
@@ -52,6 +55,7 @@ void AEnemy::TakeDamageXXX(int32 damage)
 {
 	health -= damage;
 	hit++;
+	//UE_LOG(LogTemp, Log, TEXT("taking damage %d"), health);
 	if (health <= 0) {
 		Destroy();
 	}

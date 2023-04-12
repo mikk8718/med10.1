@@ -24,6 +24,8 @@ private:
 	AA_PlayerPistol* PistolLeft;
 	AA_PlayerPistol* PistolRight;
 	TMap<EHand, AA_PlayerPistol*> Pistols;
+	TArray<float> ArmRadius;
+	float sum = 0;
 
 
 public:
