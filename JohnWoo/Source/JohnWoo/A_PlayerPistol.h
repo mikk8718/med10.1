@@ -44,7 +44,6 @@ private:
 	FCollisionQueryParams CollisionParams;
 	class USC_ThrustingReader* ThrustingReader;
 	USS_MotionController* MotionControllerSubSystem;
-	
 
 
 	UPROPERTY(EditAnywhere)

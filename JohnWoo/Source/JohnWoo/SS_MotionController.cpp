@@ -21,7 +21,6 @@ void USS_MotionController::AttachPistolToController(AA_PlayerPistol* PistolActor
 {
 	if (Controllers.Num() == 0)
 		return;
-
 	USceneComponent* Controller = Controllers[Hand];
 	(Controller, FAttachmentTransformRules::KeepRelativeTransform);
 	PistolActor->SetActorLocation(Controller->GetComponentLocation());
@@ -29,7 +28,8 @@ void USS_MotionController::AttachPistolToController(AA_PlayerPistol* PistolActor
 	InitializeCollider(Hand);
 	Pistols.Add(Hand, PistolActor);
 	Pistols[Hand]->SphereVariable = Colliders[Hand];
-	
+	LoadCalibrationValues(Hand);
+	HasFushedAndWiped = false;
 }
 
 void USS_MotionController::InitializeControllers()
@@ -66,26 +66,33 @@ void USS_MotionController::UpdateColliderRadius(EHand Hand)
 
 void USS_MotionController::PT(EHand Hand)
 {
-	
-	if (Pistols[Hand]->GetIsThrusting() && Pistols[Hand]->HasEntered && Pistols[Hand]->CloseToCenter) {
+	if (HasFushedAndWiped)
+		return;
+	if (Pistols[Hand]->GetIsThrusting() && Pistols[Hand]->CloseToCenter) {
 		Pistols[Hand]->Shoot();
-		Pistols[Hand]->HasEntered = false;
+		//Pistols[Hand]->HasEntered = false;
 	}
 	Pistols[Hand]->CloseToCenter = false;
 }
 
 void USS_MotionController::PTA(EHand Hand)
 {
+	if (HasFushedAndWiped)
+		return;
 	Pistols[Hand]->TimeExitted = UGameplayStatics::GetTimeSeconds(GetWorld());
 }
 
 void USS_MotionController::SetHasEntered(EHand Hand)
 {
+	if (HasFushedAndWiped)
+		return;
 	Pistols[Hand]->HasEntered = true;
 }
 
 void USS_MotionController::ButtonPressPTA(EHand Hand)
 {
+	if (HasFushedAndWiped)
+		return;
 	float Difference = UGameplayStatics::GetTimeSeconds(GetWorld()) - Pistols[Hand]->TimeExitted;
 		
 	if (Difference < 1) {
@@ -95,12 +102,56 @@ void USS_MotionController::ButtonPressPTA(EHand Hand)
 
 void USS_MotionController::DisableCollision(EHand Hand)
 {
+	if (HasFushedAndWiped)
+		return;
 	Colliders[Hand]->Deactivate();
 }
 
 void USS_MotionController::SetColliderPosition(EHand Hand)
 {
+	if (HasFushedAndWiped)
+		return;
 	Colliders[Hand]->SetWorldLocation(Controllers[Hand]->GetComponentLocation());
+}
+
+void USS_MotionController::SaveCalibrationValues(EHand Hand)
+{
+	if (HasFushedAndWiped)
+		return;
+	SavedColliderPosition = Colliders[Hand]->GetRelativeLocation();
+	SavedRadius = Colliders[Hand]->GetScaledSphereRadius();
+	//GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT("Position %s"), *SavedColliderPosition.ToString()));
+	//GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT("Radius %f"), SavedRadius));
+	UE_LOG(LogTemp, Log, TEXT("SAVING----------------"));
+	UE_LOG(LogTemp, Log, TEXT("POSITION %s"), *SavedColliderPosition.ToString());
+	UE_LOG(LogTemp, Log, TEXT("Radius %f"), SavedRadius);
+}
+
+void USS_MotionController::LoadCalibrationValues(EHand Hand)
+{
+	//GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT("Position %f"), SavedColliderPosition));
+	//GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT("Radius %f"), (SphereVariable->GetComponentLocation() - GetActorLocation()).Size()));
+	if (HasFushedAndWiped)
+		return;
+	//Colliders[Hand]->SetWorldLocation(SavedColliderPosition);
+
+	//FVector Local = Colliders[Hand]->GetComponentTransform().InverseTransformPosition(SavedColliderPosition);
+	Colliders[Hand]->SetRelativeLocation(SavedColliderPosition);
+	Colliders[Hand]->SetSphereRadius(SavedRadius);
+	UE_LOG(LogTemp, Log, TEXT("LOADING---------------"));
+	UE_LOG(LogTemp, Log, TEXT("POSITION %s"), *(Colliders[Hand]->GetComponentLocation().ToString()));
+	UE_LOG(LogTemp, Log, TEXT("Radius %f"), Colliders[Hand]->GetScaledSphereRadius());
+	//GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT("Position %s"), *(Colliders[Hand]->GetComponentLocation().ToString())));
+	//GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT("Radius %f"), Colliders[Hand]->GetScaledSphereRadius()));
+}
+
+void USS_MotionController::Toilet()
+{
+	Controllers.Empty();
+	Colliders.Empty();
+	ThrustingReaders.Empty();
+	Pistols.Empty();
+	HasFushedAndWiped = true;
 }
 
 

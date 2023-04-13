@@ -19,6 +19,9 @@ enum class EHand : uint8;
 #define FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_SS_MotionController_h_15_SPARSE_DATA
 #define FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_SS_MotionController_h_15_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execToilet); \
+	DECLARE_FUNCTION(execLoadCalibrationValues); \
+	DECLARE_FUNCTION(execSaveCalibrationValues); \
 	DECLARE_FUNCTION(execSetColliderPosition); \
 	DECLARE_FUNCTION(execDisableCollision); \
 	DECLARE_FUNCTION(execButtonPressPTA); \
@@ -32,6 +35,9 @@ enum class EHand : uint8;
 
 #define FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_SS_MotionController_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execToilet); \
+	DECLARE_FUNCTION(execLoadCalibrationValues); \
+	DECLARE_FUNCTION(execSaveCalibrationValues); \
 	DECLARE_FUNCTION(execSetColliderPosition); \
 	DECLARE_FUNCTION(execDisableCollision); \
 	DECLARE_FUNCTION(execButtonPressPTA); \

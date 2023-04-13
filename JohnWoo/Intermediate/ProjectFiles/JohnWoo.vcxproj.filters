@@ -48,6 +48,12 @@
     <ClInclude Include="..\..\Source\JohnWoo\A_PlayerPistol.h">
       <Filter>Source\JohnWoo</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\JohnWoo\Calibration.cpp">
+      <Filter>Source\JohnWoo</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\JohnWoo\Calibration.h">
+      <Filter>Source\JohnWoo</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\JohnWoo\Enemy.cpp">
       <Filter>Source\JohnWoo</Filter>
     </ClCompile>

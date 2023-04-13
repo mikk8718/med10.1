@@ -26,6 +26,9 @@ private:
 	TMap<EHand, AA_PlayerPistol*> Pistols;
 	TArray<float> ArmRadius;
 	float sum = 0;
+	FVector SavedColliderPosition = FVector::ZeroVector;
+	float SavedRadius = 2;
+	bool HasFushedAndWiped = false;
 
 
 public:
@@ -50,4 +53,10 @@ public:
 	void DisableCollision(EHand Hand);
 	UFUNCTION(BlueprintCallable)
 	void SetColliderPosition(EHand Hand);
-};
+	UFUNCTION(BlueprintCallable)
+	void SaveCalibrationValues(EHand Hand);
+	UFUNCTION(BlueprintCallable)
+	void LoadCalibrationValues(EHand Hand);
+	UFUNCTION(BlueprintCallable)
+	void Toilet();
+};	

@@ -27,6 +27,7 @@ void AA_PlayerPistol::BeginPlay()
 	Super::BeginPlay();
 
 	MotionControllerSubSystem = GetGameInstance()->GetSubsystem<USS_MotionController>();
+	MotionControllerSubSystem->Toilet();
 	MotionControllerSubSystem->InitializeControllers();
 	MotionControllerSubSystem->AttachPistolToController(this, Orientation != 1 ? EHand::LEFT : EHand::RIGHT);
 	ThrustingReader = (USC_ThrustingReader*)GetComponentByClass(USC_ThrustingReader::StaticClass());
@@ -38,12 +39,11 @@ void AA_PlayerPistol::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 	//PT();
 	//MotionControllerSubSystem->UpdateColliderRadius(Orientation != 1 ? EHand::LEFT : EHand::RIGHT);
-	DrawDebugLine(GetWorld(), GetActorLocation() + GetActorForwardVector() * 30, GetActorLocation() + (GetActorForwardVector() * 5000), FColor::Green, false, 1, 0, 5);
 	if ((SphereVariable->GetComponentLocation() - GetActorLocation()).Size() < 7 ) {
 		CloseToCenter = true;
 	}
 	UE_LOG(LogTemp, Log, TEXT("distance difference %f"), (SphereVariable->GetComponentLocation() - GetActorLocation()).Size());
-	GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT(" It's Micheal here %f"), (SphereVariable->GetComponentLocation() - GetActorLocation()).Size()));
+	//GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT(" It's Micheal here %f"), (SphereVariable->GetComponentLocation() - GetActorLocation()).Size()));
 }
 
 bool AA_PlayerPistol::CheckRayFromSelf()
@@ -51,7 +51,7 @@ bool AA_PlayerPistol::CheckRayFromSelf()
 
 	ForwardVector = GetActorForwardVector();
 	Start = GetActorLocation() + ForwardVector * 300;
-	EndOfTrace = ((ForwardVector * 500.f) + Start);
+	EndOfTrace = ((ForwardVector * 100000) + Start);
 	return GetWorld()->LineTraceSingleByChannel(OutHit, Start, EndOfTrace, ECC_WorldStatic, CollisionParams);
 }
 
@@ -59,6 +59,7 @@ bool AA_PlayerPistol::CheckRayFromSelf()
 void AA_PlayerPistol::Shoot()
 {
 	CheckRayFromSelf();
+	DrawDebugLine(GetWorld(), GetActorLocation() + GetActorForwardVector() * 300, GetActorLocation() + (GetActorForwardVector() * 100000), FColor::Green, false, 1, 0, 5);
 	UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), GetActorRotation());
 	UE_LOG(LogTemp, Log, TEXT("VELOCITY %f"), ThrustingReader->GetVelocityAndAccel()["Velocity"]);
 	UE_LOG(LogTemp, Log, TEXT("ACCEL %f"), ThrustingReader->GetVelocityAndAccel()["Acceleration"]);

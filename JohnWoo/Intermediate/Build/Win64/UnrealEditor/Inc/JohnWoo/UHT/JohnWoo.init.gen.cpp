@@ -17,13 +17,13 @@ void EmptyLinkFunctionForGeneratedCodeJohnWoo_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0x5F907D49,
-				0x53490E9C,
+				0xCAF01709,
+				0x6C63AFEE,
 				METADATA_PARAMS(nullptr, 0)
 			};
 			UECodeGen_Private::ConstructUPackage(Z_Registration_Info_UPackage__Script_JohnWoo.OuterSingleton, PackageParams);
 		}
 		return Z_Registration_Info_UPackage__Script_JohnWoo.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_JohnWoo(Z_Construct_UPackage__Script_JohnWoo, TEXT("/Script/JohnWoo"), Z_Registration_Info_UPackage__Script_JohnWoo, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x5F907D49, 0x53490E9C));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_JohnWoo(Z_Construct_UPackage__Script_JohnWoo, TEXT("/Script/JohnWoo"), Z_Registration_Info_UPackage__Script_JohnWoo, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xCAF01709, 0x6C63AFEE));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
