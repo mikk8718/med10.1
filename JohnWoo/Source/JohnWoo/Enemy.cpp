@@ -57,7 +57,9 @@ void AEnemy::TakeDamageXXX(int32 damage)
 	hit++;
 	//UE_LOG(LogTemp, Log, TEXT("taking damage %d"), health);
 	if (health <= 0) {
-		Destroy();
+		//Destroy();33
+		//Skeleton = FindComponentByClass<USkeletalMeshComponent>();
+	
 	}
 	else {
 		LoggingFunction(1);

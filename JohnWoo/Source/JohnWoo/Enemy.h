@@ -18,6 +18,7 @@ public:
 	int ID;
 	int GetID();
 	ULoggingSubsystem* LoggingSubsystem;
+	TSubclassOf<AActor> Particle;
 	//UPROPERTY(EditAnywhere)
 	//TSubclassOf<AActor> calibrationClass;
 	//TArray<AActor*> CalibrationInstance;
@@ -28,6 +29,8 @@ protected:
 
 public:
 	// Called every frame
+	//UPROPERTY(BlueprintReadWrite)
+	//bool IsDead = false;
 	virtual void Tick(float DeltaTime) override;
 	UFUNCTION(BlueprintCallable)
 	void LoggingFunction(int32 alive);

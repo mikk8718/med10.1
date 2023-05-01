@@ -39,7 +39,7 @@ void AA_PlayerPistol::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 	//PT();
 	//MotionControllerSubSystem->UpdateColliderRadius(Orientation != 1 ? EHand::LEFT : EHand::RIGHT);
-	if ((SphereVariable->GetComponentLocation() - GetActorLocation()).Size() < 7 ) {
+	if ((SphereVariable->GetComponentLocation() - GetActorLocation()).Size() < SphereVariable->GetUnscaledSphereRadius() * 0.3) {
 		CloseToCenter = true;
 	}
 	UE_LOG(LogTemp, Log, TEXT("distance difference %f"), (SphereVariable->GetComponentLocation() - GetActorLocation()).Size());
@@ -65,6 +65,7 @@ void AA_PlayerPistol::Shoot(FVector directionVector, FVector StartingPoint)
 
 	DrawDebugLine(GetWorld(), StartingPoint + directionVector * 150, EndOfTrace, FColor::Green, false, 1, 0, 5);
 	UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), GetActorRotation());
+	GetWorld()->SpawnActor<AActor>(Projectile, Start, directionVector.Rotation());
 	//UE_LOG(LogTemp, Log, TEXT("VELOCITY %f"), ThrustingReader->GetVelocityAndAccel()["Velocity"]);
 	//UE_LOG(LogTemp, Log, TEXT("ACCEL %f"), ThrustingReader->GetVelocityAndAccel()["Acceleration"]);
 	//UE_LOG(LogTemp, Log, TEXT("Actor Label %s"), *(OutHit.GetActor()->GetActorLabel()));

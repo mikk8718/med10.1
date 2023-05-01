@@ -24,6 +24,8 @@ public:
 	int Orientation;
 	UPROPERTY(EditAnywhere)
 	USoundBase* Sound;
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<AActor> Projectile;
 
 protected:
 	// Called when the game starts or when spawned

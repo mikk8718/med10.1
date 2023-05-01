@@ -58,7 +58,7 @@ void USS_MotionController::UpdateColliderRadius(EHand Hand)
 		for (float radius : ArmRadius) {
 			sum += radius;
 		}
-		Colliders[Hand]->SetSphereRadius(sum/ArmRadius.Num());
+		Colliders[Hand]->SetSphereRadius(sum/ArmRadius.Num() * 0.9);
 		ArmRadius.Empty();
 		sum = 0;
 	 }
@@ -72,6 +72,7 @@ void USS_MotionController::PT(EHand Hand, int id)
 		Pistols[Hand]->Shoot(interactionParlament(Hand, id), id > 1 ? Colliders[Hand]->GetComponentLocation() : Pistols[Hand]->GetActorLocation());
 		//Pistols[Hand]->HasEntered = false;
 	}
+	//if (Pistols[Hand] == nullptr) return;
 	Pistols[Hand]->CloseToCenter = false;
 }
 
@@ -146,6 +147,7 @@ void USS_MotionController::LoadCalibrationValues(EHand Hand)
 	UE_LOG(LogTemp, Log, TEXT("LOADING---------------"));
 	UE_LOG(LogTemp, Log, TEXT("POSITION %s"), *(Colliders[Hand]->GetComponentLocation().ToString()));
 	UE_LOG(LogTemp, Log, TEXT("Radius %f"), Colliders[Hand]->GetScaledSphereRadius());
+	HasFushedAndWiped = false; 
 	//GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT("Position %s"), *(Colliders[Hand]->GetComponentLocation().ToString())));
 	//GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT("Radius %f"), Colliders[Hand]->GetScaledSphereRadius()));
 }
