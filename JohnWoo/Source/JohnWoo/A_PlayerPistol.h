@@ -15,7 +15,7 @@ public:
 	// Sets default values for this actor's properties
 	AA_PlayerPistol();
 	bool hit = false;
-	void Shoot();
+	void Shoot(FVector directionVector,FVector StartingPoint);
 	USC_ThrustingReader*& GetThrustingReader();
 	bool GetIsThrusting();
 	bool HasEntered = true;

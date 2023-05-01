@@ -44,9 +44,10 @@ void AA_PlayerPistol::Tick(float DeltaTime)
 	}
 	UE_LOG(LogTemp, Log, TEXT("distance difference %f"), (SphereVariable->GetComponentLocation() - GetActorLocation()).Size());
 	//GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT(" It's Micheal here %f"), (SphereVariable->GetComponentLocation() - GetActorLocation()).Size()));
+	//DrawDebugLine(GetWorld(), GetActorLocation(), GetActorLocation() + GetActorForwardVector() * 50, FColor::Blue, true, 1, 0, 1);
 }
 
-bool AA_PlayerPistol::CheckRayFromSelf()
+bool AA_PlayerPistol::CheckRayFromSelf()//depricated
 {
 
 	ForwardVector = GetActorForwardVector();
@@ -55,25 +56,29 @@ bool AA_PlayerPistol::CheckRayFromSelf()
 	return GetWorld()->LineTraceSingleByChannel(OutHit, Start, EndOfTrace, ECC_WorldStatic, CollisionParams);
 }
 
-
-void AA_PlayerPistol::Shoot()
+void AA_PlayerPistol::Shoot(FVector directionVector, FVector StartingPoint)
 {
-	CheckRayFromSelf();
-	DrawDebugLine(GetWorld(), GetActorLocation() + GetActorForwardVector() * 300, GetActorLocation() + (GetActorForwardVector() * 100000), FColor::Green, false, 1, 0, 5);
-	UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), GetActorRotation());
-	UE_LOG(LogTemp, Log, TEXT("VELOCITY %f"), ThrustingReader->GetVelocityAndAccel()["Velocity"]);
-	UE_LOG(LogTemp, Log, TEXT("ACCEL %f"), ThrustingReader->GetVelocityAndAccel()["Acceleration"]);
-	//UE_LOG(LogTemp, Log, TEXT("Actor Label %s"), *(OutHit.GetActor()->GetActorLabel()));
-	//UE_LOG(LogTemp, Log, TEXT("Actor Label %s"), *(OutHit.GetActor()->GetActorLabel()));
+	
+	Start = StartingPoint + directionVector * 300;
+	EndOfTrace = ((directionVector * 100000) + Start);
+	GetWorld()->LineTraceSingleByChannel(OutHit, Start, EndOfTrace, ECC_WorldStatic, CollisionParams);
 
+	DrawDebugLine(GetWorld(), StartingPoint + directionVector * 150, EndOfTrace, FColor::Green, false, 1, 0, 5);
+	UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), GetActorRotation());
+	//UE_LOG(LogTemp, Log, TEXT("VELOCITY %f"), ThrustingReader->GetVelocityAndAccel()["Velocity"]);
+	//UE_LOG(LogTemp, Log, TEXT("ACCEL %f"), ThrustingReader->GetVelocityAndAccel()["Acceleration"]);
+	//UE_LOG(LogTemp, Log, TEXT("Actor Label %s"), *(OutHit.GetActor()->GetActorLabel()));
+	//UE_LOG(LogTemp, Log, TEXT("Actor Label %s"), *(OutHit.GetActor()->GetActorLabel()));
+	//UE_LOG(LogTemp, Log, TEXT("Actor Label %s"), *(OutHit.GetActor()->GetActorLabel()));
+	
 	if (OutHit.IsValidBlockingHit())//makes hit true when something in GameTraceChannel2 is being hit
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT("Shot")));
+		//GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT("Shot")));
+		//GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Green, FString::Printf(TEXT("Shot %s"), *(OutHit.GetActor()->GetActorLabel())));
 		GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Green, FString::Printf(TEXT("Shot %s"), *(OutHit.GetActor()->GetActorLabel())));
-		
 
 		if (OutHit.GetActor()->IsA(AEnemy::StaticClass())) {
-			Cast<AEnemy>(OutHit.GetActor())->TakeDamageXXX(10);
+			Cast<AEnemy>(OutHit.GetActor())->TakeDamageXXX(20);
 		}
 
 		ThrustingReader->ResetThresholsMet();

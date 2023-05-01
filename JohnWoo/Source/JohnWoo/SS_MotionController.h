@@ -42,7 +42,7 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void UpdateColliderRadius(EHand hand);
 	UFUNCTION(BlueprintCallable)
-	void PT(EHand Hand);
+	void PT(EHand Hand, int id);
 	UFUNCTION(BlueprintCallable)
 	void PTA(EHand Hand);
 	UFUNCTION(BlueprintCallable)
@@ -59,4 +59,6 @@ public:
 	void LoadCalibrationValues(EHand Hand);
 	UFUNCTION(BlueprintCallable)
 	void Toilet();
+	FVector interactionParlament(EHand Hand, int id);
+	
 };	
