@@ -60,5 +60,7 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void Toilet();
 	FVector interactionParlament(EHand Hand, int id);
+	UFUNCTION(BlueprintCallable)
+	void DisableCollider(EHand Hand);
 	
 };	

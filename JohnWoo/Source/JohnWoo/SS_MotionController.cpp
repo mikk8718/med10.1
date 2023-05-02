@@ -166,18 +166,26 @@ FVector USS_MotionController::interactionParlament(EHand Hand, int id)
 	switch (id)
 	{
 	case 1: 
-		return Pistols[Hand]->GetActorForwardVector();
+		//Pistols[Hand]->GetActorForwardVector()
+		return Pistols[Hand]->StaticMesh->GetRightVector() * -1;
 		
 	case 2:
 		return (Pistols[Hand]->GetActorLocation() - Colliders[Hand]->GetComponentLocation()).GetSafeNormal();
 
 	case 3:
-		return ((Pistols[Hand]->GetActorLocation() - Colliders[Hand]->GetComponentLocation()).GetSafeNormal()) + (Pistols[Hand]->GetActorForwardVector()).GetSafeNormal();
+		// ((Pistols[Hand]->GetActorLocation() - Colliders[Hand]->GetComponentLocation()).GetSafeNormal()) + (Pistols[Hand]->GetActorForwardVector()).GetSafeNormal();
+		// (((Pistols[Hand]->GetActorLocation() - Colliders[Hand]->GetComponentLocation()).GetSafeNormal()) + Pistols[Hand]->StaticMeshes[1]->GetRightVector() * -1).GetSafeNormal();
+		return (((Pistols[Hand]->GetActorLocation() - Colliders[Hand]->GetComponentLocation()).GetSafeNormal()) + Pistols[Hand]->StaticMesh->GetRightVector() * -1).GetSafeNormal();
 
 	default:
 		break;
 	}
 	return FVector();
+}
+
+void USS_MotionController::DisableCollider(EHand Hand)
+{
+	Colliders[Hand == EHand::LEFT ? EHand::RIGHT : EHand::LEFT]->SetVisibility(false);
 }
 
 

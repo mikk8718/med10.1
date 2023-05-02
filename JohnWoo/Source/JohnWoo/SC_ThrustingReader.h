@@ -38,15 +38,10 @@ private:
 	float currentVelocity;
 	float currentAcceleration;
 	FVector distanceVector;
-	 
-
-
-
 	UPROPERTY(EditAnywhere)
-		float customThresholds[3];			//element[0] holds distance threshold, element[1] holds velocity treshold, element[2] holds acceleration threshold.
-
+	float customThresholds[3];			//element[0] holds distance threshold, element[1] holds velocity treshold, element[2] holds acceleration threshold.
 	UPROPERTY(EditAnywhere)
-		TArray<bool> customThresholdMet;	//element[0] holds distance threshold, element[1] holds velocity treshold, element[2] holds acceleration threshold,elemetn[3] holds hitting.
+	TArray<bool> customThresholdMet;	//element[0] holds distance threshold, element[1] holds velocity treshold, element[2] holds acceleration threshold,elemetn[3] holds hitting.
 	TArray<bool> arrayOfTruth;
 	TArray<bool> arrayOfLies;
 
