@@ -26,6 +26,8 @@ public:
 	USoundBase* Sound;
 	UPROPERTY(EditAnywhere)
 	TSubclassOf<AActor> Projectile;
+	TArray<UStaticMeshComponent*> StaticMeshes;
+	UStaticMeshComponent* StaticMesh;
 
 protected:
 	// Called when the game starts or when spawned

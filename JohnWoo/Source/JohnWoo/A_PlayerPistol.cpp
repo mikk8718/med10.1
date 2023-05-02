@@ -11,6 +11,7 @@
 #include "Enemy.h"
 #include "MyENUMS.h"
 #include "Components/SphereComponent.h"
+#include "Engine/EngineTypes.h"
 
 
 // Sets default values
@@ -31,6 +32,9 @@ void AA_PlayerPistol::BeginPlay()
 	MotionControllerSubSystem->InitializeControllers();
 	MotionControllerSubSystem->AttachPistolToController(this, Orientation != 1 ? EHand::LEFT : EHand::RIGHT);
 	ThrustingReader = (USC_ThrustingReader*)GetComponentByClass(USC_ThrustingReader::StaticClass());
+	GetComponents<UStaticMeshComponent>(StaticMeshes);
+	//StaticMeshes[1]->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	StaticMesh = StaticMeshes[StaticMeshes[0]->GetName() == "Sphere" ? 1 : 0];
 }
 
 // Called every frame
@@ -42,9 +46,13 @@ void AA_PlayerPistol::Tick(float DeltaTime)
 	if ((SphereVariable->GetComponentLocation() - GetActorLocation()).Size() < SphereVariable->GetUnscaledSphereRadius() * 0.3) {
 		CloseToCenter = true;
 	}
-	UE_LOG(LogTemp, Log, TEXT("distance difference %f"), (SphereVariable->GetComponentLocation() - GetActorLocation()).Size());
-	//GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT(" It's Micheal here %f"), (SphereVariable->GetComponentLocation() - GetActorLocation()).Size()));
+	//UE_LOG(LogTemp, Log, TEXT("distance difference %f"), (SphereVariable->GetComponentLocation() - GetActorLocation()).Size());
+	//GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT(" It's Micheal here %s"), *StaticMesh->GetName()));
 	//DrawDebugLine(GetWorld(), GetActorLocation(), GetActorLocation() + GetActorForwardVector() * 50, FColor::Blue, true, 1, 0, 1);
+	//DrawDebugLine(GetWorld(), GetActorLocation(), GetActorLocation() + (StaticMesh->GetRightVector() * -1) * 50, FColor::Blue, true, 1, 0, 1);
+	//DrawDebugLine(GetWorld(), GetActorLocation(), GetActorLocation() + GetActorForwardVector() * 50, FColor::Blue, true, 1, 0, 1);
+	//GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT(" It's Micheal here %s"), *(FindComponentByClass<UStaticMeshComponent>()->GetForwardVector().ToString())));
+
 }
 
 bool AA_PlayerPistol::CheckRayFromSelf()//depricated
@@ -65,7 +73,8 @@ void AA_PlayerPistol::Shoot(FVector directionVector, FVector StartingPoint)
 
 	DrawDebugLine(GetWorld(), StartingPoint + directionVector * 150, EndOfTrace, FColor::Green, false, 1, 0, 5);
 	UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), GetActorRotation());
-	GetWorld()->SpawnActor<AActor>(Projectile, Start, directionVector.Rotation());
+	AActor* Proj = GetWorld()->SpawnActor<AActor>(Projectile, Start, directionVector.Rotation());
+	GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT("spawed %s"), *(Proj->GetActorLabel())));
 	//UE_LOG(LogTemp, Log, TEXT("VELOCITY %f"), ThrustingReader->GetVelocityAndAccel()["Velocity"]);
 	//UE_LOG(LogTemp, Log, TEXT("ACCEL %f"), ThrustingReader->GetVelocityAndAccel()["Acceleration"]);
 	//UE_LOG(LogTemp, Log, TEXT("Actor Label %s"), *(OutHit.GetActor()->GetActorLabel()));
