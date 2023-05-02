@@ -58,20 +58,21 @@ void USS_MotionController::UpdateColliderRadius(EHand Hand)
 		for (float radius : ArmRadius) {
 			sum += radius;
 		}
-		Colliders[Hand]->SetSphereRadius(sum/ArmRadius.Num());
+		Colliders[Hand]->SetSphereRadius(sum/ArmRadius.Num() * 0.9);
 		ArmRadius.Empty();
 		sum = 0;
 	 }
 }
 
-void USS_MotionController::PT(EHand Hand)
+void USS_MotionController::PT(EHand Hand, int id)
 {
 	if (HasFushedAndWiped)
 		return;
 	if (Pistols[Hand]->GetIsThrusting() && Pistols[Hand]->CloseToCenter) {
-		Pistols[Hand]->Shoot();
+		Pistols[Hand]->Shoot(interactionParlament(Hand, id), id > 1 ? Colliders[Hand]->GetComponentLocation() : Pistols[Hand]->GetActorLocation());
 		//Pistols[Hand]->HasEntered = false;
 	}
+	//if (Pistols[Hand] == nullptr) return;
 	Pistols[Hand]->CloseToCenter = false;
 }
 
@@ -81,6 +82,8 @@ void USS_MotionController::PTA(EHand Hand)
 		return;
 	Pistols[Hand]->TimeExitted = UGameplayStatics::GetTimeSeconds(GetWorld());
 }
+
+
 
 void USS_MotionController::SetHasEntered(EHand Hand)
 {
@@ -96,7 +99,7 @@ void USS_MotionController::ButtonPressPTA(EHand Hand)
 	float Difference = UGameplayStatics::GetTimeSeconds(GetWorld()) - Pistols[Hand]->TimeExitted;
 		
 	if (Difference < 1) {
-		Pistols[Hand]->Shoot();
+		//Pistols[Hand]->Shoot();
 	}
 }
 
@@ -119,28 +122,32 @@ void USS_MotionController::SaveCalibrationValues(EHand Hand)
 	if (HasFushedAndWiped)
 		return;
 	SavedColliderPosition = Colliders[Hand]->GetRelativeLocation();
-	SavedRadius = Colliders[Hand]->GetScaledSphereRadius();
+	//SavedRadius = Colliders[Hand]->GetScaledSphereRadius();
+	SavedRadius = Colliders[Hand]->GetUnscaledSphereRadius();
 	//GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT("Position %s"), *SavedColliderPosition.ToString()));
 	//GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT("Radius %f"), SavedRadius));
 	UE_LOG(LogTemp, Log, TEXT("SAVING----------------"));
 	UE_LOG(LogTemp, Log, TEXT("POSITION %s"), *SavedColliderPosition.ToString());
 	UE_LOG(LogTemp, Log, TEXT("Radius %f"), SavedRadius);
+	HasFushedAndWiped = true;
 }
 
 void USS_MotionController::LoadCalibrationValues(EHand Hand)
 {
 	//GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT("Position %f"), SavedColliderPosition));
 	//GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT("Radius %f"), (SphereVariable->GetComponentLocation() - GetActorLocation()).Size()));
-	if (HasFushedAndWiped)
+	if (!HasFushedAndWiped || Colliders.Num() == 0)
 		return;
 	//Colliders[Hand]->SetWorldLocation(SavedColliderPosition);
-
+	UE_LOG(LogTemp, Log, TEXT("Radius %f"), SavedRadius);
 	//FVector Local = Colliders[Hand]->GetComponentTransform().InverseTransformPosition(SavedColliderPosition);
 	Colliders[Hand]->SetRelativeLocation(SavedColliderPosition);
-	Colliders[Hand]->SetSphereRadius(SavedRadius);
+	Colliders[Hand]->SetSphereRadius(SavedRadius, true);
+	//Colliders[Hand]->
 	UE_LOG(LogTemp, Log, TEXT("LOADING---------------"));
 	UE_LOG(LogTemp, Log, TEXT("POSITION %s"), *(Colliders[Hand]->GetComponentLocation().ToString()));
 	UE_LOG(LogTemp, Log, TEXT("Radius %f"), Colliders[Hand]->GetScaledSphereRadius());
+	HasFushedAndWiped = false; 
 	//GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT("Position %s"), *(Colliders[Hand]->GetComponentLocation().ToString())));
 	//GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT("Radius %f"), Colliders[Hand]->GetScaledSphereRadius()));
 }
@@ -152,6 +159,33 @@ void USS_MotionController::Toilet()
 	ThrustingReaders.Empty();
 	Pistols.Empty();
 	HasFushedAndWiped = true;
+}
+
+FVector USS_MotionController::interactionParlament(EHand Hand, int id)
+{
+	switch (id)
+	{
+	case 1: 
+		//Pistols[Hand]->GetActorForwardVector()
+		return Pistols[Hand]->StaticMesh->GetRightVector() * -1;
+		
+	case 2:
+		return (Pistols[Hand]->GetActorLocation() - Colliders[Hand]->GetComponentLocation()).GetSafeNormal();
+
+	case 3:
+		// ((Pistols[Hand]->GetActorLocation() - Colliders[Hand]->GetComponentLocation()).GetSafeNormal()) + (Pistols[Hand]->GetActorForwardVector()).GetSafeNormal();
+		// (((Pistols[Hand]->GetActorLocation() - Colliders[Hand]->GetComponentLocation()).GetSafeNormal()) + Pistols[Hand]->StaticMeshes[1]->GetRightVector() * -1).GetSafeNormal();
+		return (((Pistols[Hand]->GetActorLocation() - Colliders[Hand]->GetComponentLocation()).GetSafeNormal()) + Pistols[Hand]->StaticMesh->GetRightVector() * -1).GetSafeNormal();
+
+	default:
+		break;
+	}
+	return FVector();
+}
+
+void USS_MotionController::DisableCollider(EHand Hand)
+{
+	Colliders[Hand == EHand::LEFT ? EHand::RIGHT : EHand::LEFT]->SetVisibility(false);
 }
 
 

@@ -11,6 +11,7 @@
 #include "Enemy.h"
 #include "MyENUMS.h"
 #include "Components/SphereComponent.h"
+#include "Engine/EngineTypes.h"
 
 
 // Sets default values
@@ -31,6 +32,9 @@ void AA_PlayerPistol::BeginPlay()
 	MotionControllerSubSystem->InitializeControllers();
 	MotionControllerSubSystem->AttachPistolToController(this, Orientation != 1 ? EHand::LEFT : EHand::RIGHT);
 	ThrustingReader = (USC_ThrustingReader*)GetComponentByClass(USC_ThrustingReader::StaticClass());
+	GetComponents<UStaticMeshComponent>(StaticMeshes);
+	//StaticMeshes[1]->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	StaticMesh = StaticMeshes[StaticMeshes[0]->GetName() == "Sphere" ? 1 : 0];
 }
 
 // Called every frame
@@ -39,14 +43,19 @@ void AA_PlayerPistol::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 	//PT();
 	//MotionControllerSubSystem->UpdateColliderRadius(Orientation != 1 ? EHand::LEFT : EHand::RIGHT);
-	if ((SphereVariable->GetComponentLocation() - GetActorLocation()).Size() < 7 ) {
+	if ((SphereVariable->GetComponentLocation() - GetActorLocation()).Size() < SphereVariable->GetUnscaledSphereRadius() * 0.3) {
 		CloseToCenter = true;
 	}
-	UE_LOG(LogTemp, Log, TEXT("distance difference %f"), (SphereVariable->GetComponentLocation() - GetActorLocation()).Size());
-	//GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT(" It's Micheal here %f"), (SphereVariable->GetComponentLocation() - GetActorLocation()).Size()));
+	//UE_LOG(LogTemp, Log, TEXT("distance difference %f"), (SphereVariable->GetComponentLocation() - GetActorLocation()).Size());
+	//GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT(" It's Micheal here %s"), *StaticMesh->GetName()));
+	//DrawDebugLine(GetWorld(), GetActorLocation(), GetActorLocation() + GetActorForwardVector() * 50, FColor::Blue, true, 1, 0, 1);
+	//DrawDebugLine(GetWorld(), GetActorLocation(), GetActorLocation() + (StaticMesh->GetRightVector() * -1) * 50, FColor::Blue, true, 1, 0, 1);
+	//DrawDebugLine(GetWorld(), GetActorLocation(), GetActorLocation() + GetActorForwardVector() * 50, FColor::Blue, true, 1, 0, 1);
+	//GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT(" It's Micheal here %s"), *(FindComponentByClass<UStaticMeshComponent>()->GetForwardVector().ToString())));
+
 }
 
-bool AA_PlayerPistol::CheckRayFromSelf()
+bool AA_PlayerPistol::CheckRayFromSelf()//depricated
 {
 
 	ForwardVector = GetActorForwardVector();
@@ -55,25 +64,31 @@ bool AA_PlayerPistol::CheckRayFromSelf()
 	return GetWorld()->LineTraceSingleByChannel(OutHit, Start, EndOfTrace, ECC_WorldStatic, CollisionParams);
 }
 
-
-void AA_PlayerPistol::Shoot()
+void AA_PlayerPistol::Shoot(FVector directionVector, FVector StartingPoint)
 {
-	CheckRayFromSelf();
-	DrawDebugLine(GetWorld(), GetActorLocation() + GetActorForwardVector() * 300, GetActorLocation() + (GetActorForwardVector() * 100000), FColor::Green, false, 1, 0, 5);
-	UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), GetActorRotation());
-	UE_LOG(LogTemp, Log, TEXT("VELOCITY %f"), ThrustingReader->GetVelocityAndAccel()["Velocity"]);
-	UE_LOG(LogTemp, Log, TEXT("ACCEL %f"), ThrustingReader->GetVelocityAndAccel()["Acceleration"]);
-	//UE_LOG(LogTemp, Log, TEXT("Actor Label %s"), *(OutHit.GetActor()->GetActorLabel()));
-	//UE_LOG(LogTemp, Log, TEXT("Actor Label %s"), *(OutHit.GetActor()->GetActorLabel()));
+	
+	Start = StartingPoint + directionVector * 300;
+	EndOfTrace = ((directionVector * 100000) + Start);
+	GetWorld()->LineTraceSingleByChannel(OutHit, Start, EndOfTrace, ECC_WorldStatic, CollisionParams);
 
+	DrawDebugLine(GetWorld(), StartingPoint + directionVector * 150, EndOfTrace, FColor::Green, false, 1, 0, 5);
+	UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), GetActorRotation());
+	AActor* Proj = GetWorld()->SpawnActor<AActor>(Projectile, Start, directionVector.Rotation());
+	GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT("spawed %s"), *(Proj->GetActorLabel())));
+	//UE_LOG(LogTemp, Log, TEXT("VELOCITY %f"), ThrustingReader->GetVelocityAndAccel()["Velocity"]);
+	//UE_LOG(LogTemp, Log, TEXT("ACCEL %f"), ThrustingReader->GetVelocityAndAccel()["Acceleration"]);
+	//UE_LOG(LogTemp, Log, TEXT("Actor Label %s"), *(OutHit.GetActor()->GetActorLabel()));
+	//UE_LOG(LogTemp, Log, TEXT("Actor Label %s"), *(OutHit.GetActor()->GetActorLabel()));
+	//UE_LOG(LogTemp, Log, TEXT("Actor Label %s"), *(OutHit.GetActor()->GetActorLabel()));
+	
 	if (OutHit.IsValidBlockingHit())//makes hit true when something in GameTraceChannel2 is being hit
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT("Shot")));
+		//GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT("Shot")));
+		//GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Green, FString::Printf(TEXT("Shot %s"), *(OutHit.GetActor()->GetActorLabel())));
 		GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Green, FString::Printf(TEXT("Shot %s"), *(OutHit.GetActor()->GetActorLabel())));
-		
 
 		if (OutHit.GetActor()->IsA(AEnemy::StaticClass())) {
-			Cast<AEnemy>(OutHit.GetActor())->TakeDamageXXX(10);
+			Cast<AEnemy>(OutHit.GetActor())->TakeDamageXXX(20);
 		}
 
 		ThrustingReader->ResetThresholsMet();

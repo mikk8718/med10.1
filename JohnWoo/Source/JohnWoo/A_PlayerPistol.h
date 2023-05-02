@@ -15,7 +15,7 @@ public:
 	// Sets default values for this actor's properties
 	AA_PlayerPistol();
 	bool hit = false;
-	void Shoot();
+	void Shoot(FVector directionVector,FVector StartingPoint);
 	USC_ThrustingReader*& GetThrustingReader();
 	bool GetIsThrusting();
 	bool HasEntered = true;
@@ -24,6 +24,10 @@ public:
 	int Orientation;
 	UPROPERTY(EditAnywhere)
 	USoundBase* Sound;
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<AActor> Projectile;
+	TArray<UStaticMeshComponent*> StaticMeshes;
+	UStaticMeshComponent* StaticMesh;
 
 protected:
 	// Called when the game starts or when spawned

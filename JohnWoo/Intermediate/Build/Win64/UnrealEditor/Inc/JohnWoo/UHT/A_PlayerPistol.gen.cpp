@@ -9,9 +9,11 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeA_PlayerPistol() {}
 // Cross Module References
+	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FRotator();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
+	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UActorComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USoundBase_NoRegister();
 	JOHNWOO_API UClass* Z_Construct_UClass_AA_PlayerPistol();
@@ -40,6 +42,10 @@ void EmptyLinkFunctionForGeneratedCodeA_PlayerPistol() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_Sound_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_Sound;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_Projectile_MetaData[];
+#endif
+		static const UECodeGen_Private::FClassPropertyParams NewProp_Projectile;
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_Components_Inner;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_Components_MetaData[];
@@ -81,6 +87,13 @@ void EmptyLinkFunctionForGeneratedCodeA_PlayerPistol() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AA_PlayerPistol_Statics::NewProp_Sound = { "Sound", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AA_PlayerPistol, Sound), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AA_PlayerPistol_Statics::NewProp_Sound_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AA_PlayerPistol_Statics::NewProp_Sound_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AA_PlayerPistol_Statics::NewProp_Projectile_MetaData[] = {
+		{ "Category", "A_PlayerPistol" },
+		{ "ModuleRelativePath", "A_PlayerPistol.h" },
+	};
+#endif
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_AA_PlayerPistol_Statics::NewProp_Projectile = { "Projectile", nullptr, (EPropertyFlags)0x0014000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(AA_PlayerPistol, Projectile), Z_Construct_UClass_UClass, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AA_PlayerPistol_Statics::NewProp_Projectile_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AA_PlayerPistol_Statics::NewProp_Projectile_MetaData)) };
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AA_PlayerPistol_Statics::NewProp_Components_Inner = { "Components", nullptr, (EPropertyFlags)0x0000000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, Z_Construct_UClass_UActorComponent_NoRegister, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AA_PlayerPistol_Statics::NewProp_Components_MetaData[] = {
@@ -107,6 +120,7 @@ void EmptyLinkFunctionForGeneratedCodeA_PlayerPistol() {}
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AA_PlayerPistol_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AA_PlayerPistol_Statics::NewProp_Orientation,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AA_PlayerPistol_Statics::NewProp_Sound,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AA_PlayerPistol_Statics::NewProp_Projectile,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AA_PlayerPistol_Statics::NewProp_Components_Inner,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AA_PlayerPistol_Statics::NewProp_Components,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AA_PlayerPistol_Statics::NewProp_ActorRot,
@@ -149,9 +163,9 @@ void EmptyLinkFunctionForGeneratedCodeA_PlayerPistol() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_A_PlayerPistol_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AA_PlayerPistol, AA_PlayerPistol::StaticClass, TEXT("AA_PlayerPistol"), &Z_Registration_Info_UClass_AA_PlayerPistol, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AA_PlayerPistol), 3806575768U) },
+		{ Z_Construct_UClass_AA_PlayerPistol, AA_PlayerPistol::StaticClass, TEXT("AA_PlayerPistol"), &Z_Registration_Info_UClass_AA_PlayerPistol, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AA_PlayerPistol), 2087050598U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_A_PlayerPistol_h_1691164779(TEXT("/Script/JohnWoo"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_A_PlayerPistol_h_1518780432(TEXT("/Script/JohnWoo"),
 		Z_CompiledInDeferFile_FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_A_PlayerPistol_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_A_PlayerPistol_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
