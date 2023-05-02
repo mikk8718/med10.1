@@ -15,3 +15,11 @@ void ULoggingSubsystem::WriteToFile(int32 ID, int32 Hits, int32 Health, float Sp
 		FString::SanitizeFloat(SpawnTime) + "," + FString::SanitizeFloat(DeathTime) + "," + FString::FromInt(alive) + "," + FString::SanitizeFloat(DistanceToPlayer) + "\n",
 		*filepath, FFileHelper::EEncodingOptions::AutoDetect, &IFileManager::Get(), EFileWrite::FILEWRITE_Append);
 }
+
+void ULoggingSubsystem::SaveCalibrationValues(int ID, float Radius, FVector Position)
+{
+	FFileHelper::SaveStringToFile(FString::FromInt(ID) + ","+FString::SanitizeFloat(Radius)+","+*(Position.ToString()),
+		*filepath, FFileHelper::EEncodingOptions::AutoDetect, &IFileManager::Get(), EFileWrite::FILEWRITE_Append);
+}
+
+

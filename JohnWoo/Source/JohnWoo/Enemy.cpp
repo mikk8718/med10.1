@@ -62,6 +62,6 @@ void AEnemy::TakeDamageXXX(int32 damage)
 	
 	}
 	else {
-		LoggingFunction(1);
+		//LoggingFunction(1);
 	}
 }

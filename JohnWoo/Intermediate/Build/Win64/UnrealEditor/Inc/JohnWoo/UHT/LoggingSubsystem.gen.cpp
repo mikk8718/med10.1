@@ -10,11 +10,22 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeLoggingSubsystem() {}
 // Cross Module References
+	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	ENGINE_API UClass* Z_Construct_UClass_UGameInstanceSubsystem();
 	JOHNWOO_API UClass* Z_Construct_UClass_ULoggingSubsystem();
 	JOHNWOO_API UClass* Z_Construct_UClass_ULoggingSubsystem_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_JohnWoo();
 // End Cross Module References
+	DEFINE_FUNCTION(ULoggingSubsystem::execSaveCalibrationValues)
+	{
+		P_GET_PROPERTY(FIntProperty,Z_Param_ID);
+		P_GET_PROPERTY(FFloatProperty,Z_Param_Radius);
+		P_GET_STRUCT(FVector,Z_Param_Position);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->SaveCalibrationValues(Z_Param_ID,Z_Param_Radius,Z_Param_Position);
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(ULoggingSubsystem::execWriteToFile)
 	{
 		P_GET_PROPERTY(FIntProperty,Z_Param_ID);
@@ -33,9 +44,50 @@ void EmptyLinkFunctionForGeneratedCodeLoggingSubsystem() {}
 	{
 		UClass* Class = ULoggingSubsystem::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "SaveCalibrationValues", &ULoggingSubsystem::execSaveCalibrationValues },
 			{ "WriteToFile", &ULoggingSubsystem::execWriteToFile },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_ULoggingSubsystem_SaveCalibrationValues_Statics
+	{
+		struct LoggingSubsystem_eventSaveCalibrationValues_Parms
+		{
+			int32 ID;
+			float Radius;
+			FVector Position;
+		};
+		static const UECodeGen_Private::FUnsizedIntPropertyParams NewProp_ID;
+		static const UECodeGen_Private::FFloatPropertyParams NewProp_Radius;
+		static const UECodeGen_Private::FStructPropertyParams NewProp_Position;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UFunction_ULoggingSubsystem_SaveCalibrationValues_Statics::NewProp_ID = { "ID", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(LoggingSubsystem_eventSaveCalibrationValues_Parms, ID), METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UFunction_ULoggingSubsystem_SaveCalibrationValues_Statics::NewProp_Radius = { "Radius", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(LoggingSubsystem_eventSaveCalibrationValues_Parms, Radius), METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_ULoggingSubsystem_SaveCalibrationValues_Statics::NewProp_Position = { "Position", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(LoggingSubsystem_eventSaveCalibrationValues_Parms, Position), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ULoggingSubsystem_SaveCalibrationValues_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ULoggingSubsystem_SaveCalibrationValues_Statics::NewProp_ID,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ULoggingSubsystem_SaveCalibrationValues_Statics::NewProp_Radius,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ULoggingSubsystem_SaveCalibrationValues_Statics::NewProp_Position,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ULoggingSubsystem_SaveCalibrationValues_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "LoggingSubsystem.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ULoggingSubsystem_SaveCalibrationValues_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ULoggingSubsystem, nullptr, "SaveCalibrationValues", nullptr, nullptr, sizeof(Z_Construct_UFunction_ULoggingSubsystem_SaveCalibrationValues_Statics::LoggingSubsystem_eventSaveCalibrationValues_Parms), Z_Construct_UFunction_ULoggingSubsystem_SaveCalibrationValues_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ULoggingSubsystem_SaveCalibrationValues_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04820401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ULoggingSubsystem_SaveCalibrationValues_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ULoggingSubsystem_SaveCalibrationValues_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ULoggingSubsystem_SaveCalibrationValues()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ULoggingSubsystem_SaveCalibrationValues_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_ULoggingSubsystem_WriteToFile_Statics
 	{
@@ -113,6 +165,7 @@ void EmptyLinkFunctionForGeneratedCodeLoggingSubsystem() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_JohnWoo,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_ULoggingSubsystem_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_ULoggingSubsystem_SaveCalibrationValues, "SaveCalibrationValues" }, // 4018911979
 		{ &Z_Construct_UFunction_ULoggingSubsystem_WriteToFile, "WriteToFile" }, // 3318943270
 	};
 #if WITH_METADATA
@@ -159,9 +212,9 @@ void EmptyLinkFunctionForGeneratedCodeLoggingSubsystem() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_LoggingSubsystem_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ULoggingSubsystem, ULoggingSubsystem::StaticClass, TEXT("ULoggingSubsystem"), &Z_Registration_Info_UClass_ULoggingSubsystem, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ULoggingSubsystem), 3232374087U) },
+		{ Z_Construct_UClass_ULoggingSubsystem, ULoggingSubsystem::StaticClass, TEXT("ULoggingSubsystem"), &Z_Registration_Info_UClass_ULoggingSubsystem, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ULoggingSubsystem), 976718594U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_LoggingSubsystem_h_3576752134(TEXT("/Script/JohnWoo"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_LoggingSubsystem_h_3385038345(TEXT("/Script/JohnWoo"),
 		Z_CompiledInDeferFile_FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_LoggingSubsystem_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_LoggingSubsystem_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

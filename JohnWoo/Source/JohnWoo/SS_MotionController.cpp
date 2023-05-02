@@ -8,6 +8,7 @@
 #include "MyENUMS.h"
 #include "SC_ThrustingReader.h"
 #include "Components/SphereComponent.h"
+#include "LoggingSubsystem.h"
 
 
 
@@ -124,6 +125,7 @@ void USS_MotionController::SaveCalibrationValues(EHand Hand)
 	SavedColliderPosition = Colliders[Hand]->GetRelativeLocation();
 	//SavedRadius = Colliders[Hand]->GetScaledSphereRadius();
 	SavedRadius = Colliders[Hand]->GetUnscaledSphereRadius();
+	GetGameInstance()->GetSubsystem<ULoggingSubsystem>()->SaveCalibrationValues(0, SavedRadius, SavedColliderPosition);
 	//GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT("Position %s"), *SavedColliderPosition.ToString()));
 	//GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT("Radius %f"), SavedRadius));
 	UE_LOG(LogTemp, Log, TEXT("SAVING----------------"));
@@ -186,6 +188,12 @@ FVector USS_MotionController::interactionParlament(EHand Hand, int id)
 void USS_MotionController::DisableCollider(EHand Hand)
 {
 	Colliders[Hand == EHand::LEFT ? EHand::RIGHT : EHand::LEFT]->SetVisibility(false);
+}
+
+void USS_MotionController::LoadCalibrationValuesManually(EHand Hand, float Radius, FVector Position)
+{
+	Colliders[Hand]->SetSphereRadius(Radius);
+	Colliders[Hand]->SetRelativeLocation(Position);	
 }
 
 

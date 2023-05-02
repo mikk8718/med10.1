@@ -12,3 +12,8 @@ bool UCalibration::IsInCalibration()
 {
 	return InCalibration;
 }
+
+void UCalibration::FromCalibration()
+{
+	_fromcalibration = true;
+}

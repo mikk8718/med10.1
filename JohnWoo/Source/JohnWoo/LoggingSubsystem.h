@@ -20,5 +20,7 @@ private:
 public:
 	UFUNCTION(BlueprintCallable)
 		void WriteToFile(int32 ID, int32 Hits, int32 Health, float SpawnTime, float DeathTime, int32 alive, float DistanceToPlayer);
+	UFUNCTION(BlueprintCallable)
+		void SaveCalibrationValues(int ID, float Radius, FVector Position);
 };
 

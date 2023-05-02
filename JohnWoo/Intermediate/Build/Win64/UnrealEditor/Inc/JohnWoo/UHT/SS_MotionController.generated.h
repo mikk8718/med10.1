@@ -19,6 +19,8 @@ enum class EHand : uint8;
 #define FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_SS_MotionController_h_15_SPARSE_DATA
 #define FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_SS_MotionController_h_15_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execSetDominantHand); \
+	DECLARE_FUNCTION(execLoadCalibrationValuesManually); \
 	DECLARE_FUNCTION(execDisableCollider); \
 	DECLARE_FUNCTION(execToilet); \
 	DECLARE_FUNCTION(execLoadCalibrationValues); \
@@ -36,6 +38,8 @@ enum class EHand : uint8;
 
 #define FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_SS_MotionController_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execSetDominantHand); \
+	DECLARE_FUNCTION(execLoadCalibrationValuesManually); \
 	DECLARE_FUNCTION(execDisableCollider); \
 	DECLARE_FUNCTION(execToilet); \
 	DECLARE_FUNCTION(execLoadCalibrationValues); \

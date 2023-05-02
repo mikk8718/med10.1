@@ -19,6 +19,12 @@ public:
 	void SetCalibration(bool NewValue);
 	UFUNCTION(BlueprintCallable)
 	bool IsInCalibration();
+	UFUNCTION(BlueprintCallable)
+		void FromCalibration();
+	
+	bool _fromcalibration = false;
+	UFUNCTION(BlueprintCallable)
+		bool IsFromCalibration() { return _fromcalibration; }
 private: 
 	bool InCalibration = true;
 };

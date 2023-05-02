@@ -62,5 +62,11 @@ public:
 	FVector interactionParlament(EHand Hand, int id);
 	UFUNCTION(BlueprintCallable)
 	void DisableCollider(EHand Hand);
+	UFUNCTION(BlueprintCallable)
+	void LoadCalibrationValuesManually(EHand Hand, float Radius, FVector position);
+	//UPROPERTY(BlueprintReadWrite)
+	EHand DominantHand;
+	UFUNCTION(BlueprintCallable)
+	void SetDominantHand(EHand Hand) { DominantHand = Hand; }
 	
 };	

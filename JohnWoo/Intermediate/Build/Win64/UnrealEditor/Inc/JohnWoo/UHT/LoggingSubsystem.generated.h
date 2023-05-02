@@ -17,11 +17,13 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_LoggingSubsystem_h_15_SPARSE_DATA
 #define FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_LoggingSubsystem_h_15_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execSaveCalibrationValues); \
 	DECLARE_FUNCTION(execWriteToFile);
 
 
 #define FID_Users_qwe_o_Documents_GitHub_med10_1_JohnWoo_Source_JohnWoo_LoggingSubsystem_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execSaveCalibrationValues); \
 	DECLARE_FUNCTION(execWriteToFile);
 
 

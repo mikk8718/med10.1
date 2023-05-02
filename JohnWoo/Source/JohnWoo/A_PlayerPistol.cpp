@@ -30,6 +30,7 @@ void AA_PlayerPistol::BeginPlay()
 	MotionControllerSubSystem = GetGameInstance()->GetSubsystem<USS_MotionController>();
 	MotionControllerSubSystem->Toilet();
 	MotionControllerSubSystem->InitializeControllers();
+	// orientation = depricated
 	MotionControllerSubSystem->AttachPistolToController(this, Orientation != 1 ? EHand::LEFT : EHand::RIGHT);
 	ThrustingReader = (USC_ThrustingReader*)GetComponentByClass(USC_ThrustingReader::StaticClass());
 	GetComponents<UStaticMeshComponent>(StaticMeshes);
