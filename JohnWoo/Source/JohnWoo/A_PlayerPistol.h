@@ -29,6 +29,7 @@ public:
 	TArray<UStaticMeshComponent*> StaticMeshes;
 	UStaticMeshComponent* StaticMesh;
 
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -48,7 +49,6 @@ private:
 	FCollisionQueryParams CollisionParams;
 	class USC_ThrustingReader* ThrustingReader;
 	USS_MotionController* MotionControllerSubSystem;
-
 
 	UPROPERTY(EditAnywhere)
 		TArray<UActorComponent*> Components;

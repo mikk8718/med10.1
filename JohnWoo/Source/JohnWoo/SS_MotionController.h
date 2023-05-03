@@ -8,7 +8,7 @@
 
 class USphereComponent;
 class USC_ThrustingReader;
-
+class ULoggingSubsystem;
 UCLASS()
 class JOHNWOO_API USS_MotionController : public UGameInstanceSubsystem
 {
@@ -29,6 +29,7 @@ private:
 	FVector SavedColliderPosition = FVector::ZeroVector;
 	float SavedRadius = 2;
 	bool HasFushedAndWiped = false;
+	ULoggingSubsystem* LoggingSubsystem;
 
 
 public:
@@ -42,7 +43,7 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void UpdateColliderRadius(EHand hand);
 	UFUNCTION(BlueprintCallable)
-	void PT(EHand Hand, int id);
+	void PT(bool calibration, EHand Hand, int id);
 	UFUNCTION(BlueprintCallable)
 	void PTA(EHand Hand);
 	UFUNCTION(BlueprintCallable)
@@ -68,5 +69,7 @@ public:
 	EHand DominantHand;
 	UFUNCTION(BlueprintCallable)
 	void SetDominantHand(EHand Hand) { DominantHand = Hand; }
+	UFUNCTION(BlueprintCallable)
+		TMap<FString, float> GetvelAndAccel(EHand Hand);
 	
 };	

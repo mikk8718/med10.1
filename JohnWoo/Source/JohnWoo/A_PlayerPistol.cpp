@@ -12,7 +12,7 @@
 #include "MyENUMS.h"
 #include "Components/SphereComponent.h"
 #include "Engine/EngineTypes.h"
-
+#include "LoggingSubsystem.h"
 
 // Sets default values
 AA_PlayerPistol::AA_PlayerPistol()
@@ -70,12 +70,14 @@ void AA_PlayerPistol::Shoot(FVector directionVector, FVector StartingPoint)
 	
 	Start = StartingPoint + directionVector * 300;
 	EndOfTrace = ((directionVector * 100000) + Start);
+	//LoggingSubsystem->savevlo
 	GetWorld()->LineTraceSingleByChannel(OutHit, Start, EndOfTrace, ECC_WorldStatic, CollisionParams);
 
 	DrawDebugLine(GetWorld(), StartingPoint + directionVector * 150, EndOfTrace, FColor::Green, false, 1, 0, 5);
 	UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), GetActorRotation());
 	AActor* Proj = GetWorld()->SpawnActor<AActor>(Projectile, Start, directionVector.Rotation());
-	GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT("spawed %s"), *(Proj->GetActorLabel())));
+	//ThrustingReader->ResetThresholsMet();
+	//GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT("spawed %f"), GetThrustingReader()->GetVelocityAndAccel()["Acceleration"]));
 	//UE_LOG(LogTemp, Log, TEXT("VELOCITY %f"), ThrustingReader->GetVelocityAndAccel()["Velocity"]);
 	//UE_LOG(LogTemp, Log, TEXT("ACCEL %f"), ThrustingReader->GetVelocityAndAccel()["Acceleration"]);
 	//UE_LOG(LogTemp, Log, TEXT("Actor Label %s"), *(OutHit.GetActor()->GetActorLabel()));
@@ -86,14 +88,15 @@ void AA_PlayerPistol::Shoot(FVector directionVector, FVector StartingPoint)
 	{
 		//GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT("Shot")));
 		//GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Green, FString::Printf(TEXT("Shot %s"), *(OutHit.GetActor()->GetActorLabel())));
-		GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Green, FString::Printf(TEXT("Shot %s"), *(OutHit.GetActor()->GetActorLabel())));
+		//GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Green, FString::Printf(TEXT("Shot %s"), *(OutHit.GetActor()->GetActorLabel())));
 
 		if (OutHit.GetActor()->IsA(AEnemy::StaticClass())) {
 			Cast<AEnemy>(OutHit.GetActor())->TakeDamageXXX(20);
 		}
 
-		ThrustingReader->ResetThresholsMet();
+		//ThrustingReader->ResetThresholsMet();
 	}
+	
 }
 
 USC_ThrustingReader*& AA_PlayerPistol::GetThrustingReader()

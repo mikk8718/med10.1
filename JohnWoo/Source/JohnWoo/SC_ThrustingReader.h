@@ -6,7 +6,7 @@
 #include "Components/SceneComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "SC_ThrustingReader.generated.h"
-
+class UCalibration;
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class JOHNWOO_API USC_ThrustingReader : public USceneComponent
 {
@@ -29,11 +29,14 @@ public:
 	TMap<FString, float> GetVelocityAndAccel();
 	UFUNCTION(BlueprintCallable)
 	void SetupThreshholds(float v, float a);
-
+	UCalibration* CalibrationSubsystem;
+	float tempVel = 0;
+	float tempAccel = 0;
+	float velocity;
 
 private:
 	FVector oldLocation = FVector::ZeroVector;
-	float velocity;
+	
 	float velocityPast = 0;
 	float currentVelocity;
 	float currentAcceleration;

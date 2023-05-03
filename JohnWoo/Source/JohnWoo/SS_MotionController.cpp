@@ -15,6 +15,7 @@
 void USS_MotionController::Initialize(FSubsystemCollectionBase& Collection)
 {
 	//Pistols.Init(NULL, 2);
+	LoggingSubsystem = GetGameInstance()->GetSubsystem<ULoggingSubsystem>();
 }
 
 
@@ -65,13 +66,21 @@ void USS_MotionController::UpdateColliderRadius(EHand Hand)
 	 }
 }
 
-void USS_MotionController::PT(EHand Hand, int id)
+void USS_MotionController::PT(bool calibration, EHand Hand, int id)
 {
+	GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT("FROM MOTION CONTROLLEr %f"), Pistols[Hand]->GetThrustingReader()->velocity));
 	if (HasFushedAndWiped)
 		return;
 	if (Pistols[Hand]->GetIsThrusting() && Pistols[Hand]->CloseToCenter) {
+		if(!calibration)
+			LoggingSubsystem->SaveTrusting(true);
+		Pistols[Hand]->GetThrustingReader()->ResetThresholsMet();
 		Pistols[Hand]->Shoot(interactionParlament(Hand, id), id > 1 ? Colliders[Hand]->GetComponentLocation() : Pistols[Hand]->GetActorLocation());
 		//Pistols[Hand]->HasEntered = false;
+	}
+	else if (!Pistols[Hand]->GetIsThrusting() && Pistols[Hand]->CloseToCenter) {
+		if(!calibration)
+			LoggingSubsystem->SaveTrusting(false);
 	}
 	//if (Pistols[Hand] == nullptr) return;
 	Pistols[Hand]->CloseToCenter = false;
@@ -196,4 +205,8 @@ void USS_MotionController::LoadCalibrationValuesManually(EHand Hand, float Radiu
 	Colliders[Hand]->SetRelativeLocation(Position);	
 }
 
+TMap<FString, float> USS_MotionController::GetvelAndAccel(EHand Hand)
+{
+	return Pistols[Hand]->GetThrustingReader()->GetVelocityAndAccel();
+}
 
