@@ -24,10 +24,11 @@ void ULoggingSubsystem::SaveCalibrationValues(int ID, float Radius, FVector Posi
 		*PathCalibration, FFileHelper::EEncodingOptions::AutoDetect, &IFileManager::Get(), EFileWrite::FILEWRITE_Append);
 }
 
-void ULoggingSubsystem::InitializeParticipant(int ID, EHand Hand)
+void ULoggingSubsystem::InitializeParticipant(int ID, EHand Hand, int condition)
 {
 	_Hand = Hand;
 	_ID = ID;
+	_condition = condition;
 	PathAccuracy = FPaths::ConvertRelativePathToFull(FPaths::GameSourceDir()) + TEXT("/AccuracyFile" + FString::FromInt(_ID) + ".txt");
 	PathCalibration = FPaths::ConvertRelativePathToFull(FPaths::GameSourceDir()) + TEXT("/CalibrationFile" + FString::FromInt(_ID) + ".txt");
 	PathThrust = FPaths::ConvertRelativePathToFull(FPaths::GameSourceDir()) + TEXT("/ThrustFile" + FString::FromInt(_ID) + ".txt");
@@ -36,26 +37,30 @@ void ULoggingSubsystem::InitializeParticipant(int ID, EHand Hand)
 
 }
 
-void ULoggingSubsystem::SaveFrameRate(float DeltaTime)
+void ULoggingSubsystem::SaveFrameRate(float DeltaTime,bool TriggerPress, bool ControllerGrasp)
 {
 	float FrameRate = 1.0 / DeltaTime;
+	_TriggerPress = TriggerPress;
+	_ControllerGrasp = ControllerGrasp;
 
-	FFileHelper::SaveStringToFile(FString::FromInt(_ID) + "," + FString::SanitizeFloat(FrameRate)+"\n",
+
+	FFileHelper::SaveStringToFile(FString::FromInt(_ID) + "," + FString::SanitizeFloat(FrameRate) + "," + FString::SanitizeFloat(GetWorld()->GetRealTimeSeconds()) +"," + FString::FromInt(_TriggerPress) + "," + FString::FromInt(_ControllerGrasp) + "\n",
 		*PathFrameRate, FFileHelper::EEncodingOptions::AutoDetect, &IFileManager::Get(), EFileWrite::FILEWRITE_Append);
 }
 
 
 void ULoggingSubsystem::SaveAccuracy(float v, float a, bool hit, float DistanceToTarget, bool CriticalHit)
 {
-	GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT("spawed %f"), v));
-	FFileHelper::SaveStringToFile(FString::FromInt(_ID) + "," + UEnum::GetValueAsString(_Hand) + "," + FString::FromInt(hit) + "," + FString::SanitizeFloat(DistanceToTarget) + "," +
-		FString::SanitizeFloat(v)+","+FString::SanitizeFloat(a)+","+FString::FromInt(CriticalHit)+"\n",
+	
+	FFileHelper::SaveStringToFile(FString::FromInt(_ID) + "," + UEnum::GetValueAsString(_Hand) + "," + FString::FromInt(_condition) + "," + FString::FromInt(hit) + "," + FString::SanitizeFloat(DistanceToTarget) + "," +
+		FString::SanitizeFloat(v)+","+FString::SanitizeFloat(a)+","+FString::FromInt(CriticalHit)+  "\n",
 		*PathAccuracy, FFileHelper::EEncodingOptions::AutoDetect, &IFileManager::Get(), EFileWrite::FILEWRITE_Append);
 }
 
 void ULoggingSubsystem::SaveTrusting(bool thrust)
 {
-	FFileHelper::SaveStringToFile(FString::FromInt(_ID) +","+FString::FromInt(thrust) + "\n",
+	
+	FFileHelper::SaveStringToFile(FString::FromInt(_ID) +","+FString::FromInt(thrust) + "," + FString::FromInt(_condition) + "\n",
 		*PathThrust, FFileHelper::EEncodingOptions::AutoDetect, &IFileManager::Get(), EFileWrite::FILEWRITE_Append);
 }
 

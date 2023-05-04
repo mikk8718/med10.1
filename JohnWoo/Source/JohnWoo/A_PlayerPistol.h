@@ -25,10 +25,13 @@ public:
 	UPROPERTY(EditAnywhere)
 	USoundBase* Sound;
 	UPROPERTY(EditAnywhere)
+	USoundBase* FailureSound;
+	UPROPERTY(EditAnywhere)
 	TSubclassOf<AActor> Projectile;
 	TArray<UStaticMeshComponent*> StaticMeshes;
 	UStaticMeshComponent* StaticMesh;
-
+	UPROPERTY(EditAnywhere)
+	UHapticFeedbackEffect_Base* HapticEffect;
 
 protected:
 	// Called when the game starts or when spawned

@@ -71,5 +71,6 @@ public:
 	void SetDominantHand(EHand Hand) { DominantHand = Hand; }
 	UFUNCTION(BlueprintCallable)
 		TMap<FString, float> GetvelAndAccel(EHand Hand);
-	
+	UFUNCTION(BlueprintCallable)
+	float CalculateDistance(EHand Hand);
 };	

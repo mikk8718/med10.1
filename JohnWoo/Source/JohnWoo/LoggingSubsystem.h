@@ -20,6 +20,9 @@ private:
 	FString PathCalibration;
 	float Velocity;
 	float Acceleration;
+	int _condition;
+	bool _TriggerPress;
+	bool _ControllerGrasp;
 	virtual void Initialize(FSubsystemCollectionBase& Collection) override;
 
 public:
@@ -31,9 +34,9 @@ public:
 	UFUNCTION(BlueprintCallable)
 		void SaveCalibrationValues(int ID, float Radius, FVector Position);
 	UFUNCTION(BlueprintCallable)
-		void InitializeParticipant(int ID, EHand Hand);
+		void InitializeParticipant(int ID, EHand Hand, int condition);
 	UFUNCTION(BlueprintCallable)
-		void SaveFrameRate(float DeltaTime);
+		void SaveFrameRate(float DeltaTime, bool TriggerPress, bool ControllerGrasp);
 	UFUNCTION(BlueprintCallable)
 		void SaveAccuracy(float v, float a, bool hit, float DistanceToTarget, bool CriticalHit);
 	void SaveTrusting(bool thrust);

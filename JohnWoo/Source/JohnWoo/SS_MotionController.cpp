@@ -68,12 +68,28 @@ void USS_MotionController::UpdateColliderRadius(EHand Hand)
 
 void USS_MotionController::PT(bool calibration, EHand Hand, int id)
 {
+	bool right = false;
+	APlayerController* PlayerController = GetWorld()->GetFirstPlayerController();
+
+	if (PlayerController == nullptr)
+		return;
+
+	if (Hand == EHand::RIGHT) {
+		right = true;
+	}
+	else {
+		right = false;
+	}
+
 	GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT("FROM MOTION CONTROLLEr %f"), Pistols[Hand]->GetThrustingReader()->velocity));
 	if (HasFushedAndWiped)
 		return;
 	if (Pistols[Hand]->GetIsThrusting() && Pistols[Hand]->CloseToCenter) {
 		if(!calibration)
 			LoggingSubsystem->SaveTrusting(true);
+		//PlayHapticEffect
+		//APlayerController::PlayHapticEffect(Pistols[Hand]->HapticEffect, right ? EControllerHand::Right : EControllerHand::Left, 1, false);
+		PlayerController->PlayHapticEffect(Pistols[Hand]->HapticEffect, right ? EControllerHand::Right : EControllerHand::Left, 1, false);
 		Pistols[Hand]->GetThrustingReader()->ResetThresholsMet();
 		Pistols[Hand]->Shoot(interactionParlament(Hand, id), id > 1 ? Colliders[Hand]->GetComponentLocation() : Pistols[Hand]->GetActorLocation());
 		//Pistols[Hand]->HasEntered = false;
@@ -81,6 +97,9 @@ void USS_MotionController::PT(bool calibration, EHand Hand, int id)
 	else if (!Pistols[Hand]->GetIsThrusting() && Pistols[Hand]->CloseToCenter) {
 		if(!calibration)
 			LoggingSubsystem->SaveTrusting(false);
+		//UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), GetActorRotation());
+		UGameplayStatics::PlaySoundAtLocation(GetWorld(), Pistols[Hand]->FailureSound, Pistols[Hand]->GetActorLocation(),
+			Pistols[Hand]->GetActorRotation());
 	}
 	//if (Pistols[Hand] == nullptr) return;
 	Pistols[Hand]->CloseToCenter = false;
@@ -208,5 +227,10 @@ void USS_MotionController::LoadCalibrationValuesManually(EHand Hand, float Radiu
 TMap<FString, float> USS_MotionController::GetvelAndAccel(EHand Hand)
 {
 	return Pistols[Hand]->GetThrustingReader()->GetVelocityAndAccel();
+}
+
+float USS_MotionController::CalculateDistance(EHand Hand)
+{
+	return ((Colliders[Hand]->GetComponentLocation() - Controllers[Hand]->GetComponentLocation()).Size());
 }
 

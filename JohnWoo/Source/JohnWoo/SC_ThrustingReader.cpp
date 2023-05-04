@@ -18,7 +18,7 @@ void USC_ThrustingReader::BeginPlay()
 {
 	Super::BeginPlay();
 	// velocity & acceleration
-	SetupThreshholds(5.5, 5);
+	SetupThreshholds(3, 5);	
 	CalibrationSubsystem = GetWorld()->GetGameInstance()->GetSubsystem<UCalibration>();
 }
 
