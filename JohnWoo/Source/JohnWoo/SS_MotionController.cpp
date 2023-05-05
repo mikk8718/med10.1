@@ -81,7 +81,7 @@ void USS_MotionController::PT(bool calibration, EHand Hand, int id)
 		right = false;
 	}
 
-	GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT("FROM MOTION CONTROLLEr %f"), Pistols[Hand]->GetThrustingReader()->velocity));
+	//GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT("FROM MOTION CONTROLLEr %f"), Pistols[Hand]->GetThrustingReader()->velocity));
 	if (HasFushedAndWiped)
 		return;
 	if (Pistols[Hand]->GetIsThrusting() && Pistols[Hand]->CloseToCenter) {
@@ -99,7 +99,7 @@ void USS_MotionController::PT(bool calibration, EHand Hand, int id)
 			LoggingSubsystem->SaveTrusting(false);
 		//UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), GetActorRotation());
 		UGameplayStatics::PlaySoundAtLocation(GetWorld(), Pistols[Hand]->FailureSound, Pistols[Hand]->GetActorLocation(),
-			Pistols[Hand]->GetActorRotation());
+			Pistols[Hand]->GetActorRotation(),2.0f);
 	}
 	//if (Pistols[Hand] == nullptr) return;
 	Pistols[Hand]->CloseToCenter = false;

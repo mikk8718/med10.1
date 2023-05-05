@@ -20,7 +20,7 @@ void ULoggingSubsystem::WriteToFile(int32 ID, int32 Hits, int32 Health, float Sp
 
 void ULoggingSubsystem::SaveCalibrationValues(int ID, float Radius, FVector Position)
 {
-	FFileHelper::SaveStringToFile(FString::FromInt(_ID) + ","+FString::SanitizeFloat(Radius)+","+*(Position.ToString()),
+	FFileHelper::SaveStringToFile(FString::FromInt(_ID) + ","+FString::SanitizeFloat(Radius)+","+*(Position.ToString()+"\n"),
 		*PathCalibration, FFileHelper::EEncodingOptions::AutoDetect, &IFileManager::Get(), EFileWrite::FILEWRITE_Append);
 }
 
@@ -44,7 +44,8 @@ void ULoggingSubsystem::SaveFrameRate(float DeltaTime,bool TriggerPress, bool Co
 	_ControllerGrasp = ControllerGrasp;
 
 
-	FFileHelper::SaveStringToFile(FString::FromInt(_ID) + "," + FString::SanitizeFloat(FrameRate) + "," + FString::SanitizeFloat(GetWorld()->GetRealTimeSeconds()) +"," + FString::FromInt(_TriggerPress) + "," + FString::FromInt(_ControllerGrasp) + "\n",
+	FFileHelper::SaveStringToFile(FString::FromInt(_ID) + "," + FString::SanitizeFloat(FrameRate) + "," + FString::SanitizeFloat(GetWorld()->GetRealTimeSeconds()) +"," + 
+		FString::FromInt(_TriggerPress) + "," + FString::FromInt(_ControllerGrasp) + "\n",
 		*PathFrameRate, FFileHelper::EEncodingOptions::AutoDetect, &IFileManager::Get(), EFileWrite::FILEWRITE_Append);
 }
 
@@ -52,7 +53,8 @@ void ULoggingSubsystem::SaveFrameRate(float DeltaTime,bool TriggerPress, bool Co
 void ULoggingSubsystem::SaveAccuracy(float v, float a, bool hit, float DistanceToTarget, bool CriticalHit)
 {
 	
-	FFileHelper::SaveStringToFile(FString::FromInt(_ID) + "," + UEnum::GetValueAsString(_Hand) + "," + FString::FromInt(_condition) + "," + FString::FromInt(hit) + "," + FString::SanitizeFloat(DistanceToTarget) + "," +
+	FFileHelper::SaveStringToFile(FString::FromInt(_ID) + "," + UEnum::GetValueAsString(_Hand) + "," + FString::FromInt(_condition) + "," + 
+		FString::FromInt(hit) + "," + FString::SanitizeFloat(DistanceToTarget) + "," +
 		FString::SanitizeFloat(v)+","+FString::SanitizeFloat(a)+","+FString::FromInt(CriticalHit)+  "\n",
 		*PathAccuracy, FFileHelper::EEncodingOptions::AutoDetect, &IFileManager::Get(), EFileWrite::FILEWRITE_Append);
 }

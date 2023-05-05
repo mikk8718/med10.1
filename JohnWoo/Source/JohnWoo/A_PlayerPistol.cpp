@@ -73,8 +73,8 @@ void AA_PlayerPistol::Shoot(FVector directionVector, FVector StartingPoint)
 	//LoggingSubsystem->savevlo
 	GetWorld()->LineTraceSingleByChannel(OutHit, Start, EndOfTrace, ECC_WorldStatic, CollisionParams);
 
-	DrawDebugLine(GetWorld(), StartingPoint + directionVector * 150, EndOfTrace, FColor::Green, false, 1, 0, 5);
-	UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), GetActorRotation());
+	DrawDebugLine(GetWorld(), StartingPoint + directionVector * 150, EndOfTrace, FColor::Silver, false, 1, 0, 5);
+	UGameplayStatics::PlaySoundAtLocation(GetWorld(), Sound, GetActorLocation(), GetActorRotation(),1.2f);
 	AActor* Proj = GetWorld()->SpawnActor<AActor>(Projectile, Start, directionVector.Rotation());
 	//ThrustingReader->ResetThresholsMet();
 	//GEngine->AddOnScreenDebugMessage(-1, 1.f, FColor::Purple, FString::Printf(TEXT("spawed %f"), GetThrustingReader()->GetVelocityAndAccel()["Acceleration"]));
