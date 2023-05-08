@@ -18,6 +18,7 @@ private:
 	FString PathAccuracy;
 	FString PathThrust;
 	FString PathCalibration;
+	FString PathPositionHand;
 	float Velocity;
 	float Acceleration;
 	int _condition;
@@ -40,5 +41,6 @@ public:
 	UFUNCTION(BlueprintCallable)
 		void SaveAccuracy(float v, float a, bool hit, float DistanceToTarget, bool CriticalHit);
 	void SaveTrusting(bool thrust);
+	void SavePoisition(float x, float y, float z, float DeltaTime);
 };
 

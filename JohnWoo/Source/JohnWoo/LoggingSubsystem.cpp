@@ -33,7 +33,7 @@ void ULoggingSubsystem::InitializeParticipant(int ID, EHand Hand, int condition)
 	PathCalibration = FPaths::ConvertRelativePathToFull(FPaths::GameSourceDir()) + TEXT("/CalibrationFile" + FString::FromInt(_ID) + ".txt");
 	PathThrust = FPaths::ConvertRelativePathToFull(FPaths::GameSourceDir()) + TEXT("/ThrustFile" + FString::FromInt(_ID) + ".txt");
 	PathFrameRate = FPaths::ConvertRelativePathToFull(FPaths::GameSourceDir()) + TEXT("/FrameRateFile" + FString::FromInt(_ID) + ".txt");
-
+	PathPositionHand = FPaths::ConvertRelativePathToFull(FPaths::GameSourceDir()) + TEXT("/HandPosition" + FString::FromInt(_ID) + ".txt");
 
 }
 
@@ -64,6 +64,13 @@ void ULoggingSubsystem::SaveTrusting(bool thrust)
 	
 	FFileHelper::SaveStringToFile(FString::FromInt(_ID) +","+FString::FromInt(thrust) + "," + FString::FromInt(_condition) + "\n",
 		*PathThrust, FFileHelper::EEncodingOptions::AutoDetect, &IFileManager::Get(), EFileWrite::FILEWRITE_Append);
+}
+
+void ULoggingSubsystem::SavePoisition(float x, float y, float z, float DeltaTime)
+{
+	FFileHelper::SaveStringToFile(FString::FromInt(_ID) + "," + UEnum::GetValueAsString(_Hand) + "," + FString::FromInt(_condition) + 
+		FString::SanitizeFloat(x) + "," + FString::SanitizeFloat(y) + "," + FString::SanitizeFloat(z) + "\n",
+		*PathPositionHand, FFileHelper::EEncodingOptions::AutoDetect, &IFileManager::Get(), EFileWrite::FILEWRITE_Append);
 }
 
 

@@ -75,10 +75,22 @@
     <ClInclude Include="..\..\Source\JohnWoo\LoggingSubsystem.h">
       <Filter>Source\JohnWoo</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\JohnWoo\Movement.cpp">
+      <Filter>Source\JohnWoo</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\JohnWoo\Movement.h">
+      <Filter>Source\JohnWoo</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\JohnWoo\MyENUMS.cpp">
       <Filter>Source\JohnWoo</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\JohnWoo\MyENUMS.h">
+      <Filter>Source\JohnWoo</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\JohnWoo\ProjectileDaddy.cpp">
+      <Filter>Source\JohnWoo</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\JohnWoo\ProjectileDaddy.h">
       <Filter>Source\JohnWoo</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\JohnWoo\SC_ThrustingReader.cpp">

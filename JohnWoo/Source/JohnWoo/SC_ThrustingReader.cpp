@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "Kismet/GameplayStatics.h"
 #include "SC_ThrustingReader.h"
+#include "Kismet/GameplayStatics.h"
 #include "Math/Vector.h"
 #include "Calibration.h"
 // Sets default values for this component's properties
